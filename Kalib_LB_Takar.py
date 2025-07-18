@@ -5,6 +5,29 @@ import numpy as np
 import math
 import statistics
 
+st.markdown("""
+    <style>
+    /* Paksa latar belakang utama aplikasi jadi putih */
+    html, body, [class*="stApp"] {
+        background-color: white !important;
+        color: black !important;
+    }
+
+    /* Paksa latar belakang semua container jadi putih juga */
+    .st-emotion-cache-1r6slb0 {
+        background-color: white !important;
+    }
+
+    /* Warna header dan elemen lain juga bisa disesuaikan */
+    .st-emotion-cache-13k62yr {
+        background-color: white !important;
+        color: black !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+
+
 st.set_page_config(page_title="Aplikasi Kalibrasi Volume", layout="wide")
 
 st.set_page_config(
