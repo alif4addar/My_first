@@ -66,3 +66,10 @@ if st.session_state.show_sidebar:
         st.session_state.menu_selected = menu
 
 selected = st.session_state.menu_selected  
+
+
+
+
+
+
+
