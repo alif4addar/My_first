@@ -266,5 +266,68 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
+# --- SESSION STATE ---
+if "show_sidebar" not in st.session_state:
+    st.session_state.show_sidebar = False
+if "menu_selected" not in st.session_state:
+    st.session_state.menu_selected = "🏠 Home"
+
+# --- SEMBUNYIKAN SIDEBAR DI AWAL ---
+if not st.session_state.show_sidebar:
+    st.markdown("""
+        <style>
+        [data-testid="stSidebar"] {
+            display: none;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
+# --- SIDEBAR MENU ---
+if st.session_state.show_sidebar:
+    with st.sidebar:
+        menu = option_menu(
+            menu_title="🌟 Kebutuhan Kimia",
+            options=[
+                "🏠 Home", "⚗ Reaksi Kimia", "🧪 Stoikiometri",
+                "🧫 Konsentrasi Larutan", "💧 pH dan pOH",
+                "🧬 Tabel Periodik", "🔄 Konversi Satuan",
+                "📈 Regresi Linier", "📖 About"
+            ],
+            icons=[
+                "house", "flask", "calculator",
+                "droplet-half", "thermometer-half",
+                "grid-3x3-gap-fill", "repeat",
+                "graph-up", "info-circle"
+            ],
+            default_index=0
+        )
+        st.session_state.menu_selected = menu
+
+    # FIX: Suntikkan CSS agar sidebar selalu tampil di mobile
+    st.markdown("""
+        <style>
+        [data-testid="stSidebar"] {
+            display: block !important;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
+    # FIX: Suntikkan JS agar sidebar langsung muncul
+    st.components.v1.html("""
+        <script>
+        const sidebar = parent.document.querySelector('[data-testid="stSidebar"]');
+        if(sidebar){ sidebar.style.display = "block"; }
+        </script>
+    """, height=0)
+
+# --- TOMBOL UNTUK MEMUNCULKAN SIDEBAR ---
+selected = st.session_state.menu_selected
+if selected == "🏠 Home":
+    st.markdown("<h1 style='text-align:center; font-size: 3rem;'>🧪 Techmicals</h1>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align:center; color:#3f3d56;'>Teman Asik Kimia-mu – Seru, Modern, dan Mudah!</h3>", unsafe_allow_html=True)
+    st.write("""
+        <p style='text-align:center;'>Selamat datang di <b>Techmicals</b>, aplikasi all-in-one untuk semua kebutuhan kimia kamu.  
+        🚀 Hitung reaksi, mol, konsentrasi, hingga regresi linier dengan mudah.</p>
+    """, unsafe_allow_html=True)
 
 
