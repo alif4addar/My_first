@@ -33,13 +33,14 @@ if not st.session_state.authenticated:
 # Sidebar Navigation
 with st.sidebar:
     menu = option_menu(
-        menu_title = "Kalibrasi & Ketidakpastian"
+        menu_title = "Kalibrasi & Ketidakpastian",
         options=[
                 "🏠 Home", "📋 Cara Penggunaan Web Aplikasi", "📑 Syarat Yang Harus Dipenuhi",
                 "🧮 Perhitungan", "end Page"
             ]
     )
     st.session_state.menu_selected = menu
+selected = st.session_state.menu_selected
 if selected == "🏠 Home":
     st.markdown("Aplikasi Kalibrasi Volume Labu Takar")
 
