@@ -32,10 +32,14 @@ if not st.session_state.authenticated:
 
 # Sidebar Navigation
 with st.sidebar:
-    add_radio = st.radio(
-        "Choose a shipping method",
-        ("Standard (5-15 days)", "Express (2-5 days)")
+    menu = option_menu(
+        menu_title = "Kalibrasi & Ketidakpastian"
+        options=[
+                "🏠 Home", "📋 Cara Penggunaan Web Aplikasi", "📑 Syarat Yang Harus Dipenuhi",
+                "🧮 Perhitungan", "end Page"
+            ]
     )
+    st.session_state.menu_selected = menu
 if selected == "🏠 Home":
     st.markdown("Aplikasi Kalibrasi Volume Labu Takar")
 
