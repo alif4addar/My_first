@@ -5,8 +5,9 @@ from streamlit_option_menu import option_menu
 import numpy as np
 import math
 import statistics
+from pathlib import Path
 
-st.set_page_config(page_title="Aplikasi Kalibrasi Volume", layout="wide")
+
 
 css_file = Path(__file__).parent / "gaya.css"
 with open(css_file) as f:
