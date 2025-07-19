@@ -38,7 +38,7 @@ if st.sidebar:
         ],
         default_index=0
     )
-        st.session_state.menu_selected = menu
+    st.session_state.menu_selected = menu
 
 # --- TOMBOL UNTUK MEMUNCULKAN SIDEBAR ---
 selected = st.session_state.menu_selected
