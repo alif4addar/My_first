@@ -45,7 +45,8 @@ if not st.session_state.authenticated:
 
 # Sidebar Navigation
 with st.sidebar:
-    st.markdown("## 📋 Menu Navigasi")
+    st.title("📊 Menu Kalibrasi")
+    st.markdown("---")
     menu = option_menu(
         menu_title = "Kalibrasi & Ketidakpastian",
         options=[
