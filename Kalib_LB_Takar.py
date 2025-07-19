@@ -43,4 +43,4 @@ with st.sidebar:
 selected = st.session_state.menu_selected
 if selected == "🏠 Home":
     st.markdown("Aplikasi Kalibrasi Volume Labu Takar")
-
+    st.markdown("<h1 style='text-align:center; font-size: 3rem;'>🤖 TECHMICALS 🤖</h1>", unsafe_allow_html=True)
