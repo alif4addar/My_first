@@ -30,16 +30,14 @@ if not st.session_state.authenticated:
     st.stop()
 
 # Sidebar Navigation
-if st.session_state.show_sidebar:
-    with st.sidebar:
-        menu = option_menu(
-            menu_title="Kalibrasi Ketidakpastian🌟",
-            options=[
-                "🏠 Home", "📋 Cara Penggunaan Web Aplikasi", "📑 Syarat Yang Harus Dipenuhi",
-                "🧮 Perhitungan", "end Page"
-            ],
-            default_index=0
-        )
+if st.sidebar:
+    menu = option_menu(
+        menu_title="Kalibrasi Ketidakpastian🌟",
+        options=[
+            "🏠 Home", "📋 Cara Penggunaan Web Aplikasi", "📑 Syarat Yang Harus Dipenuhi",                "🧮 Perhitungan", "end Page"
+        ],
+        default_index=0
+    )
         st.session_state.menu_selected = menu
 
 # --- TOMBOL UNTUK MEMUNCULKAN SIDEBAR ---
