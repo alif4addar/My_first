@@ -31,11 +31,11 @@ if not st.session_state.authenticated:
     st.stop()
 
 # Sidebar Navigation
-page = st.sidebar(
-    "📄 Go to Page",
-    ("Dashboard", "Upload Data", "Finance Chatbot", "Settings")
-)
-
+with st.sidebar:
+    add_radio = st.radio(
+        "Choose a shipping method",
+        ("Standard (5-15 days)", "Express (2-5 days)")
+    )
 if selected == "🏠 Home":
     st.markdown("Aplikasi Kalibrasi Volume Labu Takar")
 
