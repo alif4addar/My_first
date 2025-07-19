@@ -43,3 +43,7 @@ if st.sidebar:
 
 # --- TOMBOL UNTUK MEMUNCULKAN SIDEBAR ---
 selected = st.session_state.menu_selected
+
+if selected == "🏠 Home":
+    st.markdown("Aplikasi Kalibrasi Volume Labu Takar")
+
