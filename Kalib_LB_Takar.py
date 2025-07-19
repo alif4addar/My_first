@@ -30,7 +30,8 @@ if not st.session_state.authenticated:
     st.stop()
 
 # Sidebar Navigation
-page = st.sidebar.selectbox(
-    "📄 Go to Page",
-    ("Dashboard", "Upload Data", "Finance Chatbot", "Settings")
+page = st.sidebar(
+    "🏠 Home", "📋 Cara Penggunaan Web Aplikasi",
+    "📑 Syarat Yang Harus Dipenuhi",
+    "🧮 Perhitungan", "end Page"
 )
