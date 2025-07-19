@@ -31,18 +31,10 @@ if not st.session_state.authenticated:
     st.stop()
 
 # Sidebar Navigation
-if st.sidebar.selecbox:
-    menu = option_menu(
-        menu_title="Kalibrasi Ketidakpastian🌟",
-        options=[
-            "🏠 Home", "📋 Cara Penggunaan Web Aplikasi", "📑 Syarat Yang Harus Dipenuhi",                "🧮 Perhitungan", "end Page"
-        ],
-        default_index=0
-    )
-    st.session_state.menu_selected = menu
-
-# --- TOMBOL UNTUK MEMUNCULKAN SIDEBAR ---
-selected = st.session_state.menu_selected
+page = st.sidebar(
+    "📄 Go to Page",
+    ("Dashboard", "Upload Data", "Finance Chatbot", "Settings")
+)
 
 if selected == "🏠 Home":
     st.markdown("Aplikasi Kalibrasi Volume Labu Takar")
