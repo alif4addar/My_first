@@ -52,6 +52,7 @@ with st.sidebar:
 selected = st.session_state.menu_selected
 if selected == "🏠 Home":
      st.markdown('<div class="app-card">', unsafe_allow_html=True)
+    
 elif selected == "📋 Cara Penggunaan Web Aplikasi": 
      st.markdown('<div class="app-card">', unsafe_allow_html=True)
 elif selected == "📑 Syarat Yang Harus Dipenuh": 
