@@ -231,4 +231,10 @@
         background-color: white !important;
         color: black !important;
     }
-    
+
+
+    /* Sembunyikan ikon 'keyboard_double_arrow_right' jika muncul */
+    section[data-testid="stSidebar"] button[title="Collapse sidebar"] span {
+        visibility: hidden;
+    }
+
