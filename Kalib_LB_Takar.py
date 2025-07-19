@@ -31,7 +31,7 @@ if not st.session_state.authenticated:
     st.stop()
 
 # Sidebar Navigation
-if st.sidebar:
+if st.sidebar.selecbox:
     menu = option_menu(
         menu_title="Kalibrasi Ketidakpastian🌟",
         options=[
