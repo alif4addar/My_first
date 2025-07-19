@@ -228,5 +228,6 @@ elif selected == "🧮 Perhitungan":
 
 
 elif selected == "end Page": 
+     st.markdown('<div class="app-card">', unsafe_allow_html=True)
 
     
