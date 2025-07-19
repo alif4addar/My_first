@@ -51,11 +51,11 @@ with st.sidebar:
     st.session_state.menu_selected = menu
 selected = st.session_state.menu_selected
 if selected == "🏠 Home":
-    
+     st.markdown('<div class="app-card">', unsafe_allow_html=True)
 elif selected == "📋 Cara Penggunaan Web Aplikasi": 
-
+     st.markdown('<div class="app-card">', unsafe_allow_html=True)
 elif selected == "📑 Syarat Yang Harus Dipenuh": 
-
+     st.markdown('<div class="app-card">', unsafe_allow_html=True)
 elif selected == "🧮 Perhitungan": 
     # Bagian Input VKonvensional
     st.markdown("<h1 style='color:#5F6F65;'>Aplikasi Kalibrasi Volume - Labu Takar</h1>", unsafe_allow_html=True)
