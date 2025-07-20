@@ -161,7 +161,7 @@ elif selected == "🧮 Input Data":
     CC = ["Timbangan","Termometer Air","Termometer Udara","Barometer Udara","Hygrometer"]
     satuan = ["g", "C", "C", "mmHg", "%"]
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
-    st.markdown("<h3 style='color:#5F6F65;'>4. Input Alat Ukur</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='color:#5F6F65;'>4. Input Data Alat Ukur</h3>", unsafe_allow_html=True)
     lop = st.number_input("Masukkan Nilai LOP Timbangan", value=0.0000, step=0.0001, format="%.4f")
     st.markdown("Masukkan nilai NST, U95, dan K untuk alat ukur:")
         
@@ -180,7 +180,6 @@ elif selected == "🧮 Input Data":
         
         
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
-    st.markdown("<h3 style='color:#5F6F65;'>Perhitungan Ketidakpastian</h3>", unsafe_allow_html=True)
         
         # Tombol ngitung ketidakpastian
     if "rata_pengukuran" in st.session_state:
