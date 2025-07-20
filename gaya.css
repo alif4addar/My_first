@@ -32,7 +32,7 @@
         margin: 10px;
     }
     [data-testid="stSidebar"] {
-        background-color: white !important;
+        background-color: black !important;
         animation: hue 5s infinite linear;
         border-radius: 16px !important;        /* Membulatkan sudut sidebar */
         padding: 10px;
