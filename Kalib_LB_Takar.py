@@ -22,19 +22,11 @@ st.set_page_config(
 
 
 def add_row():
-    new_row = pd.DataFrame([["" for _ in cols]], columns=cols)
-    st.session_state.data_pengukuran = pd.concat([st.session_state.data_pengukuran, new_row], ignore_index=True)
     st.session_state.rows += 1
 
 def remove_row():
     if st.session_state.rows > 1:
-        st.session_state.data_pengukuran = st.session_state.data_pengukuran.iloc[:-1]
         st.session_state.rows -= 1
-
-def reset_data():
-    st.session_state.rows = 1
-    st.session_state.data_pengukuran = pd.DataFrame([["" for _ in cols]], columns=cols)
-
 def mulai():
     st.session_state.show_sidebar = True
 
@@ -134,12 +126,9 @@ elif selected == "🧮 Input Data":
         st.session_state.data_pengukuran,
         use_container_width=True,
         num_rows="dynamic",
-        key="pengukuran_editor"
     )
-    st.session_state.data_pengukuran = edited_df
 
-    
-  
+
     if st.button("Hitung Rata-rata Data Pengukuran"):
         try:
             df = st.session_state.data_pengukuran.copy()
