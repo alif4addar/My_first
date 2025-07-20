@@ -42,6 +42,7 @@
         animation: hue 5s infinite linear;
         border-radius: 16px !important;        /* Membulatkan sudut sidebar */
         padding: 10px;
+        display: block !important;
         z-index: 1 !important;
         position: relative !important;
         margin: 10px;
