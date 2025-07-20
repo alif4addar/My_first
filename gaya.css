@@ -15,7 +15,13 @@
         margin: 10px;
     }
 
-    [data-testid="stSidebar"] .block-container,
+    [data-testid="stSidebar"] .block-container {
+         background-color: transparent !important;
+    }
+
+
+    [data-testid="stSidebar"] .css-1kyxreq,
+    [data-testid="stSidebar"] .css-1cpxqw2,
     [data-testid="stSidebar"] .stForm,
     [data-testid="stSidebar"] .stTextInput,
     [data-testid="stSidebar"] .stNumberInput,
@@ -24,7 +30,7 @@
     [data-testid="stSidebar"] .stRadio,
     [data-testid="stSidebar"] .stButton,
     [data-testid="stSidebar"] .stSlider {
-        background-colour: #030f00;
+    background-colour: #030f00 !important;
         border-radius: 16px !important;        /* Membulatkan sudut sidebar */
         padding: 10px;
         margin: 10px;
