@@ -14,7 +14,7 @@ st.set_page_config(
     page_title="Aplikasi Kalibrasi Volume",
     page_icon="📖",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"
 )
 
 if "rows" not in st.session_state:
