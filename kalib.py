@@ -81,10 +81,13 @@ if selected == "🏠 Home":
            st.markdown('</div>', unsafe_allow_html=True) 
         st.markdown('</div>', unsafe_allow_html=True)
     
-    
+elif selected == "📋 Cara Penggunaan Web Aplikasi": 
+     st.markdown('<div class="app-card">', unsafe_allow_html=True)
+elif selected == "📑 Syarat Yang Harus Dipenuh": 
+     st.markdown('<div class="app-card">', unsafe_allow_html=True)    
 
 
-if selected == "🧮 Input Data":
+elif selected == "🧮 Input Data":
         # Bagian Input VKonvensional
     st.markdown("<h1 style='color:#5F6F65;'>Aplikasi Kalibrasi Volume - Labu Takar</h1>", unsafe_allow_html=True)
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
