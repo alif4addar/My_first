@@ -6,6 +6,7 @@
 
     .main .block-container {
         color: transparent !important;
+        position: relative !important;
     }
 
     [data-testid="stToolbar"] > div {
@@ -20,24 +21,6 @@
         position: relative !important;
     }
 
-    /* Atur sidebar jika digunakan */
-    [data-testid="stSidebar"] .css-1kyxreq,
-    [data-testid="stSidebar"] .css-1cpxqw2,
-    [data-testid="stSidebar"] .stForm,
-    [data-testid="stSidebar"] .stTextInput,
-    [data-testid="stSidebar"] .stNumberInput,
-    [data-testid="stSidebar"] .stSelectbox,
-    [data-testid="stSidebar"] .stMultiSelect,
-    [data-testid="stSidebar"] .stRadio,
-    [data-testid="stSidebar"] .stButton,
-    [data-testid="stSidebar"] .stSlider {
-    background-color: transparent !important;
-        border-radius: 16px !important;        /* Membulatkan sudut sidebar */
-        padding: 10px;
-        position: relative !important;
-        z-index: 1000 !important;
-        margin: 10px;
-    }
     [data-testid="stSidebar"] {
         background-color: white !important;
         animation: hue 5s infinite linear;
