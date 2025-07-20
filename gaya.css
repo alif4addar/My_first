@@ -116,7 +116,7 @@
 
     /* Buttons  */
     .stButton > button {
-        background-color: #BAD8B6;
+        background-color: #06D001;
         color: white;
         border: none;
         padding: 10px 25px;
@@ -127,15 +127,15 @@
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .stButton > button:hover {
-        background-color: #E1EACD;
+        background-color: #9BEC00;
         box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
     /* Style for the "Add Row" and "Remove Row" buttons */
     .stButton > button[data-testid="stFormSubmitButton"] { /* Target specific buttons if needed */
-        background-color: #73EC8B; /* Green for add */
+        background-color: #06D001; /* Green for add */
     }
     .stButton > button[data-testid="stFormSubmitButton"]:hover {
-        background-color: #218838;
+        background-color: #9BEC00;
     }
     .stButton > button[data-testid="stFormSubmitButton"] + div .stButton > button { /* Target remove button */
         background-color: #73EC8B; /* Red for remove */
@@ -248,10 +248,4 @@
     .st-emotion-cache-13k62yr {
         background-color: white !important;
         color: black !important;
-    }
-
-/* Sembunyikan ikon 'keyboard_double_arrow_right' jika muncul */
-    section[data-testid="stSidebar"] button[title="Collapse sidebar"] span {
-        visibility: hidden;
-    
     }
