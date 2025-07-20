@@ -43,15 +43,16 @@ if not st.session_state.authenticated:
 
 # Sidebar Navigation
 with st.sidebar:
-    st.title("📊 Menu Kalibrasi")
+    st.markdown("<p style='color:#5F6F65;'>Kalibrasi & Ketidakpastian</p>", unsafe_allow_html=True)
     st.markdown("---")
     menu = option_menu(
-        menu_title = "Kalibrasi & Ketidakpastian",
+        menu_title = None,
         options=[
                 "🏠 Home", "📋 Cara Penggunaan Web Aplikasi", 
                 "📑 Syarat Yang Harus Dipenuhi",
-                "🧮 Perhitungan", "end Page"
-            ]
+                "🧮 Perhitungan", "end Page"],
+        menu_icon="cast"
+    
     )
     st.session_state.menu_selected = menu
 selected = st.session_state.menu_selected
