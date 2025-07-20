@@ -25,10 +25,17 @@ if "data" not in st.session_state:
 if "rows" not in st.session_state:
     st.session_state.rows = 1
 def add_row():
-    st.session_state.rows += 1 
+    st.session_state.rows += 1
+    st.session_state.data_pengukuran = pd.DataFrame([["" for _ in cols] for _ in range(st.session_state.rows)], columns=cols)
+
 def remove_row():
     if st.session_state.rows > 1:
         st.session_state.rows -= 1
+        st.session_state.data_pengukuran = pd.DataFrame([["" for _ in cols] for _ in range(st.session_state.rows)], columns=cols)
+
+def reset_data():
+    st.session_state.data_pengukuran = pd.DataFrame([["" for _ in cols] for _ in range(st.session_state.rows)], columns=cols)
+
 
 def mulai():
     st.session_state.show_sidebar = True
@@ -123,6 +130,7 @@ elif selected == "🧮 Input Data":
 
     # Tombol untuk menghapus semua data
     if st.button("🗑️ Hapus Semua Inputan"):
+        reset_data()
         st.rerun()  # Refresh halaman agar editor kembali kosong
     
     if st.button("Hitung Rata-rata Data Pengukuran"):
