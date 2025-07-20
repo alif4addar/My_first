@@ -7,11 +7,13 @@
     .main .block-container {
         colour: transparent !important;
     }
-    
+
+
+    [data-testid="stToolbar"] {
+        background: transparent !important;
+    }
+
     /* Atur sidebar jika digunakan */
-    
-
-
     [data-testid="stSidebar"] .css-1kyxreq,
     [data-testid="stSidebar"] .css-1cpxqw2,
     [data-testid="stSidebar"] .stForm,
