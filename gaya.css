@@ -28,18 +28,20 @@
         box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
     .header-section h1 {
-        font-weight: 700;
+        font-weight: 650;
         margin: 0;
         text-align: center;
         font-size: 3.5rem;
-        font-weight: bold;
         background: linear-gradient(45deg, #ff6ec4, #7873f5, #4facfe);
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
         animation: hue 5s infinite linear;
+    }
 
-        
+    @keyframes hue {
+        from {filter: hue-rotate(0deg);}
+        to {filter: hue-rotate(360deg);}
     }
 
     /* Hero Section */
