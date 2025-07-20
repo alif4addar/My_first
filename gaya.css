@@ -92,11 +92,20 @@
         animation: hue 5s infinite linear;
      }
 
+    .h1 {
+        color:##030f00;
+    }
+
+    .h2 {
+        color:##030f00;
+    }
 
     @keyframes hue {
         from {filter: hue-rotate(0deg);}
         to {filter: hue-rotate(360deg);}
     }
+
+
 
     /* Hero Section */
     .hero-section {
