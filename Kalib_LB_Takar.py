@@ -83,8 +83,8 @@ if selected == "🏠 Home":
             <div id="mulai-button">
                 <button onclick="window.parent.postMessage({isStreamlitMessage: true, type: 'streamlit:rerun'}, '*')" 
                         style="
-                            font-size: 0.75rem;
-                            padding: 6px 14px;
+                            font-size: 1rem;
+                            padding: 8px 16px;
                             border-radius: 4px;
                             background: linear-gradient(to left, #06D001, #9BEC00);
                             border: none;
@@ -95,12 +95,6 @@ if selected == "🏠 Home":
                 </button>
             </div>
         """, unsafe_allow_html=True)
-
-    with col_spasi:
-        st.markdown('<div id="mulai-button">', unsafe_allow_html=True)
-        st.button("Mulai", help="Klik untuk memulai fitur", on_click=mulai)
-        st.markdown('</div>', unsafe_allow_html=True)
-    
     
 elif selected == "📋 Cara Penggunaan Web Aplikasi": 
      st.markdown('<div class="app-card">', unsafe_allow_html=True)
