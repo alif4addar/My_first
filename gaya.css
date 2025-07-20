@@ -286,3 +286,12 @@
         background-color: white !important;
         color: black !important;
     }
+
+    
+    [data-testid="stSidebar"] {
+        background-color: #F8FAFC;
+        color: #030f00;
+        padding: 20px;
+        border-right: 2px solid white;
+        animation: hue 5s infinite linear;
+    }
