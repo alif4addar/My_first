@@ -8,7 +8,7 @@
     
     /* Atur sidebar jika digunakan */
     [data-testid="stSidebar"] {
-        background: linear-gradient(30deg, #93DA97, #5E936C) !important;
+        background-colour: white !important;
         animation: hue 5s infinite linear;
         border-radius: 16px !important;        /* Membulatkan sudut sidebar */
         padding: 10px;
