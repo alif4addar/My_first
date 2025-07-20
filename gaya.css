@@ -132,13 +132,13 @@
     }
     /* Style for the "Add Row" and "Remove Row" buttons */
     .stButton > button[data-testid="stFormSubmitButton"] { /* Target specific buttons if needed */
-        background-color: #28a745; /* Green for add */
+        background-color: #73EC8B; /* Green for add */
     }
     .stButton > button[data-testid="stFormSubmitButton"]:hover {
         background-color: #218838;
     }
     .stButton > button[data-testid="stFormSubmitButton"] + div .stButton > button { /* Target remove button */
-        background-color: #dc3545; /* Red for remove */
+        background-color: #73EC8B; /* Red for remove */
     }
     .stButton > button[data-testid="stFormSubmitButton"] + div .stButton > button:hover {
         background-color: #c82333;
