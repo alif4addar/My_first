@@ -293,7 +293,7 @@
         background: linear-gradient(to right, #06D001, #2fec00, #9BEC00);
         color: #030f00;
         padding: 20px;
-        border-radius: 50px;
+        border-radius: 10px;
         border-right: 2px solid white;
         width: 300px !important;
     }
