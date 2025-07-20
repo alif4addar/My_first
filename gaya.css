@@ -4,6 +4,29 @@
         color: #888; /* Warna teks umum */
     }
 
+    /* Atur background utama aplikasi */
+    html, body, .main, .block-container {
+        color: #888 !important;             /* Warna teks agar kontras */
+        background: linear-gradient(30deg, #A4DD00, #98CD00);
+        background-clip: text;
+        -webkit-background-clip: text;
+        animation: hue 5s infinite linear;
+    
+    }
+    
+    /* Atur sidebar jika digunakan */
+    [data-testid="stSidebar"] {
+        background-color: #1A1D23 !important;
+    }
+    
+    /* Hilangkan efek tema otomatis dari browser */
+    body {
+        color-scheme: only light !important;  /* Atau 'dark' tergantung kamu mau yang mana */
+    }
+
+
+
+
 
     body {
         background: linear-gradient(-45deg, #FFFADC, #B6F500, #A4DD00, #98CD00);
