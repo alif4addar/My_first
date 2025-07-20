@@ -51,9 +51,9 @@ if not st.session_state.show_sidebar:
     
 # Sidebar Navigation
 with st.sidebar:
-    st.markdown("<h2 style='color:#5F6F65;'>Aplikasi Kalibrasi & Ketidakpastian</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='color:##030f00;'>Aplikasi Kalibrasi & Ketidakpastian</h2>", unsafe_allow_html=True)
     st.markdown("---")
-    st.markdown("<h3 style='color:#5F6F65;'>Menu</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='color:#030f00;'>Menu</h3>", unsafe_allow_html=True)
     menu = option_menu(
         menu_title = None,
         options=[
