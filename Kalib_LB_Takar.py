@@ -82,7 +82,7 @@ if selected == "🏠 Home":
         st.markdown('</div>', unsafe_allow_html=True)
     
 elif selected == "📋 Cara Penggunaan Web Aplikasi": 
-     st.markdown('<div class="header-section"><h2>Cara Penggunaan Web Aplikasi</h2></div>', unsafe_allow_html=True)
+    st.markdown('<div class="header-section"><h2>Cara Penggunaan Web Aplikasi</h2></div>', unsafe_allow_html=True)
     st.markdown("""
         <div class="hero-section">
             <p2>1. Pada saat akan memasukan data pengukuran, banyaknya kolom sesuai dengan banyaknya data.</p2>
