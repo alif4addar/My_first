@@ -52,7 +52,7 @@
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
-        animation: hue 5s infinite linear;
+        animation: hue 5s linear;
     }
 
     .header-section h2 {
