@@ -8,15 +8,14 @@
     html, body, .main, .block-container {
         color: #888 !important;             /* Warna teks agar kontras */
         background: linear-gradient(30deg, #A4DD00, #98CD00);
-        background-clip: text;
-        -webkit-background-clip: text;
         animation: hue 5s infinite linear;
     
     }
     
     /* Atur sidebar jika digunakan */
     [data-testid="stSidebar"] {
-        background-color: #1A1D23 !important;
+        background: linear-gradient(30deg, #A4DD00, #98CD00) !important;
+        animation: hue 5s infinite linear;
     }
     
     /* Hilangkan efek tema otomatis dari browser */
