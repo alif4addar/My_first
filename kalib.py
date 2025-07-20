@@ -94,13 +94,15 @@ elif selected == "🧮 Input Data":
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
     
         # Input volume konvensional
+    st.markdown("<h3 style='color:#5F6F65;'>1.Input Data Volume</h3>", unsafe_allow_html=True)
     v_konven = st.number_input("Masukkan Volume Konvensional (mL)", min_value=0.0, step=25.0,  format="%.2f")
-    
+    st.markdown('<div class="app-card">', unsafe_allow_html=True)
+    st.markdown("<h3 style='color:#5F6F65;'>2. Input Ketelitian Alat</h3>", unsafe_allow_html=True)
     ketelitian_lb = st.number_input("Masukkan Ketelitian Labu Takar (mL)", min_value=0.0, step=0.001, format="%.4f")
     
         # Template input tabel
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
-    st.markdown("<h3 style='color:#5F6F65;'>Input Data Pengukuran</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='color:#5F6F65;'>3. Input Data Pengukuran</h3>", unsafe_allow_html=True)
     cols = [
             "Bobot Kosong (g)",
             "Bobot Isi (g)",
@@ -159,7 +161,7 @@ elif selected == "🧮 Input Data":
     CC = ["Timbangan","Termometer Air","Termometer Udara","Barometer Udara","Hygrometer"]
     satuan = ["g", "C", "C", "mmHg", "%"]
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
-    st.markdown("<h3 style='color:#5F6F65;'>Input Alat Ukur</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='color:#5F6F65;'>4. Input Alat Ukur</h3>", unsafe_allow_html=True)
     lop = st.number_input("Masukkan Nilai LOP Timbangan", value=0.0000, step=0.0001, format="%.4f")
     st.markdown("Masukkan nilai NST, U95, dan K untuk alat ukur:")
         
