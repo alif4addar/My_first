@@ -18,7 +18,7 @@ st.set_page_config(
     layout="wide",     
 )
 
-# Inisialisasi session_state
+
 if "rows" not in st.session_state:
     st.session_state.rows = 1
 def add_row():
@@ -26,6 +26,7 @@ def add_row():
 def remove_row():
     if st.session_state.rows > 1:
         st.session_state.rows -= 1
+
 def mulai():
     st.session_state.show_sidebar = True
 
@@ -62,6 +63,7 @@ with st.sidebar:
     st.session_state.menu_selected = menu
 selected = st.session_state.menu_selected
 
+
 if selected == "🏠 Home":
     st.markdown('<div class="header-section"><h1>Aplikasi Kalibrasi Volume Labu Takar</h1></div>', unsafe_allow_html=True)
 
@@ -79,12 +81,14 @@ if selected == "🏠 Home":
            st.markdown('</div>', unsafe_allow_html=True) 
         st.markdown('</div>', unsafe_allow_html=True)
     
-    
 elif selected == "📋 Cara Penggunaan Web Aplikasi": 
      st.markdown('<div class="app-card">', unsafe_allow_html=True)
 elif selected == "📑 Syarat Yang Harus Dipenuh": 
-     st.markdown('<div class="app-card">', unsafe_allow_html=True)
+     st.markdown('<div class="app-card">', unsafe_allow_html=True)    
+
+
 elif selected == "🧮 Input Data":
+        # Bagian Input VKonvensional
     st.markdown("<h1 style='color:#5F6F65;'>Aplikasi Kalibrasi Volume - Labu Takar</h1>", unsafe_allow_html=True)
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
     
@@ -250,12 +254,11 @@ elif selected == "🧮 Input Data":
                 except Exception as e:
                     st.error(f"Terjadi kesalahan saat perhitungan lanjutan: {e}")
     
-
-   
-
-
-
-elif selected == "end Page": 
-     st.markdown('<div class="app-card">', unsafe_allow_html=True)
-
+       
     
+    st.markdown('<div class="header-section"><h1>Terimakasih</h1></div>', unsafe_allow_html=True)
+           
+            
+            
+        
+       
