@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 from streamlit_option_menu import option_menu
-import numpy as np
 import math
 import statistics
 from pathlib import Path
