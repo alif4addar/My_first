@@ -77,7 +77,7 @@ if selected == "🏠 Home":
     """, unsafe_allow_html=True)
 
     st.divider()
-    col_spasi, col_mulai, col_spasi_2 = st.columns([4, 4, 4])
+    col_spasi, col_mulai, col_spasi_2 = st.columns([3, 4, 3])
     with col_mulai:
         st.button("Mulai", help="Klik untuk memulai fitur", on_click=mulai)
     
