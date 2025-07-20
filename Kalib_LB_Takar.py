@@ -148,7 +148,7 @@ elif selected == "🧮 Input Data":
                     for k, v in rata.items():
                         st.write(f"{k}: **{v:.4f}**")
         
-            except Exception as e:
+        except Exception as e:
                 st.error(f"Terjadi kesalahan saat menghitung rata-rata: {e}")
         
     # Input untuk ketidakpastian
