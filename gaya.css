@@ -8,6 +8,10 @@
         color: transparent !important;
     }
 
+    [data-testid="stToolbar"] > div {
+        background: transparent !important;
+    }
+
 
     [data-testid="stToolbar"] {
         background: transparent !important;
