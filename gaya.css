@@ -129,41 +129,9 @@
 
 /* Buttons  */
 
-    .mulai-button button {
-        background: linear-gradient(to left, #06D001, #9BEC00) !important;
-        color: #222831;
-        border: #059212 ;
-        padding: 8px 16px;
-        border-radius: 5px;
-        font-size: 1.0em;
-        cursor: pointer;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        font-size: 0.75rem !important;
-        padding: 6px 14px !important;
-        border-radius: 4px !important;
-    }
-
-    .mulai-button button:hover {
-        background: linear-gradient(to rigth, #06D001, #9BEC00) !important;
-        color: #222831;
-        border: #059212 ;
-        padding: 10px 18px;
-        border-radius: 5px;
-        font-size: 1.0em;
-        cursor: pointer;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        font-size: 0.75rem !important;
-        padding: 6px 14px !important;
-        border-radius: 4px !important;
-    }
-
-
-
     .stButton > button {
         background: linear-gradient(to left, #06D001, #9BEC00) !important;
-        color: #222831;
+        color: #030f00;
         border: #059212 ;
         padding: 8px 20px;
         border-radius: 5px;
