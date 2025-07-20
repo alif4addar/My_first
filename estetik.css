@@ -7,8 +7,3 @@ input[type="number"] {
 }
 
 
-
-html, body, [class*="st-"] {
-    font-family: 'Inter', sans-serif;
-    color: #333; /* Warna teks umum */
-}
