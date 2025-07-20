@@ -79,15 +79,6 @@ if selected == "🏠 Home":
         st.session_state.show_sidebar = True
         st.session_state.menu_selected = "📋 Cara Penggunaan Web Aplikasi"
     
-        # FIX: Paksa scroll ke atas & sidebar muncul
-        st.components.v1.html("""
-            <script>
-            const sidebar = parent.document.querySelector('[data-testid="stSidebar"]');
-            if(sidebar){ sidebar.style.display = "block"; }
-            window.scrollTo(0, 0);  // Scroll ke atas
-            </script>
-        """, height=0)
-
     
 elif selected == "📋 Cara Penggunaan Web Aplikasi": 
      st.markdown('<div class="app-card">', unsafe_allow_html=True)
