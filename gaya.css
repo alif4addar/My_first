@@ -116,7 +116,7 @@
 
     /* Buttons  */
     .stButton > button {
-        background: linear-gradient(to rigth, #9BEC00, #06D001) !important;
+        background: linear-gradient(to left, #06D001, #9BEC00) !important;
         color: #222831;
         border: #059212 ;
         padding: 10px 25px;
