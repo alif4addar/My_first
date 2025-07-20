@@ -72,6 +72,8 @@ if selected == "🏠 Home":
             <p>Alat komprehensif ini membantu Anda melakukan perhitungan kalibrasi volume labu takar secara akurat, termasuk analisis ketidakpastian sesuai standar metrologi.</p>
         </div>
     """, unsafe_allow_html=True)
+
+    st.divider()
     
     if st.button("Mulai", key="start", help="Klik untuk memulai fitur", use_container_width=True):
         st.session_state.show_sidebar = True
