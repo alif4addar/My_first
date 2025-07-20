@@ -80,8 +80,7 @@ if selected == "🏠 Home":
     col_spasi, col_mulai, col_spasi_2 = st.columns([5, 4, 5])
     with col_mulai:
         if st.button("Mulai", on_click=mulai):
-            st.write ="Klik untuk memulai fitur"
-            st.session_state.menu_selected = "📋 Cara Penggunaan Web Aplikasi"
+            
         st.markdown('</div>', unsafe_allow_html=True)
     
     
