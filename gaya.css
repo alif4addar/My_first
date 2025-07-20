@@ -5,26 +5,13 @@
     }
 
      .main .block-container {
+        
         padding-left: 2rem;
         margin-left: 2rem;
     }
     
     /* Atur sidebar jika digunakan */
-    [data-testid="stSidebar"] {
-        animation: hue 5s infinite linear;
-        border-radius: 16px !important;        /* Membulatkan sudut sidebar */
-        padding: 10px;
-        position: relative !important;
-        z-index: 1 !important;
-        margin: 10px;
-        colour: #030f00;
-    }
-
-    [data-testid="stSidebar"] .block-container {
-        background-color: transparent !important;
-        position: relative !important;
-        z-index: 1 !important;
-    }
+    
 
 
     [data-testid="stSidebar"] .css-1kyxreq,
@@ -43,6 +30,21 @@
         position: relative !important;
         z-index: 1 !important;
         margin: 10px;
+    }
+    [data-testid="stSidebar"] {
+        animation: hue 5s infinite linear;
+        border-radius: 16px !important;        /* Membulatkan sudut sidebar */
+        padding: 10px;
+        position: relative !important;
+        z-index: 1 !important;
+        margin: 10px;
+        colour: #030f00;
+    }
+
+    [data-testid="stSidebar"] .block-container {
+        background-color: transparent !important;
+        position: relative !important;
+        z-index: 1 !important;
     }
 
     /* Hilangkan efek tema otomatis dari browser */
