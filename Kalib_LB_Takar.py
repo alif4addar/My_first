@@ -75,7 +75,7 @@ if selected == "🏠 Home":
 
     st.divider()
     
-    if st.button("Mulai", key="start", help="Klik untuk memulai fitur", use_container_width=True):
+    if st.button("Mulai", key="start", help="Klik untuk memulai fitur"):
         st.session_state.show_sidebar = True
         st.session_state.menu_selected = "📋 Cara Penggunaan Web Aplikasi"
     
