@@ -84,7 +84,7 @@ if selected == "🏠 Home":
 elif selected == "📋 Cara Penggunaan Web Aplikasi": 
      st.markdown('<div class="header-section"><h2>Cara Penggunaan Web Aplikasi</h2></div>', unsafe_allow_html=True)
 elif selected == "📑 Syarat Yang Harus Dipenuhi": 
-        st.markdown('<div class="header-section"><h2>📑 Syarat Yang Harus Dipenuhi</h2></div>', unsafe_allow_html=True)
+        st.markdown('<div class="header-section"><h2> Syarat Yang Harus Dipenuhi</h2></div>', unsafe_allow_html=True)
 
 
 elif selected == "🧮 Input Data":
