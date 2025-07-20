@@ -16,7 +16,14 @@
     }
 
     [data-testid="stSidebar"] .block-container,
-    [data-testid="stSidebar"] .stSelectbox {
+    [data-testid="stSidebar"] .stForm,
+    [data-testid="stSidebar"] .stTextInput,
+    [data-testid="stSidebar"] .stNumberInput,
+    [data-testid="stSidebar"] .stSelectbox,
+    [data-testid="stSidebar"] .stMultiSelect,
+    [data-testid="stSidebar"] .stRadio,
+    [data-testid="stSidebar"] .stButton,
+    [data-testid="stSidebar"] .stSlider {
         background-colour: white;
         border-radius: 16px !important;        /* Membulatkan sudut sidebar */
         padding: 10px;
