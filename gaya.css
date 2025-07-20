@@ -24,7 +24,7 @@
     [data-testid="stSidebar"] .stRadio,
     [data-testid="stSidebar"] .stButton,
     [data-testid="stSidebar"] .stSlider {
-        background-colour: white;
+        background-colour: #030f00;
         border-radius: 16px !important;        /* Membulatkan sudut sidebar */
         padding: 10px;
         margin: 10px;
