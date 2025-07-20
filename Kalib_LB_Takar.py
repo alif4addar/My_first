@@ -19,8 +19,6 @@ st.set_page_config(
 )
 
 # Inisialisasi session_state
-
-
 def add_row():
     st.session_state.rows += 1
 
@@ -127,7 +125,7 @@ elif selected == "🧮 Input Data":
         use_container_width=True,
         num_rows="dynamic",
     )
-
+    st.session_state.data_pengukuran = edited_df
 
     if st.button("Hitung Rata-rata Data Pengukuran"):
         try:
