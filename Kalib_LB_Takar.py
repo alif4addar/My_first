@@ -20,23 +20,19 @@ st.set_page_config(
 
 # Inisialisasi session_state
 
-if "data" not in st.session_state:
-    st.session_state.data = None
+if "data_pengukuran" not in st.session_state:
+    st.session_state.data_pengukuran = pd.DataFrame([["" for _ in cols] for _ in range(st.session_state.rows)], columns=cols)
 if "rows" not in st.session_state:
     st.session_state.rows = 1
 def add_row():
     st.session_state.rows += 1
     st.session_state.data_pengukuran = pd.DataFrame([["" for _ in cols] for _ in range(st.session_state.rows)], columns=cols)
-
 def remove_row():
     if st.session_state.rows > 1:
         st.session_state.rows -= 1
         st.session_state.data_pengukuran = pd.DataFrame([["" for _ in cols] for _ in range(st.session_state.rows)], columns=cols)
-
 def reset_data():
     st.session_state.data_pengukuran = pd.DataFrame([["" for _ in cols] for _ in range(st.session_state.rows)], columns=cols)
-
-
 def mulai():
     st.session_state.show_sidebar = True
 
@@ -128,6 +124,15 @@ elif selected == "🧮 Input Data":
     def_data = [["" for _ in range(len(cols))] for _ in range(st.session_state.rows)]
     df = st.data_editor(pd.DataFrame(def_data, columns=cols), use_container_width=True, num_rows="dynamic")
 
+    edited_df = st.data_editor(
+        st.session_state.data_pengukuran,
+        use_container_width=True,
+        num_rows="dynamic",
+        key="pengukuran_editor"
+    )
+    st.session_state.data_pengukuran = edited_df
+
+    
     # Tombol untuk menghapus semua data
     if st.button("🗑️ Hapus Semua Inputan"):
         reset_data()
