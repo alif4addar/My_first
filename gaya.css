@@ -4,13 +4,7 @@
         color: #888; /* Warna teks umum */
     }
 
-    /* Atur background utama aplikasi */
-    html, body, .main, {
-        color: #888 !important;             /* Warna teks agar kontras */
-        background: white;
-        animation: hue 5s infinite linear;
     
-    }
     
     /* Atur sidebar jika digunakan */
     [data-testid="stSidebar"] {
@@ -161,6 +155,7 @@
         cursor: pointer;
         transition: background-color 0.3s ease, box-shadow 0.3s ease;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        animation: hue 5s infinite linear;
     }
     .stButton > button:hover {
         background: linear-gradient(to left, #9BEC00, #06D001) !important;
@@ -276,12 +271,12 @@
         color: black !important;
     }
 
-    /* Paksa latar belakang semua container jadi putih juga */
+    /* Paksa latar belakang semua container jadi putih */
     .st-emotion-cache-1r6slb0 {
         background-color: white !important;
     }
 
-    /* Warna header dan elemen lain juga bisa disesuaikan */
+    /* Warna header dan elemen lain  */
     .st-emotion-cache-13k62yr {
         background-color: white !important;
         color: black !important;
