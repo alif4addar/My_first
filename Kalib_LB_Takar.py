@@ -75,32 +75,10 @@ if selected == "🏠 Home":
         st.markdown('</div>', unsafe_allow_html=True)
     
 elif selected == "📋 Cara Penggunaan Web Aplikasi": 
-    st.markdown('<div class="header-section"><h2>Cara Penggunaan Web Aplikasi</h2></div>', unsafe_allow_html=True)
-    st.markdown("""
-        <div class="hero-section">
-            <p2>1. Pada saat akan memasukan data pengukuran, banyaknya kolom sesuai dengan banyaknya data.</p2>
-        </div>
-    """, unsafe_allow_html=True)
-    st.markdown("""
-        <div class="hero-section">
-            <p2>2. Sebelum menghitung nilai rata-rata  dari data pengukuran, semua kolom sudah terisi semua.</p2>
-        </div>
-    """, unsafe_allow_html=True)
-    st.markdown("""
-        <div class="hero-section">
-            <p2>3. Tombol untuk menghitung volume sebenarnya dan nilai ketidakpastian
-                akan otomatis muncul setelah nilai rata-rata didapatkan.</p2>
-        </div>
-    """, unsafe_allow_html=True)
+    
 
 elif selected == "📑 Syarat Yang Harus Dipenuh": 
-    st.markdown('<div class="header-section"><h2> Syarat Yang Harus Dipenuhi</h2></div>', unsafe_allow_html=True)
-    cek1 = st.checkbox("✅ Pastikan Seluruh Alat Ukur Memiliki Sertifikat")
-    cek2 = st.checkbox("✅ Pastikan Suhu, Tekanan Dan Kelembaban Ruangan Stabil")
-    if cek1 and cek2:
-        st.success("✅ Semua syarat telah dipenuhi.")
-    else:
-        st.warning("⚠️ Harap centang semua syarat terlebih dahulu.")   
+    
 
 elif selected == "🧮 Input Data":
     st.markdown('<div class="header-section"><h2>Input Data</h2></div>', unsafe_allow_html=True)
