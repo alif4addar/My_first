@@ -31,6 +31,16 @@
         color: #5F6F65;
         font-weight: 700;
         margin: 0;
+        text-align: center;
+        font-size: 3.5rem;
+        font-weight: bold;
+        background: linear-gradient(45deg, #ff6ec4, #7873f5, #4facfe);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: hue 5s infinite linear;
+
+        
     }
 
     /* Hero Section */
