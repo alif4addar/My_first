@@ -13,7 +13,8 @@ with open(css_file) as f:
 st.set_page_config(
     page_title="Aplikasi Kalibrasi Volume",
     page_icon="📖",
-    layout="wide",     
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
 if "rows" not in st.session_state:
@@ -56,6 +57,7 @@ with st.sidebar:
         menu_icon="cast"    
     )
     st.session_state.menu_selected = menu
+    
 selected = st.session_state.menu_selected
 
 if selected == "🏠 Home":
@@ -103,19 +105,21 @@ elif selected == "📑 Syarat Yang Harus Dipenuhi":
         st.warning("⚠️ Harap centang semua syarat terlebih dahulu.")
 
 elif selected == "🧮 Input Data":
+    
     st.markdown('<div class="header-section"><h2>Input Data</h2></div>', unsafe_allow_html=True)
-        # Bagian Input VKonvensional
+        
+    # Bagian Input VKonvensional
     st.markdown("<h1 style='color:#5F6F65;'>Aplikasi Kalibrasi Volume - Labu Takar</h1>", unsafe_allow_html=True)
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
 
-        # Input volume konvensional
+    # Input volume konvensional
     st.markdown("<h3 style='color:#5F6F65;'>1.Input Volume Labu Takar</h3>", unsafe_allow_html=True)
     v_konven = st.number_input("Masukkan Volume Konvensional (mL)", min_value=0.0, step=25.0,  format="%.2f")
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
     st.markdown("<h3 style='color:#5F6F65;'>2. Input Ketelitian Alat</h3>", unsafe_allow_html=True)
     ketelitian_lb = st.number_input("Masukkan Ketelitian Labu Takar (mL)", min_value=0.0, step=0.001, format="%.4f")
     
-        # Template input tabel
+    # Template input tabel
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
     st.markdown("<h3 style='color:#5F6F65;'>3. Input Data Pengukuran</h3>", unsafe_allow_html=True)
     cols = [
@@ -127,7 +131,7 @@ elif selected == "🧮 Input Data":
             "Kelembaban (%)"
     ]
         
-        # jmlh baris
+     # jmlh baris
     col1, col2, col3 = st.columns([3, 6, 3])
     with col1:
         st.button(" + Tambah Baris", on_click=add_row)
@@ -172,7 +176,7 @@ elif selected == "🧮 Input Data":
         except Exception as e:
             st.error(f"Terjadi kesalahan saat menghitung rata-rata: {e}")
         
-        # Input untuk ketidakpastian
+    # Input untuk ketidakpastian
     CC = ["Timbangan","Termometer Air","Termometer Udara","Barometer Udara","Hygrometer"]
     satuan = ["g", "C", "C", "mmHg", "%"]
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
