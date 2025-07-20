@@ -46,7 +46,7 @@
 
     /* Hero Section */
     .hero-section {
-        background: linear-gradient(to right, #06D001, #2fec00, #9BEC00);
+        background: linear-gradient(to left, #06D001, #2fec00, #9BEC00);
         color: white;
         padding: 60px 30px;
         text-align: center;
@@ -116,7 +116,7 @@
 
     /* Buttons  */
     .stButton > button {
-        background-color: #9BEC00;
+        background: linear-gradient (to rigth #9BEC00, #06D001);
         color: #222831;
         border: none;
         padding: 10px 25px;
@@ -127,7 +127,7 @@
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .stButton > button:hover {
-        background-color: #06D001;
+        background: linear-gradient (to left #9BEC00, #06D001);
         box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
     /* Style for the "Add Row" and "Remove Row" buttons */
