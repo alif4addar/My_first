@@ -292,9 +292,10 @@
         background-color: #F8FAFC;
         color: #030f00;
         padding: 25px;
+        border-radius: 20px;
         border-right: 2px solid white;
         animation: hue 5s infinite linear;
-        width: 400px !important;
+        width: 300px !important;
     }
 
 
