@@ -85,83 +85,71 @@ elif selected == "📑 Syarat Yang Harus Dipenuh":
      st.markdown('<div class="app-card">', unsafe_allow_html=True)
 elif selected == "🧮 Input Data": 
     # Bagian Input VKonvensional
-    st.markdown('<div class="header-section"><h2>Input Data & Perhitungan</h2></div>', unsafe_allow_html=True)
+    st.markdown("<h1 style='color:#5F6F65;'>Aplikasi Kalibrasi Volume - Labu Takar</h1>", unsafe_allow_html=True)
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
-
-    # Input volume konvensional
-    v_konven = st.number_input(" Masukkan Volume Konvensional (mL)", min_value=0.0, step=25.0,  format="%.2f")
-
-    ketelitian_lb = st.number_input(" Masukkan Ketelitian Labu Takar (mL)", min_value=0.0, step=0.001, format="%.4f")
-
-    # Template input tabel
+    
+        # Input volume konvensional
+    v_konven = st.number_input("Masukkan Volume Konvensional (mL)", min_value=0.0, step=25.0,  format="%.2f")
+    
+    ketelitian_lb = st.number_input("Masukkan Ketelitian Labu Takar (mL)", min_value=0.0, step=0.001, format="%.4f")
+    
+        # Template input tabel
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
     st.markdown("<h3 style='color:#5F6F65;'>Input Data Pengukuran</h3>", unsafe_allow_html=True)
     cols = [
-        "Bobot Kosong (g)",
-        "Bobot Isi (g)",
-        "Suhu Air (C)",
-        "Suhu Udara (C)",
-        "Tekanan Udara (mmHg)",
-        "Kelembaban (%)"
+            "Bobot Kosong (g)",
+            "Bobot Isi (g)",
+            "Suhu Air (C)",
+            "Suhu Udara (C)",
+            "Tekanan Udara (mmHg)",
+            "Kelembaban (%)"
     ]
-    if "rows" not in st.session_state:
-        st.session_state.rows = 1
-    if "data_pengukuran" not in st.session_state:
-        st.session_state.data_pengukuran = pd.DataFrame(
-            [["" for _ in cols] for _ in range(st.session_state.rows)], columns=cols
-        )
-    
-    # jmlh baris
+        
+        # jmlh baris
     col1, col2, col3 = st.columns([3, 6, 3])
     with col1:
         st.button(" + Tambah Baris", on_click=add_row)
     with col3:
         st.button(" - Hapus Baris", on_click=remove_row)
-    
-    
+        
+        
     def_data = [["" for _ in range(len(cols))] for _ in range(st.session_state.rows)]
-    edited_df = st.data_editor(
-        st.session_state.data_pengukuran,
-        use_container_width=True,
-        num_rows="dynamic",
-    )
-    st.session_state.data_pengukuran = edited_df
-
+    df = st.data_editor(pd.DataFrame(def_data, columns=cols), use_container_width=True, num_rows="dynamic")
+        
     if st.button("Hitung Rata-rata Data Pengukuran"):
         try:
-            df = st.session_state.data_pengukuran.copy()
             if df.isnull().values.any() or (df == "").values.any():
                 st.warning("⚠️ Semua sel harus diisi sebelum menghitung rata-rata.")
             else:
-                kosong = df["Bobot Kosong (g)"].astype(float).tolist()
-                isi = df["Bobot Isi (g)"].astype(float).tolist()
-                suhu_air = df["Suhu Air (C)"].astype(float).tolist()
-                suhu_udara = df["Suhu Udara (C)"].astype(float).tolist()
-                tekanan = df["Tekanan Udara (mmHg)"].astype(float).tolist()
-                kelembaban = df["Kelembaban (%)"].astype(float).tolist()
-    
-                hasil = [b - a for a, b in zip(kosong, isi)]
-    
-                rata = {
-                    "Bobot Kosong (g)": sum(kosong)/len(kosong),
-                    "Bobot Isi (g)": sum(isi)/len(isi),
-                    "Bobot Isi (Hasil) (g)": sum(hasil)/len(hasil),
-                    "Suhu Air (C)": sum(suhu_air)/len(suhu_air),
-                    "Suhu Udara (C)": sum(suhu_udara)/len(suhu_udara),
-                    "Tekanan Udara (mmHg)": sum(tekanan)/len(tekanan),
-                    "Kelembaban (%)": sum(kelembaban)/len(kelembaban),
-                    "SEM Bobot Isi (g)": statistics.stdev(hasil) / math.sqrt(len(hasil))
-                }
-    
-                st.session_state.rata_pengukuran = rata
-    
-                st.subheader("Rata-rata Data Pengukuran")
-                for k, v in rata.items():
-                    st.write(f"{k}: **{v:.4f}**")
-    
+                    kosong = df["Bobot Kosong (g)"].astype(float).tolist()
+                    isi = df["Bobot Isi (g)"].astype(float).tolist()
+                    suhu_air = df["Suhu Air (C)"].astype(float).tolist()
+                    suhu_udara = df["Suhu Udara (C)"].astype(float).tolist()
+                    tekanan = df["Tekanan Udara (mmHg)"].astype(float).tolist()
+                    kelembaban = df["Kelembaban (%)"].astype(float).tolist()
+        
+                    hasil = [b - a for a, b in zip(kosong, isi)]
+        
+                    rata = {
+                        "Bobot Kosong (g)": sum(kosong)/len(kosong),
+                        "Bobot Isi (g)": sum(isi)/len(isi),
+                        "Bobot Isi (Hasil) (g)": sum(hasil)/len(hasil),
+                        "Suhu Air (C)": sum(suhu_air)/len(suhu_air),
+                        "Suhu Udara (C)": sum(suhu_udara)/len(suhu_udara),
+                        "Tekanan Udara (mmHg)": sum(tekanan)/len(tekanan),
+                        "Kelembaban (%)": sum(kelembaban)/len(kelembaban),
+                        "SEM Bobot Isi (g)": statistics.stdev(hasil) / math.sqrt(len(hasil))
+                    }
+        
+                    st.session_state.rata_pengukuran = rata
+        
+                    st.subheader("Rata-rata Data Pengukuran")
+                    for k, v in rata.items():
+                        st.write(f"{k}: **{v:.4f}**")
+        
         except Exception as e:
             st.error(f"Terjadi kesalahan saat menghitung rata-rata: {e}")
-    
+        
     # Input untuk ketidakpastian
     CC = ["Timbangan","Termometer Air","Termometer Udara","Barometer Udara","Hygrometer"]
     satuan = ["g", "C", "C", "mmHg", "%"]
