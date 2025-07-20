@@ -120,6 +120,11 @@ elif selected == "🧮 Input Data":
     
     def_data = [["" for _ in range(len(cols))] for _ in range(st.session_state.rows)]
     df = st.data_editor(pd.DataFrame(def_data, columns=cols), use_container_width=True, num_rows="dynamic")
+
+    # Tombol untuk menghapus semua data
+    if st.button("🗑️ Hapus Semua Inputan"):
+        st.session_state.data_pengukuran = default_data.copy()
+        st.rerun()  # Refresh halaman agar editor kembali kosong
     
     if st.button("Hitung Rata-rata Data Pengukuran"):
         try:
