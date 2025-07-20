@@ -1,5 +1,11 @@
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
+    html, body, [class*="st-"] {
+        
+        color: #333; /* Warna teks umum */
+    }
+
+
     .stApp {
         background-color: #f8f8f8; /* Latar belakang aplikasi */
         padding: 20px; /* Padding keseluruhan */
