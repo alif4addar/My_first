@@ -24,7 +24,7 @@
     /* Header */
     .header-section {
         padding: 20px 0;
-        text-align: center;
+        text-align: center !important;
         background: linear-gradient( to left, #FFD65A; #FFF7D1);
         border-bottom: 1px solid #eee;
         margin-bottom: 30px;
@@ -290,12 +290,11 @@
 
     
     [data-testid="stSidebar"] {
-         background: linear-gradient(30deg, #A4DD00, #98CD00);
+        background: linear-gradient(to right, #06D001, #2fec00, #9BEC00);
         color: #030f00;
         padding: 25px;
         border-radius: 20px;
         border-right: 2px solid white;
-        animation: hue 5s infinite linear;
         width: 300px !important;
     }
 
