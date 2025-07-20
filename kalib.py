@@ -88,6 +88,7 @@ elif selected == "📑 Syarat Yang Harus Dipenuh":
 
 
 elif selected == "🧮 Input Data":
+    st.markdown('<div class="header-section"><h2>Input Data</h2></div>', unsafe_allow_html=True)
         # Bagian Input VKonvensional
     st.markdown("<h1 style='color:#5F6F65;'>Aplikasi Kalibrasi Volume - Labu Takar</h1>", unsafe_allow_html=True)
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
