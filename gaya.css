@@ -5,7 +5,7 @@
     }
 
     /* Atur background utama aplikasi */
-    html, body, .main, .block-container {
+    html, body, .main, {
         color: #888 !important;             /* Warna teks agar kontras */
         background: white;
         animation: hue 5s infinite linear;
