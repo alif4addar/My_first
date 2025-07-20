@@ -302,4 +302,11 @@
     [data-testid="stSidebar"] ul[class^="css-"] {
         border-radius: 15px;
         padding: 10px;
-   
+    }
+
+[data-testid="stSidebar"] ul[class^="css-"] > li {
+    color: #030f00;
+    border-radius: 15px;
+}
+
+
