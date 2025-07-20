@@ -128,6 +128,23 @@
     }
 
     /* Buttons  */
+
+    button {
+        background: linear-gradient(to left, #06D001, #9BEC00) !important;
+        color: #222831 !important;
+        border: 1px solid #059212 !important;
+        border-radius: 5px !important;
+        padding: 10px 25px !important;
+        font-size: 1.0em !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+    }
+    button:hover {
+        background: linear-gradient(to left, #9BEC00, #06D001) !important;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
+    }
+
+
+
     .stButton > button {
         background: linear-gradient(to left, #06D001, #9BEC00) !important;
         color: #222831;
