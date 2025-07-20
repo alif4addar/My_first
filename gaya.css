@@ -144,6 +144,14 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .hero-section p2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+    }
 
     /* General Card/Container Style */
     .app-card {
