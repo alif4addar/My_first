@@ -19,10 +19,7 @@ st.set_page_config(
 )
 
 # Inisialisasi session_state
-if "authenticated" not in st.session_state:
-    st.session_state.authenticated = False
-if "username" not in st.session_state:
-    st.session_state.username = None
+
 if "data" not in st.session_state:
     st.session_state.data = None
 if "rows" not in st.session_state:
@@ -33,15 +30,6 @@ def remove_row():
     if st.session_state.rows > 1:
         st.session_state.rows -= 1
 
-
-# Login Page
-if not st.session_state.authenticated:
-    st.divider("")
-    if st.button("Mulai"):
-        st.session_state.authenticated = True
-        st.success("Login successful!")
-        st.rerun()
-    st.stop()
 
 # Sidebar Navigation
 with st.sidebar:
