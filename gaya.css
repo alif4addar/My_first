@@ -8,6 +8,7 @@
     .stApp {
         background-color: #f8f8f8; /* Latar belakang aplikasi */
         padding: 20px; /* Padding keseluruhan */
+        animation: fadeIn 3s ease-in-out;
     }
 
     /* Header */
