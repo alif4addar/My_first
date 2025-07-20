@@ -75,7 +75,7 @@
     /* Input Fields */
 .stNumberInput label, .stTextInput label, .stTextArea label {
     font-weight: 600;
-    color: #555;
+    color: #0000;
     margin-bottom: 5px;
     display: block;
 }
