@@ -81,8 +81,16 @@ if selected == "🏠 Home":
            st.markdown('</div>', unsafe_allow_html=True) 
         st.markdown('</div>', unsafe_allow_html=True)
     
-elif selected == "📋 Cara Penggunaan Web Aplikasi": 
+elif selected == "📋 Cara Penggunaan Web Aplikasi":     
     st.markdown('<div class="header-section"><h2>Cara Penggunaan Web Aplikasi</h2></div>', unsafe_allow_html=True)
+    st.markdown("""
+        <div class="hero-section">
+            <h2>Alat komprehensif ini membantu Anda melakukan perhitungan kalibrasi volume labu takar secara akurat, termasuk analisis ketidakpastian sesuai standar metrologi.</h2>
+            <h3>Pada saat akan memasukan </h3>
+
+        </div>
+    """, unsafe_allow_html=True)
+
 elif selected == "📑 Syarat Yang Harus Dipenuhi":
     st.markdown('<div class="header-section"><h2> Syarat Yang Harus Dipenuhi</h2></div>', unsafe_allow_html=True)
     cek1 = st.checkbox("✅ Pastikan Seluruh Alat Ukur Memiliki Sertifikat")
@@ -96,10 +104,6 @@ elif selected == "📑 Syarat Yang Harus Dipenuhi":
 
 
 elif selected == "🧮 Input Data":
-    if cek1 and cek2:
-        st.success("✅ Semua syarat telah dipenuhi.")
-    else:
-        st.warning("⚠️ Harap centang semua syarat terlebih dahulu.")
     st.markdown('<div class="header-section"><h2>Input Data</h2></div>', unsafe_allow_html=True)
         # Bagian Input VKonvensional
     st.markdown("<h1 style='color:#5F6F65;'>Aplikasi Kalibrasi Volume - Labu Takar</h1>", unsafe_allow_html=True)
