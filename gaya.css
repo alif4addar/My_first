@@ -4,7 +4,10 @@
         color: #888; /* Warna teks umum */
     }
 
-    
+     .main .block-container {
+        padding-left: 2rem;
+        margin-left: 2rem;
+    }
     
     /* Atur sidebar jika digunakan */
     [data-testid="stSidebar"] {
@@ -12,6 +15,8 @@
         animation: hue 5s infinite linear;
         border-radius: 16px !important;        /* Membulatkan sudut sidebar */
         padding: 10px;
+        position: relative !important;
+        z-index: 1 !important;
         margin: 10px;
         colour: #030f00;
     }
