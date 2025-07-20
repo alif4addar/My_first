@@ -20,10 +20,10 @@ st.set_page_config(
 
 # Inisialisasi session_state
 
-if "data_pengukuran" not in st.session_state:
-    st.session_state.data_pengukuran = pd.DataFrame([["" for _ in cols] for _ in range(st.session_state.rows)], columns=cols)
 if "rows" not in st.session_state:
     st.session_state.rows = 1
+if "data_pengukuran" not in st.session_state:
+    st.session_state.data_pengukuran = pd.DataFrame([["" for _ in cols] for _ in range(st.session_state.rows)], columns=cols)
 def add_row():
     st.session_state.rows += 1
     st.session_state.data_pengukuran = pd.DataFrame([["" for _ in cols] for _ in range(st.session_state.rows)], columns=cols)
