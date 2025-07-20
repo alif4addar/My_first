@@ -30,7 +30,22 @@ def remove_row():
     if st.session_state.rows > 1:
         st.session_state.rows -= 1
 
+# --- SESSION STATE ---
+if "show_sidebar" not in st.session_state:
+    st.session_state.show_sidebar = False
+if "menu_selected" not in st.session_state:
+    st.session_state.menu_selected = "🏠 Home"
 
+# --- SEMBUNYIKAN SIDEBAR DI AWAL ---
+if not st.session_state.show_sidebar:
+    st.markdown("""
+        <style>
+        [data-testid="stSidebar"] {
+            display: none;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+    
 # Sidebar Navigation
 with st.sidebar:
     st.markdown("<h2 style='color:#5F6F65;'>Aplikasi Kalibrasi & Ketidakpastian</h2>", unsafe_allow_html=True)
