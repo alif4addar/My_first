@@ -7,8 +7,9 @@ import math
 import statistics
 from pathlib import Path
 
-
-
+css_file = Path(__file__).parent / "style.css"
+with open(css_file) as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 
 st.set_page_config(
@@ -43,9 +44,9 @@ if not st.session_state.authenticated:
 
 # Sidebar Navigation
 with st.sidebar:
-    st.markdown("<h2 style='color:#5F6F65;'>Kalibrasi & Ketidakpastian</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='color:#5F6F65;'>Aplikasi Kalibrasi & Ketidakpastian</h2>", unsafe_allow_html=True)
     st.markdown("---")
-    st.markdown("<p style='color:#5F6F65;'>Menu</p>", unsafe_allow_html=True)
+    st.markdown("<h3 style='color:#5F6F65;'>Menu</h3>", unsafe_allow_html=True)
     menu = option_menu(
         menu_title = None,
         options=[
