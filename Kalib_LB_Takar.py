@@ -43,7 +43,7 @@ if not st.session_state.authenticated:
 
 # Sidebar Navigation
 with st.sidebar:
-    st.title("<h3 style='color:#5F6F65;'>Kalibrasi & Ketidakpastian</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='color:#5F6F65;'>Kalibrasi & Ketidakpastian</h3>", unsafe_allow_html=True)
     st.markdown("---")
     st.markdown("<p style='color:#5F6F65;'>Menu</p>", unsafe_allow_html=True)
     menu = option_menu(
