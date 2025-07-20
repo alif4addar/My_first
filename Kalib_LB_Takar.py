@@ -76,7 +76,7 @@ elif selected == "📑 Syarat Yang Harus Dipenuh":
      st.markdown('<div class="app-card">', unsafe_allow_html=True)
 elif selected == "🧮 Input Data": 
     # Bagian Input VKonvensional
-    st.markdown('<div class="header-section">Input Data & Perhitungan</h1>', unsafe_allow_html=True)
+    st.markdown('<div class="header-section"><h3>Input Data & Perhitungan</h3></div>', unsafe_allow_html=True)
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
 
     # Input volume konvensional
