@@ -79,8 +79,8 @@ if selected == "🏠 Home":
     st.divider()
     col_spasi, col_mulai, col_spasi_2 = st.columns([5, 2, 5])
     with col_mulai:
-        st.markdown('<div id="mulai-button">', unsafe_allow_html=True)
-        st.button("Mulai", help="Klik untuk memulai fitur", on_click=mulai)
+        if st.button("Mulai", on_click=mulai):
+            help="Klik untuk memulai fitur"
         st.markdown('</div>', unsafe_allow_html=True)
     
     
