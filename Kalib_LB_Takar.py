@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 from streamlit_option_menu import option_menu
@@ -11,13 +10,11 @@ css_file = Path(__file__).parent / "gaya.css"
 with open(css_file) as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-
 st.set_page_config(
     page_title="Aplikasi Kalibrasi Volume",
     page_icon="📖",
     layout="wide",     
 )
-
 
 if "rows" not in st.session_state:
     st.session_state.rows = 1
@@ -26,7 +23,6 @@ def add_row():
 def remove_row():
     if st.session_state.rows > 1:
         st.session_state.rows -= 1
-
 def mulai():
     st.session_state.show_sidebar = True
 
@@ -57,16 +53,13 @@ with st.sidebar:
                 "🏠 Home", "📋 Cara Penggunaan Web Aplikasi", 
                 "📑 Syarat Yang Harus Dipenuhi",
                 "🧮 Input Data", "end Page"],
-        menu_icon="cast"
-    
+        menu_icon="cast"    
     )
     st.session_state.menu_selected = menu
 selected = st.session_state.menu_selected
 
-
 if selected == "🏠 Home":
     st.markdown('<div class="header-section"><h1>Aplikasi Kalibrasi Volume Labu Takar</h1></div>', unsafe_allow_html=True)
-
     st.markdown("""
         <div class="hero-section">
             <h2>Hitung Volume Sebenarnya dan Ketidakpastian Labu Takar Anda</h2>
@@ -109,17 +102,19 @@ elif selected == "📑 Syarat Yang Harus Dipenuh":
     else:
         st.warning("⚠️ Harap centang semua syarat terlebih dahulu.")   
 
-
 elif selected == "🧮 Input Data":
+    st.markdown('<div class="header-section"><h2>Input Data</h2></div>', unsafe_allow_html=True)
         # Bagian Input VKonvensional
     st.markdown("<h1 style='color:#5F6F65;'>Aplikasi Kalibrasi Volume - Labu Takar</h1>", unsafe_allow_html=True)
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
     
         # Input volume konvensional
+    st.markdown("<h3 style='color:#5F6F65;'>1.Input Volume Labu Takar</h3>", unsafe_allow_html=True)
     v_konven = st.number_input("Masukkan Volume Konvensional (mL)", min_value=0.0, step=25.0,  format="%.2f")
-    
+    st.markdown('<div class="app-card">', unsafe_allow_html=True)
+    st.markdown("<h3 style='color:#5F6F65;'>2. Input Ketelitian Alat</h3>", unsafe_allow_html=True)
     ketelitian_lb = st.number_input("Masukkan Ketelitian Labu Takar (mL)", min_value=0.0, step=0.001, format="%.4f")
-    
+       
         # Template input tabel
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
     st.markdown("<h3 style='color:#5F6F65;'>Input Data Pengukuran</h3>", unsafe_allow_html=True)
@@ -195,10 +190,7 @@ elif selected == "🧮 Input Data":
     with col_k:
             st.markdown("<h3 style='color:#5F6F65; font-size: 24px;'>K</h3>", unsafe_allow_html=True)
             nilai_k = [st.number_input(f" {label}", value=2.0, key=f"kval_{i}", step=0.0001, format="%.4f") for i, label in enumerate(CC)]
-        
-        
-        
-        
+         
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
     st.markdown("<h3 style='color:#5F6F65;'>Perhitungan Ketidakpastian</h3>", unsafe_allow_html=True)
         
