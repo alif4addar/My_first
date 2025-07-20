@@ -46,6 +46,7 @@ if not st.session_state.show_sidebar:
         </style>
     """, unsafe_allow_html=True)
     
+    
 # Sidebar Navigation
 with st.sidebar:
     st.markdown("<h2 style='color:#030f00;'>Aplikasi Kalibrasi & Ketidakpastian</h2>", unsafe_allow_html=True)
