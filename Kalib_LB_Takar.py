@@ -22,14 +22,19 @@ st.set_page_config(
 
 
 def add_row():
+    new_row = pd.DataFrame([["" for _ in cols]], columns=cols)
+    st.session_state.data_pengukuran = pd.concat([st.session_state.data_pengukuran, new_row], ignore_index=True)
     st.session_state.rows += 1
-    st.session_state.data_pengukuran = pd.DataFrame([["" for _ in cols] for _ in range(st.session_state.rows)], columns=cols)
+
 def remove_row():
     if st.session_state.rows > 1:
+        st.session_state.data_pengukuran = st.session_state.data_pengukuran.iloc[:-1]
         st.session_state.rows -= 1
-        st.session_state.data_pengukuran = pd.DataFrame([["" for _ in cols] for _ in range(st.session_state.rows)], columns=cols)
+
 def reset_data():
-    st.session_state.data_pengukuran = pd.DataFrame([["" for _ in cols] for _ in range(st.session_state.rows)], columns=cols)
+    st.session_state.rows = 1
+    st.session_state.data_pengukuran = pd.DataFrame([["" for _ in cols]], columns=cols)
+
 def mulai():
     st.session_state.show_sidebar = True
 
@@ -112,8 +117,9 @@ elif selected == "🧮 Input Data":
     if "rows" not in st.session_state:
         st.session_state.rows = 1
     if "data_pengukuran" not in st.session_state:
-        st.session_state.data_pengukuran = pd.DataFrame([["" for _ in cols] for _ in range(st.session_state.rows)], columns=cols)
-
+        st.session_state.data_pengukuran = pd.DataFrame(
+            [["" for _ in cols] for _ in range(st.session_state.rows)], columns=cols
+        )
     
     # jmlh baris
     col1, col2, col3 = st.columns([3, 6, 3])
@@ -140,6 +146,7 @@ elif selected == "🧮 Input Data":
     
     if st.button("Hitung Rata-rata Data Pengukuran"):
         try:
+            df = st.session_state.data_pengukuran.copy()
             if df.isnull().values.any() or (df == "").values.any():
                 st.warning("⚠️ Semua sel harus diisi sebelum menghitung rata-rata.")
             else:
