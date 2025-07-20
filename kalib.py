@@ -65,6 +65,26 @@ selected = st.session_state.menu_selected
 
 
 if selected == "🏠 Home":
+    st.markdown('<div class="header-section"><h1>Aplikasi Kalibrasi Volume Labu Takar</h1></div>', unsafe_allow_html=True)
+
+    st.markdown("""
+        <div class="hero-section">
+            <h2>Hitung Volume Sebenarnya dan Ketidakpastian Labu Takar Anda</h2>
+            <p>Alat komprehensif ini membantu Anda melakukan perhitungan kalibrasi volume labu takar secara akurat, termasuk analisis ketidakpastian sesuai standar metrologi.</p>
+        </div>
+    """, unsafe_allow_html=True)
+
+    st.divider()
+    col_spasi, col_mulai, col_spasi_2 = st.columns([5, 4, 5])
+    with col_mulai:
+        if st.button("Mulai", on_click=mulai):
+           st.markdown('</div>', unsafe_allow_html=True) 
+        st.markdown('</div>', unsafe_allow_html=True)
+    
+    
+
+
+if selected == ""🧮 Input Data":
         # Bagian Input VKonvensional
     st.markdown("<h1 style='color:#5F6F65;'>Aplikasi Kalibrasi Volume - Labu Takar</h1>", unsafe_allow_html=True)
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
