@@ -89,13 +89,11 @@ elif selected == "📋 Cara Penggunaan Web Aplikasi":
             <p2>1. Pada saat akan memasukan data pengukuran, banyaknya kolom sesuai dengan banyaknya data.</p2>
         </div>
     """, unsafe_allow_html=True)
-    st.markdown('<div class="header-section"><h2>Cara Penggunaan Web Aplikasi</h2></div>', unsafe_allow_html=True)
     st.markdown("""
         <div class="hero-section">
             <p2>2. Sebelum menghitung nilai rata-rata  dari data pengukuran, semua kolom sudah terisi semua.</p2>
         </div>
     """, unsafe_allow_html=True)
-    st.markdown('<div class="header-section"><h2>Cara Penggunaan Web Aplikasi</h2></div>', unsafe_allow_html=True)
     st.markdown("""
         <div class="hero-section">
             <p2>3. Tombol untuk menghitung volume sebenarnya dan nilai ketidakpastian
