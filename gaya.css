@@ -17,6 +17,7 @@
         background: transparent !important;
         box-shadow: none !important;
         border: none !important;
+        position: relative !important;
     }
 
     /* Atur sidebar jika digunakan */
@@ -42,8 +43,7 @@
         animation: hue 5s infinite linear;
         border-radius: 16px !important;        /* Membulatkan sudut sidebar */
         padding: 10px;
-        display: block !important;
-        z-index: 1 !important;
+        z-index: 1000 !important;
         position: relative !important;
         margin: 10px;
         colour: #030f00;
