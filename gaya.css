@@ -293,10 +293,13 @@
         background: linear-gradient(to right, #06D001, #2fec00, #9BEC00);
         color: #030f00;
         padding: 20px;
-        border-radius: 10px;
+        border-radius: 15px;
         border-right: 2px solid white;
         width: 300px !important;
     }
 
-
+    /* Background dan warna teks menu */
+    [data-testid="stSidebar"] ul[class^="css-"] {
+        border-radius: 15px;
+        padding: 10px;
    
