@@ -23,7 +23,8 @@
     }
     
     /* 3. Hilangkan padding saat sidebar tertutup */
-    [data-testid="stSidebar"][aria-expanded="false"] + .main .block-container {
+    [data-testid="stSidebar"],
+    [aria-expanded="false"] + .main .block-container {
         margin-left: 0;
         width: 100%;
     }
