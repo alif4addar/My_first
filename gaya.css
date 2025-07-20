@@ -4,25 +4,6 @@
         color: #888; /* Warna teks umum */
     }
 
-    .main .block-container {
-        color: transparent !important;
-        position: relative !important;
-    }
-
-
-   
-    [data-testid="stToolbar"] > div {
-        background: transparent !important;
-    }
-
-
-    [data-testid="stToolbar"] {
-        background: transparent !important;
-        box-shadow: none !important;
-        border: none !important;
-        position: relative !important;
-    }
-
     [data-testid="stSidebar"] {
         background-color: white !important;
         animation: hue 5s infinite linear;
@@ -33,12 +14,10 @@
         margin: 10px;
         display: none;
         colour: #030f00;
-    }
-
-    [data-testid="stSidebar"] .block-container {
-        background-color: transparent !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
         position: relative !important;
-        z-index: 1 !important;
     }
 
     /* Hilangkan efek tema otomatis dari browser */
