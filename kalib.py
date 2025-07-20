@@ -85,8 +85,7 @@ elif selected == "📋 Cara Penggunaan Web Aplikasi":
     st.markdown('<div class="header-section"><h2>Cara Penggunaan Web Aplikasi</h2></div>', unsafe_allow_html=True)
     st.markdown("""
         <div class="hero-section">
-            <h3>Alat komprehensif ini membantu Anda melakukan perhitungan kalibrasi volume labu takar secara akurat, termasuk analisis ketidakpastian sesuai standar metrologi.</h3>
-            <p>Pada saat akan memasukan data pengukuran, banyaknya kolom sesuai dengan banyaknya data</p>
+            <p2>Pada saat akan memasukan data pengukuran, banyaknya kolom sesuai dengan banyaknya data</p2>
 
         </div>
     """, unsafe_allow_html=True)
