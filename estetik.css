@@ -1,0 +1,20 @@
+input[type="number"] {
+    background-color: #393E46 !important;
+    color: #FDFAF6 !important;
+    border: 2px solid #819A91 !important;
+    border-radius: 6px;
+    padding: 8px;    
+}
+
+
+
+html, body, [class*="st-"] {
+    font-family: 'Inter', sans-serif;
+    color: #333; /* Warna teks umum */
+}
+
+
+.stApp {
+    background-color: #f8f8f8; /* Latar belakang aplikasi */
+    padding: 20px; /* Padding keseluruhan */
+}
