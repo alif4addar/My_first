@@ -129,7 +129,7 @@
 
 /* Buttons  */
 
-    #mulai-button button {
+    mulai-button > button {
         background: linear-gradient(to left, #06D001, #9BEC00) !important;
         color: #222831;
         border: #059212 ;
