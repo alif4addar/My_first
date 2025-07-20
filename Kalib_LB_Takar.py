@@ -74,10 +74,11 @@ if selected == "🏠 Home":
     """, unsafe_allow_html=True)
 
     st.divider()
-    
-    if st.button("Mulai", key="start", help="Klik untuk memulai fitur"):
-        st.session_state.show_sidebar = True
-        st.session_state.menu_selected = "📋 Cara Penggunaan Web Aplikasi"
+    col_spasi, col_mulai, col_spasi_2 = st.columns([5, 2, 5])
+    with col_mulai:
+        if st.button("Mulai", key="start", help="Klik untuk memulai fitur"):
+            st.session_state.show_sidebar = True
+            st.session_state.menu_selected = "📋 Cara Penggunaan Web Aplikasi"
     
     
 elif selected == "📋 Cara Penggunaan Web Aplikasi": 
