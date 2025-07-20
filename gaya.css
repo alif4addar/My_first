@@ -123,6 +123,7 @@
         font-weight: 700;
         margin-bottom: 15px;
         line-height: 1.2;
+        text-align: left;
         color: white; /* Pastikan judul di hero putih */
     }
     
@@ -131,6 +132,7 @@
         font-weight: 750;
         margin-bottom: 15px;
         line-height: 1.2;
+        text-align: left;
         color: #5F6F65;
     }
 
