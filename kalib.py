@@ -86,7 +86,7 @@ elif selected == "📋 Cara Penggunaan Web Aplikasi":
     st.markdown("""
         <div class="hero-section">
             <h2>Alat komprehensif ini membantu Anda melakukan perhitungan kalibrasi volume labu takar secara akurat, termasuk analisis ketidakpastian sesuai standar metrologi.</h2>
-            <h3>Pada saat akan memasukan </h3>
+            <h3>Pada saat akan memasukan data pengukuran, banyaknya kolom sesuai dengan banyaknya data</h3>
 
         </div>
     """, unsafe_allow_html=True)
@@ -110,7 +110,7 @@ elif selected == "🧮 Input Data":
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
     
         # Input volume konvensional
-    st.markdown("<h3 style='color:#5F6F65;'>1.Input Data Volume</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='color:#5F6F65;'>1.Input Volume Labu Takar</h3>", unsafe_allow_html=True)
     v_konven = st.number_input("Masukkan Volume Konvensional (mL)", min_value=0.0, step=25.0,  format="%.2f")
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
     st.markdown("<h3 style='color:#5F6F65;'>2. Input Ketelitian Alat</h3>", unsafe_allow_html=True)
