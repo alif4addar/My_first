@@ -75,10 +75,10 @@ if selected == "🏠 Home":
         st.markdown('</div>', unsafe_allow_html=True)
     
 elif selected == "📋 Cara Penggunaan Web Aplikasi": 
-    
+    st.markdown('</div>', unsafe_allow_html=True)
 
 elif selected == "📑 Syarat Yang Harus Dipenuh": 
-    
+    st.markdown('</div>', unsafe_allow_html=True)
 
 elif selected == "🧮 Input Data":
     st.markdown('<div class="header-section"><h2>Input Data</h2></div>', unsafe_allow_html=True)
