@@ -116,7 +116,7 @@
 
     /* Buttons  */
     .stButton > button {
-        background-colour: linear-gradient(to rigth #9BEC00, #06D001) !important;
+        background: linear-gradient(to rigth, #9BEC00, #06D001) !important;
         color: #222831;
         border: #059212 ;
         padding: 10px 25px;
@@ -127,21 +127,21 @@
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .stButton > button:hover {
-        background-colour: linear-gradient(to left #9BEC00, #06D001) !important;
+        background: linear-gradient(to left, #9BEC00, #06D001) !important;
         box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
     /* Style for the "Add Row" and "Remove Row" buttons */
     .stButton > button[data-testid="stFormSubmitButton"] { /* Target specific buttons if needed */
-        background-colour: linear-gradient(to rigth #9BEC00, #06D001) !important;
+        background: linear-gradient(to rigth, #9BEC00, #06D001) !important;
     }
     .stButton > button[data-testid="stFormSubmitButton"]:hover {
-        background-colour: linear-gradient(to left #9BEC00, #06D001) !important;
+        background: linear-gradient(to left, #9BEC00, #06D001) !important;
     }
     .stButton > button[data-testid="stFormSubmitButton"] + div .stButton > button { /* Target remove button */
-        background-colour: linear-gradient(to rigth #9BEC00, #06D001) !important;
+        background: linear-gradient(to rigth, #9BEC00, #06D001) !important;
     }
     .stButton > button[data-testid="stFormSubmitButton"] + div .stButton > button:hover {
-        background-colour: linear-gradient(to left #9BEC00, #06D001) !important;
+        background: linear-gradient(to left, #9BEC00, #06D001) !important;
     }
         
     
