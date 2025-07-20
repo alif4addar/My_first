@@ -79,22 +79,10 @@ if selected == "🏠 Home":
     st.divider()
     col_spasi, col_mulai, col_spasi_2 = st.columns([5, 2, 5])
     with col_mulai:
-        st.markdown("""
-            <div id="mulai-button">
-                <button onclick="window.parent.postMessage({isStreamlitMessage: true, type: 'streamlit:rerun'}, '*')" 
-                        style="
-                            font-size: 1rem;
-                            padding: 8px 16px;
-                            border-radius: 4px;
-                            background: linear-gradient(to left, #06D001, #9BEC00);
-                            border: none;
-                            color: #222831;
-                            cursor: pointer;
-                        ">
-                    Mulai
-                </button>
-            </div>
-        """, unsafe_allow_html=True)
+        st.markdown('<div id="mulai-button">', unsafe_allow_html=True)
+        st.button("Mulai", help="Klik untuk memulai fitur", on_click=mulai)
+        st.markdown('</div>', unsafe_allow_html=True)
+    
     
 elif selected == "📋 Cara Penggunaan Web Aplikasi": 
      st.markdown('<div class="app-card">', unsafe_allow_html=True)
