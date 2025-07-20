@@ -5,6 +5,12 @@
     }
 
 
+    body {
+        background: linear-gradient(-45deg, #89f7fe, #66a6ff, #fbc2eb, #a6c1ee);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+    }
+
     .stApp {
         background-color: #f8f8f8; /* Latar belakang aplikasi */
         padding: 20px; /* Padding keseluruhan */
