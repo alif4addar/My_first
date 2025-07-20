@@ -46,6 +46,22 @@
         margin: 10px;
     }
 
+/* Mengatur agar konten utama bergeser saat sidebar terbuka */
+    section.main {
+        margin-left: 25rem;  /* Sesuaikan dengan lebar sidebar */
+        transition: margin-left 300ms ease;
+    }
+    
+    /* Sidebar tetap di posisinya */
+    [data-testid="stSidebar"] {
+        width: 25rem !important;
+        position: fixed !important;
+        left: 0 !important;
+        top: 0 !important;
+        height: 100% !important;
+    }
+
+
     /* Hilangkan efek tema otomatis dari browser */
     body {
         color-scheme: only light !important;  /* Atau 'dark' tergantung kamu mau yang mana */
