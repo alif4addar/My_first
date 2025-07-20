@@ -19,9 +19,10 @@ st.set_page_config(
 )
 
 # Inisialisasi session_state
+if "rows" not in st.session_state:
+    st.session_state.rows = 1
 def add_row():
     st.session_state.rows += 1
-
 def remove_row():
     if st.session_state.rows > 1:
         st.session_state.rows -= 1
