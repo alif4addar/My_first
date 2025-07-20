@@ -96,6 +96,10 @@ elif selected == "📑 Syarat Yang Harus Dipenuhi":
 
 
 elif selected == "🧮 Input Data":
+    if cek1 and cek2:
+        st.success("✅ Semua syarat telah dipenuhi.")
+    else:
+        st.warning("⚠️ Harap centang semua syarat terlebih dahulu.")
     st.markdown('<div class="header-section"><h2>Input Data</h2></div>', unsafe_allow_html=True)
         # Bagian Input VKonvensional
     st.markdown("<h1 style='color:#5F6F65;'>Aplikasi Kalibrasi Volume - Labu Takar</h1>", unsafe_allow_html=True)
