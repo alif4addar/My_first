@@ -20,10 +20,7 @@ st.set_page_config(
 
 # Inisialisasi session_state
 
-if "rows" not in st.session_state:
-    st.session_state.rows = 1
-if "data_pengukuran" not in st.session_state:
-    st.session_state.data_pengukuran = pd.DataFrame([["" for _ in cols] for _ in range(st.session_state.rows)], columns=cols)
+
 def add_row():
     st.session_state.rows += 1
     st.session_state.data_pengukuran = pd.DataFrame([["" for _ in cols] for _ in range(st.session_state.rows)], columns=cols)
@@ -112,6 +109,11 @@ elif selected == "🧮 Input Data":
         "Tekanan Udara (mmHg)",
         "Kelembaban (%)"
     ]
+    if "rows" not in st.session_state:
+        st.session_state.rows = 1
+    if "data_pengukuran" not in st.session_state:
+        st.session_state.data_pengukuran = pd.DataFrame([["" for _ in cols] for _ in range(st.session_state.rows)], columns=cols)
+
     
     # jmlh baris
     col1, col2, col3 = st.columns([3, 6, 3])
