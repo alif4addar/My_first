@@ -11,6 +11,8 @@
 
     [data-testid="stToolbar"] {
         background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
     }
 
     /* Atur sidebar jika digunakan */
