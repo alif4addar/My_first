@@ -5,7 +5,7 @@
     }
 
     .main .block-container {
-        colour: transparent !important;
+        color: transparent !important;
     }
 
 
@@ -24,7 +24,7 @@
     [data-testid="stSidebar"] .stRadio,
     [data-testid="stSidebar"] .stButton,
     [data-testid="stSidebar"] .stSlider {
-    background-colour: transparent !important;
+    background-color: transparent !important;
         border-radius: 16px !important;        /* Membulatkan sudut sidebar */
         padding: 10px;
         position: relative !important;
