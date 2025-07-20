@@ -30,6 +30,9 @@ def remove_row():
     if st.session_state.rows > 1:
         st.session_state.rows -= 1
 
+def mulai():
+    st.session_state.show_sidebar = True
+
 # --- SESSION STATE ---
 if "show_sidebar" not in st.session_state:
     st.session_state.show_sidebar = False
@@ -76,9 +79,8 @@ if selected == "🏠 Home":
     st.divider()
     col_spasi, col_mulai, col_spasi_2 = st.columns([5, 2, 5])
     with col_mulai:
-        if st.button("Mulai", key="start", help="Klik untuk memulai fitur"):
-            st.session_state.show_sidebar = True
-            st.session_state.menu_selected = "📋 Cara Penggunaan Web Aplikasi"
+        st.button("Mulai", key="start", help="Klik untuk memulai fitur", on_click=mulai):
+        st.session_state.menu_selected = "📋 Cara Penggunaan Web Aplikasi"
     
     
 elif selected == "📋 Cara Penggunaan Web Aplikasi": 
