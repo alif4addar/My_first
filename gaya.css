@@ -304,9 +304,24 @@
         padding: 10px;
     }
 
-[data-testid="stSidebar"] ul[class^="css-"] > li {
-    color: #030f00;
-    border-radius: 15px;
-}
+    [data-testid="stSidebar"] ul[class^="css-"] > li {
+        color: #030f00;
+        border-radius: 15px;
+    }
+
+
+    /* Container menu option (ul) */
+    [data-testid="stSidebar"] ul[class^="css-"] {
+        background: linear-gradient(to right, #06D001, #2fec00, #9BEC00);
+        border-radius: 20px;  /* Sudut melengkung */
+        padding: 15px;
+        margin: 10px;
+    }
+    
+    /* Item menu aktif */
+    [data-testid="stSidebar"] ul[class^="css-"] > li[data-selected="true"] {
+        background-color: #ffffff33;
+        border-radius: 20px;
+    }
 
 
