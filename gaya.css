@@ -13,6 +13,7 @@
         border-radius: 16px !important;        /* Membulatkan sudut sidebar */
         padding: 10px;
         margin: 10px;
+        colour: #030f00;
     }
 
     [data-testid="stSidebar"] .block-container {
@@ -30,7 +31,7 @@
     [data-testid="stSidebar"] .stRadio,
     [data-testid="stSidebar"] .stButton,
     [data-testid="stSidebar"] .stSlider {
-    background-colour: #030f00 !important;
+    background-colour: transparent !important;
         border-radius: 16px !important;        /* Membulatkan sudut sidebar */
         padding: 10px;
         margin: 10px;
