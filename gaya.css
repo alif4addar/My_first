@@ -143,7 +143,7 @@
     .stButton > button:hover {
         background: linear-gradient(to left, #9BEC00, #06D001) !important;
         box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        padding: 10px 22px;
+        padding: 8px 22px;
     }
     /* Style for the "Add Row" and "Remove Row" buttons */
     .stButton > button[data-testid="stFormSubmitButton"] { /* Target specific buttons if needed */
