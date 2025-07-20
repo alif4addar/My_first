@@ -116,8 +116,8 @@
 
     /* Buttons  */
     .stButton > button {
-        background-color: #06D001;
-        color: white;
+        background-color: #9BEC00;
+        color: #222831;
         border: none;
         padding: 10px 25px;
         border-radius: 5px;
@@ -127,18 +127,18 @@
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .stButton > button:hover {
-        background-color: #9BEC00;
+        background-color: #06D001;
         box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
     /* Style for the "Add Row" and "Remove Row" buttons */
     .stButton > button[data-testid="stFormSubmitButton"] { /* Target specific buttons if needed */
-        background-color: #06D001; /* Green for add */
-    }
-    .stButton > button[data-testid="stFormSubmitButton"]:hover {
         background-color: #9BEC00;
     }
+    .stButton > button[data-testid="stFormSubmitButton"]:hover {
+        background-color: #06D001;
+    }
     .stButton > button[data-testid="stFormSubmitButton"] + div .stButton > button { /* Target remove button */
-        background-color: #73EC8B; /* Red for remove */
+        background-color: #73EC8B;
     }
     .stButton > button[data-testid="stFormSubmitButton"] + div .stButton > button:hover {
         background-color: #c82333;
