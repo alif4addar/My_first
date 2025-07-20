@@ -52,17 +52,16 @@ with st.sidebar:
         options=[
                 "🏠 Home", "📋 Cara Penggunaan Web Aplikasi", 
                 "📑 Syarat Yang Harus Dipenuhi",
-                "🧮 Perhitungan", "end Page"],
+                "🧮 Input Data", "end Page"],
         menu_icon="cast"
     
     )
     st.session_state.menu_selected = menu
 selected = st.session_state.menu_selected
+
 if selected == "🏠 Home":
-    st.markdown('<div class="app-card">', unsafe_allow_html=True)
     st.markdown('<div class="header-section"><h1>Aplikasi Kalibrasi Volume Labu Takar</h1></div>', unsafe_allow_html=True)
 
-# --- Hero Section (Deskripsi Aplikasi) ---
     st.markdown("""
         <div class="hero-section">
             <h2>Hitung Volume Sebenarnya dan Ketidakpastian Labu Takar Anda</h2>
@@ -75,7 +74,7 @@ elif selected == "📋 Cara Penggunaan Web Aplikasi":
      st.markdown('<div class="app-card">', unsafe_allow_html=True)
 elif selected == "📑 Syarat Yang Harus Dipenuh": 
      st.markdown('<div class="app-card">', unsafe_allow_html=True)
-elif selected == "🧮 Perhitungan": 
+elif selected == "🧮 Input Data": 
     # Bagian Input VKonvensional
     st.markdown("<h1 style='color:#5F6F65;'>Aplikasi Kalibrasi Volume - Labu Takar</h1>", unsafe_allow_html=True)
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
