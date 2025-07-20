@@ -139,11 +139,7 @@ elif selected == "🧮 Input Data":
     st.session_state.data_pengukuran = edited_df
 
     
-    # Tombol untuk menghapus semua data
-    if st.button("🗑️ Hapus Semua Inputan"):
-        reset_data()
-        st.rerun()  # Refresh halaman agar editor kembali kosong
-    
+  
     if st.button("Hitung Rata-rata Data Pengukuran"):
         try:
             df = st.session_state.data_pengukuran.copy()
