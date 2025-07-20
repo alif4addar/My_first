@@ -129,7 +129,7 @@
 
 /* Buttons  */
 
-    .mulai-button > button {
+    .mulai-button button {
         background: linear-gradient(to left, #06D001, #9BEC00) !important;
         color: #222831;
         border: #059212 ;
@@ -144,7 +144,7 @@
         border-radius: 4px !important;
     }
 
-    .mulai-button > button:hover {
+    .mulai-button button:hover {
         background: linear-gradient(to rigth, #06D001, #9BEC00) !important;
         color: #222831;
         border: #059212 ;
