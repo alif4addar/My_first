@@ -39,6 +39,19 @@
         animation: hue 5s infinite linear;
     }
 
+    .header-section h2 {
+        font-weight: 650;
+        margin: 0;
+        text-align: center;
+        font-size: 2.8rem;
+        background: linear-gradient(30deg, #B6F500, #A4DD00, #98CD00);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: hue 5s infinite linear;
+     }
+
+
     @keyframes hue {
         from {filter: hue-rotate(0deg);}
         to {filter: hue-rotate(360deg);}
