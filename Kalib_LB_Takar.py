@@ -36,7 +36,8 @@ def remove_row():
 
 # Login Page
 if not st.session_state.authenticated:
-    if st.button("Login"):
+    st.divider("")
+    if st.button("Mulai"):
         st.session_state.authenticated = True
         st.success("Login successful!")
         st.rerun()
