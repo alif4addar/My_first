@@ -10,25 +10,7 @@
     }
 
 
-    /* 1. Atur konten utama untuk responsif */
-    .main .block-container {
-        padding-left: 2rem;
-        padding-right: 2rem;
-        transition: margin-left 0.3s ease;
-    }
-    
-    /* 2. Saat sidebar terbuka */
-    [data-testid="collapsedControl"] + .main .block-container {
-        margin-left: 300px; /* Sesuaikan dengan lebar sidebar */
-    }
-    
-    /* 3. Hilangkan padding saat sidebar tertutup */
-    [data-testid="stSidebar"],
-    [aria-expanded="false"] + .main .block-container {
-        margin-left: 0;
-        width: 100%;
-    }
-
+   
     [data-testid="stToolbar"] > div {
         background: transparent !important;
     }
