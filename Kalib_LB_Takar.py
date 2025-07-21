@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 from streamlit_option_menu import option_menu
-import numpy as np
 import math
 import statistics
 from pathlib import Path
@@ -52,7 +51,7 @@ with st.sidebar:
         options=[
                 "🏠 Home", "📋 Cara Penggunaan Web Aplikasi", 
                 "📑 Syarat Yang Harus Dipenuhi",
-                "🧮 Input Data", "end Page"],
+                "🧮 Input Data", "📘 Penutup"],
         menu_icon="cast"    
     )
     st.session_state.menu_selected = menu
@@ -70,13 +69,43 @@ if selected == "🏠 Home":
     st.divider()
     col_spasi, col_mulai, col_spasi_2 = st.columns([5, 4, 5])
     with col_mulai:
-        st.button("Mulai", on_click=mulai)
+        if st.button("Mulai", key="start", on_click=mulai): 
+            st.session_state.show_sidebar = True
+            st.session_state.menu_selected = "📋 Cara Penggunaan Web Aplikasi"
     
 elif selected == "📋 Cara Penggunaan Web Aplikasi": 
-    st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown('<div class="header-section"><h2>Cara Penggunaan Web Aplikasi</h2></div>', unsafe_allow_html=True)
+    st.markdown("""
+        <div class="hero-section">
+            <p2>1. Pastikan sudah memenuhu semua syarat yang ditentukan.</p2>
+        </div>
+    """, unsafe_allow_html=True)
+    st.markdown("""
+        <div class="hero-section">
+            <p2>2. Pada saat akan memasukan data pengukuran, banyaknya kolom sesuaikan dengan banyaknya data.</p2>
+        </div>
+    """, unsafe_allow_html=True)
+    st.markdown("""
+        <div class="hero-section">
+            <p2>3. Sebelum menghitung nilai rata-rata  dari data pengukuran, semua kolom sudah terisi semua.</p2>
+        </div>
+    """, unsafe_allow_html=True)
+    st.markdown("""
+        <div class="hero-section">
+            <p2>4. Tombol untuk menghitung volume sebenarnya dan nilai ketidakpastian
+                akan otomatis muncul setelah nilai rata-rata didapatkan.</p2>
+        </div>
+    """, unsafe_allow_html=True)
+
 
 elif selected == "📑 Syarat Yang Harus Dipenuh": 
-    st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown('<div class="header-section"><h2> Syarat Yang Harus Dipenuhi</h2></div>', unsafe_allow_html=True)
+    cek1 = st.checkbox("✅ Pastikan Seluruh Alat Ukur Memiliki Sertifikat")
+    cek2 = st.checkbox("✅ Pastikan Suhu, Tekanan Dan Kelembaban Ruangan Stabil")
+    if cek1 and cek2:
+        st.success("✅ Semua syarat telah dipenuhi.")
+    else:
+        st.warning("⚠️ Harap centang semua syarat terlebih dahulu.")
 
 elif selected == "🧮 Input Data":
     st.markdown('<div class="header-section"><h2>Input Data</h2></div>', unsafe_allow_html=True)
@@ -245,8 +274,7 @@ elif selected == "🧮 Input Data":
                 except Exception as e:
                     st.error(f"Terjadi kesalahan saat perhitungan lanjutan: {e}")
     
-       
-    
+elif selected == "📘 Penutup":    
     st.markdown('<div class="header-section"><h1>Terimakasih</h1></div>', unsafe_allow_html=True)
            
             
