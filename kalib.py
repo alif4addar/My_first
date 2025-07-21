@@ -277,7 +277,7 @@ elif selected == "🧮 Input Data":
                     st.error(f"Terjadi kesalahan saat perhitungan lanjutan: {e}")
     
 
-elif selected == "end Page":
+elif selected == "📘 Penutup":
     st.markdown('<div class="header-section"><h1>Terimakasih</h1></div>', unsafe_allow_html=True)
            
             
