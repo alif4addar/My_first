@@ -51,7 +51,7 @@ with st.sidebar:
         options=[
                 "🏠 Home", "📋 Cara Penggunaan Web Aplikasi", 
                 "📑 Syarat Yang Harus Dipenuhi",
-                "🧮 Input Data", "end Page"],
+                "🧮 Input Data", "📘 Penutup"],
         menu_icon="cast"    
     )
     st.session_state.menu_selected = menu
