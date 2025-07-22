@@ -12,7 +12,7 @@ with open(css_file) as f:
 st.set_page_config(
     page_title="Aplikasi Kalibrasi Volume",
     page_icon="📖",
-    layout="wide",
+    layout="centered",
 )
 
 if "rows" not in st.session_state:
