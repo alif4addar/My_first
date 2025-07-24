@@ -167,7 +167,7 @@ elif selected == "🧮 Input Data":
                         "Suhu Udara (C)": sum(suhu_udara)/len(suhu_udara),
                         "Tekanan Udara (mmHg)": sum(tekanan)/len(tekanan),
                         "Kelembaban (%)": sum(kelembaban)/len(kelembaban),
-                        "SEM Bobot Isi (g)": statistics.stdev(hasil) / math.sqrt(len(hasil))
+                        "U repeatability (g)": statistics.stdev(hasil) / math.sqrt(len(hasil))
                     }
         
                     st.session_state.rata_pengukuran = rata
@@ -225,7 +225,7 @@ elif selected == "🧮 Input Data":
         
                 # Ketidakpastian massa air (U1)
                     k_neraca = (lop/(2*math.sqrt(3)))
-                    k_ulangan = rata["SEM Bobot Isi (g)"]
+                    k_ulangan = rata["U repeatability (g)"]
                     U1 = math.sqrt(k_neraca**2 + k_ulangan**2)
                     Cs1 = (1 - koef_muai * (T - 20)) / (dens_air - dens_udara)
         
@@ -272,7 +272,13 @@ elif selected == "🧮 Input Data":
                     st.subheader("Ketidakpastian")
                     st.write(f"Ugab (Gabungan): **{Ugab:.6f} mL**")
                     st.write(f"Ketidakpastian Diperluas (U95): **{U95_exp:.6f} mL**")
-        
+
+                    st.subheader("Kesimpulan")
+                    if koreksi < ketelitian_lb:
+                        st.write("labu Takar Dapat Digunakan")
+                        st.write(f"Karena Nilai Koreksi ({koreksi}) Lebih Kecil Dari Ketelitian Labu Takar ({ketelitian_lb})")
+
+                
                 except Exception as e:
                     st.error(f"Terjadi kesalahan saat perhitungan lanjutan: {e}")
     
