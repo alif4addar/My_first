@@ -150,7 +150,11 @@ elif selected == "💾 Input Data":
         
    
     def_data = [["" for _ in range(len(cols))] for _ in range(st.session_state.rows)] 
-    df = st.data_editor(pd.DataFrame(def_data, columns=cols), use_container_width=True, num_rows="dynamic", key="data_input")
+    df = st.data_editor(pd.DataFrame(def_data, columns=cols), use_container_width=True, num_rows="dynamic", key="data_input", value=st.session_state.get("df"))
+    st.session_state.df = df
+    if "df" not in st.session_state:
+        st.session_state.df = 0.0 
+
     
     if st.button("Hitung Rata-rata Data Pengukuran"):
         try:
@@ -197,10 +201,7 @@ elif selected == "💾 Input Data":
     col_nst, col_u95, col_k = st.columns(3)
     with col_nst:
             st.markdown("<h3 style='color:#5F6F65; font-size: 24px;'>NST</h3>", unsafe_allow_html=True)
-            nst = [st.number_input(f" {label} ( {satuan[i]} )", key=f"nst_{i}", step=0.0001, format="%.4f", value=st.session_state.get(f"nst_{i}, 0.0000")) for i, label in enumerate(CC)]
-            st.session_state.nst = nst
-            if "nst" not in st.session_state:
-                st.session_state.nst = 0.0 
+            nst = [st.number_input(f" {label} ( {satuan[i]} )", value=0.0000, key=f"nst_{i}", step=0.0001, format="%.4f") for i, label in enumerate(CC)]
     with col_u95:
             st.markdown("<h3 style='color:#5F6F65; font-size: 24px;'>U95</h3>", unsafe_allow_html=True)
             u95 = [st.number_input(f" {label}", value=0.0000, key=f"u95_{i}", step=0.0010, format="%.4f") for i, label in enumerate(CC)]
