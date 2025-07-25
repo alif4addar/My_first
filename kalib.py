@@ -323,7 +323,7 @@ elif selected == "🧮 Input Data":
                     else:
                         st.write("labu Takar Tidak Dapat Digunakan")
                         st.write(f"Karena Nilai Koreksi ({koreksi:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
-                        st.write(f"Dan Karena Nilai Maksimum(Nilai Koreksi + U95) ({Koreksi:.4f}+{U95_exp:.4f} = {nilai_maks:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
+                        st.write(f"Dan Karena Nilai Maksimum(Nilai Koreksi + U95) ({koreksi:.4f}+{U95_exp:.4f} = {nilai_maks:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
                 except Exception as e:
                     st.error(f"Terjadi kesalahan saat perhitungan lanjutan: {e}")
     
