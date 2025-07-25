@@ -258,6 +258,7 @@ elif selected == "🧮 Input Data":
                     Cs6 = 1
         
                 #Ketidakpastian gabungan(Ugab)
+                    Ugab2 = ((U1*Cs1)**2 + (U2*Cs2)**2 + (U3*Cs3)**2 + (U4*Cs4)**2 + (U5*Cs5)**2 + (U6*Cs6)**2)
                     Ugab = math.sqrt((U1*Cs1)**2 + (U2*Cs2)**2 + (U3*Cs3)**2 + (U4*Cs4)**2 + (U5*Cs5)**2 + (U6*Cs6)**2)
                 
                 #Ketidakpastian Diperluas
@@ -302,6 +303,7 @@ elif selected == "🧮 Input Data":
                     st.write(f"U6 : **{(U6*Cs6)**2:.11f}**")
                     
                     st.subheader("Ketidakpastian")
+                     st.write(f"Ugab^2 (Gabungan^2): **{Ugab2:.6f} mL**")
                     st.write(f"Ugab (Gabungan): **{Ugab:.6f} mL**")
                     st.write(f"Ketidakpastian Diperluas (U95): **{U95_exp:.6f} mL**")
 
