@@ -308,15 +308,15 @@ elif selected == "🧮 Input Data":
                     st.write(f"Ketidakpastian Diperluas (U95): **{U95_exp:.6f} mL**")
                     nilai_maks = koreksi + U95_exp
                     st.subheader("Kesimpulan")
-                    if koreksi < ketelitian_lb, koreksi < ketelitian_lb:
+                    if koreksi < ketelitian_lb; koreksi < ketelitian_lb:
                         st.write("labu Takar Dapat Digunakan")
                         st.write(f"Karena Nilai Koreksi ({koreksi:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
                         st.write(f"Karena Nilai Maksimum(Nilai Koreksi + U95) ({Koreksi:.4f}+{U95_exp:.4f} = {nilai_maks:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
-                    elif koreksi < ketelitian_lb, koreksi > ketelitian_lb:
+                    elif koreksi < ketelitian_lb; koreksi > ketelitian_lb:
                         st.write("labu Takar Tidak Dapat Digunakan")
                         st.write(f"Karena Nilai Koreksi ({koreksi:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
                         st.write(f"Tetapi Nilai Maksimum(Nilai Koreksi + U95) ({Koreksi:.4f}+{U95_exp:.4f} = {nilai_maks:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
-                    elif koreksi > ketelitian_lb, koreksi < ketelitian_lb:
+                    elif koreksi > ketelitian_lb; koreksi < ketelitian_lb:
                         st.write("labu Takar Tidak Dapat Digunakan")
                         st.write(f"Karena Nilai Maksimum(Nilai Koreksi + U95) ({Koreksi:.4f}+{U95_exp:.4f} = {nilai_maks:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
                         st.write(f"Tetapi Nilai Koreksi ({koreksi:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
