@@ -307,6 +307,37 @@ elif selected == "💾 Input Data":
                     st.error(f"Terjadi kesalahan saat perhitungan lanjutan: {e}")
     
 elif selected == "📱 Hasil Perhitungan":
+    st.subheader("Ui")
+    st.write(f"U1 : **{U1:.11f}**")
+    st.write(f"U2 : **{U2:.11f}**")
+    st.write(f"U3 : **{U3:.11f}**")
+    st.write(f"U4 : **{U4:.11f}**")
+    st.write(f"U5 : **{U5:.11f}**")
+    st.write(f"U6 : **{U6:.11f}**")
+
+    st.subheader("Csi")
+    st.write(f"Cs1 : **{Cs1:.11f}**")
+    st.write(f"Cs2 : **{Cs2:.11f}**")
+    st.write(f"Cs3 : **{Cs3:.11f}**")
+    st.write(f"Cs4 : **{Cs4:.11f}**")
+    st.write(f"Cs5 : **{Cs5:.11f}**")
+    st.write(f"Cs6 : **{Cs6:.11f}**")
+
+    st.subheader("Ui x Csi")
+    st.write(f"U1 : **{(U1*Cs1):.11f}**")
+    st.write(f"U2 : **{(U2*Cs2):.11f}**")
+    st.write(f"U3 : **{(U3*Cs3):.11f}**")
+    st.write(f"U4 : **{(U4*Cs4):.11f}**")
+    st.write(f"U5 : **{(U5*Cs5):.11f}**")
+    st.write(f"U6 : **{(U6*Cs6):.11f}**")
+
+    st.subheader("(Ui x Csi)^2")
+    st.write(f"U1 : **{(U1*Cs1)**2:.11f}**")
+    st.write(f"U2 : **{(U2*Cs2)**2:.11f}**")
+    st.write(f"U3 : **{(U3*Cs3)**2:.11f}**")
+    st.write(f"U4 : **{(U4*Cs4)**2:.11f}**")
+    st.write(f"U5 : **{(U5*Cs5)**2:.11f}**")
+    st.write(f"U6 : **{(U6*Cs6)**2:.11f}**")
 
     
 elif selected == "📘 Penutup":
