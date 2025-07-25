@@ -254,7 +254,7 @@ elif selected == "🧮 Input Data":
                     Cs5 = massa * (20 - T) / (dens_air - dens_udara)
         
                 #Ketidakpastian miniskus(U6)
-                    U6 = (0.05 * ketelitian_lb) / math.sqrt(3)
+                    U6 = ((5/100) * ketelitian_lb) / math.sqrt(3)
                     Cs6 = 1
         
                 #Ketidakpastian gabungan(Ugab)
