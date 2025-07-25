@@ -300,8 +300,9 @@ elif selected == "💾 Input Data":
                     st.error(f"Terjadi kesalahan saat perhitungan lanjutan: {e}")
     
 elif selected == "📱 Hasil Perhitungan":
+    st.session_state.rata_pengukuran = rata
+    st.subheader("Rata-rata Data Pengukuran")
     for k, v in rata.items():
-        st.write("Rata-rata:")
         st.write(f"{k}: **{v:.4f}**")
 
     if "ui" in st.session_state and "csi" in st.session_state:
