@@ -269,6 +269,22 @@ elif selected == "🧮 Input Data":
                     st.write(f"Volume Sebenarnya (20°C): **{v_20:.6f} mL**")
                     st.write(f"Koreksi Volume Konvensional: **{koreksi:+.6f} mL**")
                     
+                    st.subheader("Ui")
+                    st.write(f"U1 : **{U1:.10f}**")
+                    st.write(f"U2 : **{U2:.10f}**")
+                    st.write(f"U3 : **{U3:.10f}**")
+                    st.write(f"U4 : **{U4:.10f}**")
+                    st.write(f"U5 : **{U5:.10f}**")
+                    st.write(f"U6 : **{U6:.10f}**")
+
+                    st.subheader("Csi")
+                    st.write(f"Cs1 : **{Cs1:.10f}**")
+                    st.write(f"Cs2 : **{Cs2:.10f}**")
+                    st.write(f"Cs3 : **{Cs3:.10f}**")
+                    st.write(f"Cs4 : **{Cs4:.10f}**")
+                    st.write(f"Cs5 : **{Cs5:.10f}**")
+                    st.write(f"Cs6 : **{Cs6:.10f}**")
+
                     st.subheader("Ui x Csi")
                     st.write(f"U1 : **{(U1*Cs1):.10f}**")
                     st.write(f"U2 : **{(U2*Cs2):.10f}**")
