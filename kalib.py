@@ -268,6 +268,16 @@ elif selected == "🧮 Input Data":
                     st.write(f"Densitas Udara: **{dens_udara:.6f} g/mL**")
                     st.write(f"Volume Sebenarnya (20°C): **{v_20:.6f} mL**")
                     st.write(f"Koreksi Volume Konvensional: **{koreksi:+.6f} mL**")
+                    
+                    st.subheader("Ui x Csi")
+                    st.write(f"U1 : **{(U1*Cs1):.10f}**")
+                    st.write(f"U2 : **{(U2*Cs2):.10f}**")
+                    st.write(f"U3 : **{(U3*Cs3):.10f}**")
+                    st.write(f"U4 : **{(U4*Cs4):.10f}**")
+                    st.write(f"U5 : **{(U5*Cs5):.10f}**")
+                    st.write(f"U6 : **{(U6*Cs6):.10f}**")
+
+                    st.subheader("(Ui x Csi)^2")
                     st.write(f"U1 : **{(U1*Cs1)**2:.10f}**")
                     st.write(f"U2 : **{(U2*Cs2)**2:.10f}**")
                     st.write(f"U3 : **{(U3*Cs3)**2:.10f}**")
