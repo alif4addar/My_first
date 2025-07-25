@@ -310,7 +310,7 @@ elif selected == "🧮 Input Data":
                     st.subheader("Kesimpulan")
                     if koreksi < ketelitian_lb:
                         st.write("labu Takar Dapat Digunakan")
-                        st.write(f"Karena Nilai Koreksi ({koreksi:.5f}) Lebih Kecil Dari Ketelitian Labu Takar ({ketelitian_lb})")
+                        st.write(f"Karena Nilai Koreksi ({koreksi:.5f}) Lebih Kecil Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
                     else:
                         st.write("labu Takar Tidak Dapat Digunakan")
                 
