@@ -117,12 +117,12 @@ elif selected == "💾 Input Data":
 
     # Input volume konvensional
     st.markdown("<h3 style='color:#5F6F65;'>1.Input Volume Labu Takar</h3>", unsafe_allow_html=True)
-    v_konven = st.number_input("Masukkan Volume Konvensional (mL)", min_value=0.0, step=25.0,  format="%.2f")
+    v_konven = st.number_input("Masukkan Volume Konvensional (mL)", min_value=0.0, step=25.0,  format="%.2f", key="v_konven", value=st.session_state.get("v_konven", 0.0)))
     st.session_state.v_konven = v_konven
     
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
     st.markdown("<h3 style='color:#5F6F65;'>2. Input Ketelitian Alat</h3>", unsafe_allow_html=True)
-    ketelitian_lb = st.number_input("Masukkan Ketelitian Labu Takar (mL)", min_value=0.0, step=0.0100, format="%.4f")
+    ketelitian_lb = st.number_input("Masukkan Ketelitian Labu Takar (mL)", min_value=0.0, step=0.0100, format="%.4f", key="ketelitian_lb", value=st.session_state.get("ketelitian_lb", 0.0)))
     st.session_state.ketelitian_lb = ketelitian_lb
     
     # Template input tabel
@@ -144,9 +144,13 @@ elif selected == "💾 Input Data":
     with col3:
         st.button(" - Hapus Baris", on_click=remove_row)
         
-        
-    def_data = [["" for _ in range(len(cols))] for _ in range(st.session_state.rows)]
-    df = st.data_editor(pd.DataFrame(def_data, columns=cols), use_container_width=True, num_rows="dynamic")
+    if "data_input" in st.session_state:
+        df = st.session_state.data_input
+    else:   
+        def_data = [["" for _ in range(len(cols))] for _ in range(st.session_state.rows)]
+        df = pd.DataFrame(def_data, columns=cols)
+    
+    df = st.data_editor(pd.DataFrame(def_data, columns=cols), use_container_width=True, num_rows="dynamic", key="data_input")
     st.session_state.data_input = df
     
     if st.button("Hitung Rata-rata Data Pengukuran"):
