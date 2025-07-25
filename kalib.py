@@ -117,14 +117,14 @@ elif selected == "💾 Input Data":
 
     # Input volume konvensional
     st.markdown("<h3 style='color:#5F6F65;'>1.Input Volume Labu Takar</h3>", unsafe_allow_html=True)
-    v_konven = st.number_input("Masukkan Volume Konvensional (mL)", step=25.0,  format="%.2f", value=st.session_state.get("v_konven"))
+    v_konven = st.number_input("Masukkan Volume Konvensional (mL)", min_value=0.00, step=25.0,  format="%.2f", value=st.session_state.get("v_konven"))
     st.session_state.v_konven = v_konven
-    if "v_konven" in st.session_state:
+    if "v_konven" not in st.session_state:
         st.session_state.v_konven = v_konven
     
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
     st.markdown("<h3 style='color:#5F6F65;'>2. Input Ketelitian Alat</h3>", unsafe_allow_html=True)
-    ketelitian_lb = st.number_input("Masukkan Ketelitian Labu Takar (mL)", min_value=0.01, step=0.0100, format="%.4f", value=st.session_state.get("ketelitian_lb"))
+    ketelitian_lb = st.number_input("Masukkan Ketelitian Labu Takar (mL)", min_value=0.00, step=0.0100, format="%.4f", value=st.session_state.get("ketelitian_lb"))
     st.session_state.ketelitian_lb = ketelitian_lb
     if "ketelitian_lb" not in st.session_state:
         st.session_state.ketelitian_lb = 0.0 
