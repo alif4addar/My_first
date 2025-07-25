@@ -191,13 +191,19 @@ elif selected == "💾 Input Data":
     satuan = ["g", "C", "C", "mmHg", "%"]
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
     st.markdown("<h3 style='color:#5F6F65;'>4. Input Data Alat Ukur</h3>", unsafe_allow_html=True)
-    lop = st.number_input("Masukkan Nilai LOP Timbangan", value=0.0000, step=0.0001, format="%.4f")
+    lop = st.number_input("Masukkan Nilai LOP Timbangan", value=0.0000, step=0.0001, format="%.4f", value=st.session_state.get("lop"))
+    st.session_state.lop = lop
+    if "lop" not in st.session_state:
+        st.session_state.lop = 0.0 
     st.markdown("Masukkan nilai NST, U95, dan K untuk alat ukur:")
         
     col_nst, col_u95, col_k = st.columns(3)
     with col_nst:
             st.markdown("<h3 style='color:#5F6F65; font-size: 24px;'>NST</h3>", unsafe_allow_html=True)
-            nst = [st.number_input(f" {label} ( {satuan[i]} )", value=0.0000, key=f"nst_{i}", step=0.0001, format="%.4f") for i, label in enumerate(CC)]
+            nst = [st.number_input(f" {label} ( {satuan[i]} )", value=0.0000, key=f"nst_{i}", step=0.0001, format="%.4f", value=st.session_state.get("nst")) for i, label in enumerate(CC)]
+            st.session_state.nst = nst
+            if "nst" not in st.session_state:
+                st.session_state.nst = 0.0 
     with col_u95:
             st.markdown("<h3 style='color:#5F6F65; font-size: 24px;'>U95</h3>", unsafe_allow_html=True)
             u95 = [st.number_input(f" {label}", value=0.0000, key=f"u95_{i}", step=0.0010, format="%.4f") for i, label in enumerate(CC)]
