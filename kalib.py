@@ -120,7 +120,7 @@ elif selected == "💾 Input Data":
     v_konven = st.number_input("Masukkan Volume Konvensional (mL)", min_value=0.0, step=25.0,  format="%.2f", value=st.session_state.get("v_konven"))
     st.session_state.v_konven = v_konven
     if "v_konven" not in st.session_state:
-        st.session_state.v_konven = 0.0 
+        st.session_state.v_konven = 0.0
     
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
     st.markdown("<h3 style='color:#5F6F65;'>2. Input Ketelitian Alat</h3>", unsafe_allow_html=True)
@@ -191,10 +191,7 @@ elif selected == "💾 Input Data":
     satuan = ["g", "C", "C", "mmHg", "%"]
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
     st.markdown("<h3 style='color:#5F6F65;'>4. Input Data Alat Ukur</h3>", unsafe_allow_html=True)
-    lop = st.number_input("Masukkan Nilai LOP Timbangan", value=0.0000, step=0.0001, format="%.4f", value=st.session_state.get("lop"))
-    st.session_state.lop = lop
-    if "lop" not in st.session_state:
-        st.session_state.lop = 0.0 
+    lop = st.number_input("Masukkan Nilai LOP Timbangan", value=0.0000, step=0.0001, format="%.4f")
     st.markdown("Masukkan nilai NST, U95, dan K untuk alat ukur:")
         
     col_nst, col_u95, col_k = st.columns(3)
