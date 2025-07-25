@@ -120,8 +120,7 @@ elif selected == "💾 Input Data":
     v_konven = st.number_input("Masukkan Volume Konvensional (mL)", min_value=0.0, step=25.0,  format="%.2f")
     st.session_state.v_konven = v_konven
     if "v_konven" in st.session_state:
-        v_konven = st.number_input("Masukkan Volume Konvensional (mL)", min_value=0.0, step=25.0,  format="%.2f", value=st.session_state.get("v_konven"))
-        
+        st.session_state.v_konven = 25.00
     
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
     st.markdown("<h3 style='color:#5F6F65;'>2. Input Ketelitian Alat</h3>", unsafe_allow_html=True)
