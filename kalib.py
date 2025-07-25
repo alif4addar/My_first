@@ -309,7 +309,7 @@ elif selected == "🧮 Input Data":
                     nilai_maks = koreksi + U95_exp
                     st.subheader("Kesimpulan")
                     if koreksi < ketelitian_lb and koreksi < ketelitian_lb:
-                        st.write("labu Takar Dapat Digunakan")
+                        st.write("✅ labu Takar Dapat Digunakan")
                         st.write(f"Karena Nilai Koreksi ({koreksi:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
                         st.write(f"Karena Nilai Maksimum(Nilai Koreksi + U95) ({Koreksi:.4f}+{U95_exp:.4f} = {nilai_maks:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
                     elif koreksi < ketelitian_lb and koreksi > ketelitian_lb:
