@@ -216,10 +216,10 @@ elif selected == "🧮 Input Data":
                     tekanan = rata["Tekanan Udara (mmHg)"]
                     kelembaban = rata["Kelembaban (%)"]
         
-                    dens_air = 0.999974 - (((T - 3.989)**2) * (T + 338.636)) / (563385.4 * (T + 72.45147))
-                    dens_udara = ((0.464554 * tekanan) - kelembaban*(0.00252*suhu_udara-0.020582)) / ((237.15+suhu_udara)*1000)
+                    dens_air = 0.999974 - ((((T - 3.989)**2) * (T + 338.636)) / (563385.4 * (T + 72.45147)))
+                    dens_udara = (((0.464554 * tekanan) - kelembaban*(0.00252*suhu_udara-0.020582)) / ((237.15+suhu_udara)*1000))
         
-                    koef_muai = 1e-5
+                    koef_muai = 0.00001
                     v_20 = massa * (1 - koef_muai * (T - 20)) / (dens_air - dens_udara)
                     koreksi = abs(v_20 - v_konven)
         
@@ -231,12 +231,12 @@ elif selected == "🧮 Input Data":
         
                 #Ketidakpastian suhu air (U2)
                     U2 = u95[1] / nilai_k[1]
-                    Cs2 = massa * (-koef_muai) / (dens_air - dens_udara)
+                    Cs2 = (massa * (-koef_muai)) / (dens_air - dens_udara)
         
                 #Ketidakpastian densitas air(U3)
                     Ut = U2
-                    Ci = -((5.32e-6 * T**2 + 1.20e-4*T + 2.82e-5) / ((T + 72.45147)**2))
-                    U3 = abs(Ut * Ci)
+                    Ci = -((5.32*(10**-6) * T**2 + 1.20*(10**-4)*T + 2.82*(10**-5)) / ((T + 72.45147)**2))
+                    U3 = math.sqrt((Ut * Ci)**2)
                     Cs3 = -massa * (1 - koef_muai*(T - 20)) / ((dens_air - dens_udara)**2)
         
                 #Ketidakpastian densitas udara(U4)
@@ -264,9 +264,9 @@ elif selected == "🧮 Input Data":
                     U95_exp = Ugab * 2
         
                     st.subheader("Hasil Perhitungan")
-                    st.write(f"Densitas Air: **{dens_air:.7f} g/mL**")
-                    st.write(f"Densitas Udara: **{dens_udara:.7f} g/mL**")
-                    st.write(f"Volume Sebenarnya (20°C): **{v_20:.7f} mL**")
+                    st.write(f"Densitas Air: **{dens_air:.6f} g/mL**")
+                    st.write(f"Densitas Udara: **{dens_udara:.6f} g/mL**")
+                    st.write(f"Volume Sebenarnya (20°C): **{v_20:.6f} mL**")
                     st.write(f"Koreksi Volume Konvensional: **{koreksi:+.6f} mL**")
         
                     st.subheader("Ketidakpastian")
