@@ -256,7 +256,10 @@ elif selected == "💾 Input Data":
                 #Ketidakpastian miniskus(U6)
                     U6 = ((5/100) * ketelitian_lb) / math.sqrt(3)
                     Cs6 = 1
-        
+
+                    st.session_state.ui = [U1, U2, U3, U4, U5, U6]
+                    st.session_state.csi = [Cs1, Cs2, Cs3, Cs4, Cs5, Cs6]
+                    
                 #Ketidakpastian gabungan(Ugab)
                     Ugab2 = ((U1*Cs1)**2 + (U2*Cs2)**2 + (U3*Cs3)**2 + (U4*Cs4)**2 + (U5*Cs5)**2 + (U6*Cs6)**2)
                     Ugab = math.sqrt((U1*Cs1)**2 + (U2*Cs2)**2 + (U3*Cs3)**2 + (U4*Cs4)**2 + (U5*Cs5)**2 + (U6*Cs6)**2)
@@ -299,6 +302,31 @@ elif selected == "📱 Hasil Perhitungan":
     for k, v in rata.items():
         st.write("Rata-rata:")
         st.write(f"{k}: **{v:.4f}**")
+
+    if "ui" in st.session_state and "csi" in st.session_state:
+        ui = st.session_state.ui
+        csi = st.session_state.csi
+    
+        st.subheader("Ui")
+        for i, u in enumerate(ui, 1):
+            st.write(f"U{i} : **{u:.11f}**")
+    
+        st.subheader("Csi")
+        for i, c in enumerate(csi, 1):
+            st.write(f"Cs{i} : **{c:.11f}**")
+    
+        st.subheader("Ui x Csi")
+        for i in range(6):
+            result = ui[i] * csi[i]
+            st.write(f"U{i+1} x Cs{i+1} : **{result:.11f}**")
+    
+        st.subheader("(Ui x Csi)^2")
+        for i in range(6):
+            result2 = (ui[i] * csi[i])**2
+            st.write(f"(U{i+1} x Cs{i+1})² : **{result2:.11f}**")
+    else:
+        st.warning("⚠️ Silakan lakukan perhitungan terlebih dahulu pada halaman 'Input Data'.")
+
 
     st.subheader("Ui")
     st.write(f"U1 : **{U1:.11f}**")
