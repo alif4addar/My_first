@@ -303,7 +303,7 @@ elif selected == "🧮 Input Data":
                     st.write(f"U6 : **{(U6*Cs6)**2:.11f}**")
                     
                     st.subheader("Ketidakpastian")
-                     st.write(f"Ugab2 (Gabungan2): **{Ugab2:.6f} mL**")
+                    st.write(f"Ugab2 (Gabungan2): **{Ugab2:.6f} mL**")
                     st.write(f"Ugab (Gabungan): **{Ugab:.6f} mL**")
                     st.write(f"Ketidakpastian Diperluas (U95): **{U95_exp:.6f} mL**")
 
