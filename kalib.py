@@ -308,20 +308,6 @@ elif selected == "💾 Input Data":
     
 elif selected == "📱 Hasil Perhitungan":
 
-    if "data_input" in st.session_state:
-        df = st.session_state.data_input
-        v_konven = st.session_state.v_konven
-        ketelitian_lb = st.session_state.ketelitian_lb
-        
-        # Lakukan perhitungan menggunakan df, v_konven, dan ketelitian_lb
-        st.subheader("Data Input")
-        st.write(df)
-        st.write(f"Volume Konvensional: {v_konven} mL")
-        st.write(f"Ketelitian Labu Takar: {ketelitian_lb} mL")
-        
-        # Lanjutkan dengan perhitungan yang diperlukan
-    else:
-        st.warning("⚠️ Silakan lakukan perhitungan terlebih dahulu pada halaman 'Input Data'.")
     
 elif selected == "📘 Penutup":
     st.markdown('<div class="header-section"><h1>Terimakasih</h1></div>', unsafe_allow_html=True)
