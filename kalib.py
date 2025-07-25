@@ -151,7 +151,6 @@ elif selected == "💾 Input Data":
    
     def_data = [["" for _ in range(len(cols))] for _ in range(st.session_state.rows)] 
     df = st.data_editor(pd.DataFrame(def_data, columns=cols), use_container_width=True, num_rows="dynamic", key="data_input")
-    st.session_state.data_input = df
     
     if st.button("Hitung Rata-rata Data Pengukuran"):
         try:
