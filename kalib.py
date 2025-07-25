@@ -311,14 +311,14 @@ elif selected == "🧮 Input Data":
                     if koreksi < ketelitian_lb and koreksi < ketelitian_lb:
                         st.write("✅ labu Takar Dapat Digunakan")
                         st.write(f"Karena Nilai Koreksi ({koreksi:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
-                        st.write(f"Karena Nilai Maksimum(Nilai Koreksi + U95) ({Koreksi:.4f}+{U95_exp:.4f} = {nilai_maks:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
+                        st.write(f"Karena Nilai Maksimum(Nilai Koreksi + U95) ({koreksi:.4f}+{U95_exp:.4f} = {nilai_maks:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
                     elif koreksi < ketelitian_lb and koreksi > ketelitian_lb:
                         st.write("labu Takar Tidak Dapat Digunakan")
                         st.write(f"Karena Nilai Koreksi ({koreksi:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
-                        st.write(f"Tetapi Nilai Maksimum(Nilai Koreksi + U95) ({Koreksi:.4f}+{U95_exp:.4f} = {nilai_maks:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
+                        st.write(f"Tetapi Nilai Maksimum(Nilai Koreksi + U95) ({koreksi:.4f}+{U95_exp:.4f} = {nilai_maks:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
                     elif koreksi > ketelitian_lb and koreksi < ketelitian_lb:
                         st.write("labu Takar Tidak Dapat Digunakan")
-                        st.write(f"Karena Nilai Maksimum(Nilai Koreksi + U95) ({Koreksi:.4f}+{U95_exp:.4f} = {nilai_maks:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
+                        st.write(f"Karena Nilai Maksimum(Nilai Koreksi + U95) ({koreksi:.4f}+{U95_exp:.4f} = {nilai_maks:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
                         st.write(f"Tetapi Nilai Koreksi ({koreksi:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
                     else:
                         st.write("labu Takar Tidak Dapat Digunakan")
