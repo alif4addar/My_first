@@ -200,7 +200,7 @@ elif selected == "💾 Input Data":
     col_nst, col_u95, col_k = st.columns(3)
     with col_nst:
             st.markdown("<h3 style='color:#5F6F65; font-size: 24px;'>NST</h3>", unsafe_allow_html=True)
-            nst = [st.number_input(f" {label} ( {satuan[i]} )", value=0.0000, key=f"nst_{i}", step=0.0001, format="%.4f", value=st.session_state.get("nst")) for i, label in enumerate(CC)]
+            nst = [st.number_input(f" {label} ( {satuan[i]} )", key=f"nst_{i}", step=0.0001, format="%.4f", value=st.session_state.get(f"nst_{i}, 0.0000")) for i, label in enumerate(CC)]
             st.session_state.nst = nst
             if "nst" not in st.session_state:
                 st.session_state.nst = 0.0 
