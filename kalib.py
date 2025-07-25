@@ -117,10 +117,10 @@ elif selected == "💾 Input Data":
 
     # Input volume konvensional
     st.markdown("<h3 style='color:#5F6F65;'>1.Input Volume Labu Takar</h3>", unsafe_allow_html=True)
-    v_konven = st.number_input("Masukkan Volume Konvensional (mL)", min_value=0.0, step=25.0,  format="%.2f", value=st.session_state.get("v_konven"))
+    v_konven = st.number_input("Masukkan Volume Konvensional (mL)", min_value=0.0, step=25.0,  format="%.2f")
     st.session_state.v_konven = v_konven
-    if "v_konven" not in st.session_state:
-        st.session_state.v_konven = 0.0
+    if "v_konven" in st.session_state:
+        value=st.session_state.get("v_konven")
     
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
     st.markdown("<h3 style='color:#5F6F65;'>2. Input Ketelitian Alat</h3>", unsafe_allow_html=True)
