@@ -51,7 +51,7 @@ with st.sidebar:
         options=[
                 "🏠 Home", "📋 Cara Penggunaan Web Aplikasi", 
                 "📑 Syarat Yang Harus Dipenuhi",
-                "🧮 Input Data", "📘 Penutup"],
+                "💾 Input Data", "📱 Hasil Perhitungan", "📘 Penutup"],
         menu_icon="cast"    
     )
     st.session_state.menu_selected = menu
@@ -107,7 +107,7 @@ elif selected == "📑 Syarat Yang Harus Dipenuhi":
     else:
         st.warning("⚠️ Harap centang semua syarat terlebih dahulu.")
 
-elif selected == "🧮 Input Data":
+elif selected == "💾 Input Data":
     
     st.markdown('<div class="header-section"><h2>Input Data</h2></div>', unsafe_allow_html=True)
         
@@ -268,39 +268,7 @@ elif selected == "🧮 Input Data":
                     st.write(f"Densitas Air: **{dens_air:.6f} g/mL**")
                     st.write(f"Densitas Udara: **{dens_udara:.6f} g/mL**")
                     st.write(f"Volume Sebenarnya (20°C): **{v_20:.6f} mL**")
-                    st.write(f"Koreksi Volume Konvensional: **{koreksi:+.6f} mL**")
-                    
-                    st.subheader("Ui")
-                    st.write(f"U1 : **{U1:.11f}**")
-                    st.write(f"U2 : **{U2:.11f}**")
-                    st.write(f"U3 : **{U3:.11f}**")
-                    st.write(f"U4 : **{U4:.11f}**")
-                    st.write(f"U5 : **{U5:.11f}**")
-                    st.write(f"U6 : **{U6:.11f}**")
-
-                    st.subheader("Csi")
-                    st.write(f"Cs1 : **{Cs1:.11f}**")
-                    st.write(f"Cs2 : **{Cs2:.11f}**")
-                    st.write(f"Cs3 : **{Cs3:.11f}**")
-                    st.write(f"Cs4 : **{Cs4:.11f}**")
-                    st.write(f"Cs5 : **{Cs5:.11f}**")
-                    st.write(f"Cs6 : **{Cs6:.11f}**")
-
-                    st.subheader("Ui x Csi")
-                    st.write(f"U1 : **{(U1*Cs1):.11f}**")
-                    st.write(f"U2 : **{(U2*Cs2):.11f}**")
-                    st.write(f"U3 : **{(U3*Cs3):.11f}**")
-                    st.write(f"U4 : **{(U4*Cs4):.11f}**")
-                    st.write(f"U5 : **{(U5*Cs5):.11f}**")
-                    st.write(f"U6 : **{(U6*Cs6):.11f}**")
-
-                    st.subheader("(Ui x Csi)^2")
-                    st.write(f"U1 : **{(U1*Cs1)**2:.11f}**")
-                    st.write(f"U2 : **{(U2*Cs2)**2:.11f}**")
-                    st.write(f"U3 : **{(U3*Cs3)**2:.11f}**")
-                    st.write(f"U4 : **{(U4*Cs4)**2:.11f}**")
-                    st.write(f"U5 : **{(U5*Cs5)**2:.11f}**")
-                    st.write(f"U6 : **{(U6*Cs6)**2:.11f}**")
+                    st.write(f"Koreksi Volume Konvensional: **{koreksi:+.6f} mL**") 
                     
                     st.subheader("Ketidakpastian")
                     st.write(f"Ugab2 (Gabungan2): **{Ugab2:.6f} mL**")
@@ -327,7 +295,46 @@ elif selected == "🧮 Input Data":
                 except Exception as e:
                     st.error(f"Terjadi kesalahan saat perhitungan lanjutan: {e}")
     
+elif selected == "📱 Hasil Perhitungan":
+    for k, v in rata.items():
+        st.write("Rata-rata:")
+        st.write(f"{k}: **{v:.4f}**")
 
+    st.subheader("Ui")
+    st.write(f"U1 : **{U1:.11f}**")
+    st.write(f"U2 : **{U2:.11f}**")
+    st.write(f"U3 : **{U3:.11f}**")
+    st.write(f"U4 : **{U4:.11f}**")
+    st.write(f"U5 : **{U5:.11f}**")
+    st.write(f"U6 : **{U6:.11f}**")
+
+    st.subheader("Csi")
+    st.write(f"Cs1 : **{Cs1:.11f}**")
+    st.write(f"Cs2 : **{Cs2:.11f}**")
+    st.write(f"Cs3 : **{Cs3:.11f}**")
+    st.write(f"Cs4 : **{Cs4:.11f}**")
+    st.write(f"Cs5 : **{Cs5:.11f}**")    
+    st.write(f"Cs6 : **{Cs6:.11f}**")
+
+    st.subheader("Ui x Csi")
+    st.write(f"U1 : **{(U1*Cs1):.11f}**")
+    st.write(f"U2 : **{(U2*Cs2):.11f}**")
+    st.write(f"U3 : **{(U3*Cs3):.11f}**")
+    st.write(f"U4 : **{(U4*Cs4):.11f}**")
+    st.write(f"U5 : **{(U5*Cs5):.11f}**")
+    st.write(f"U6 : **{(U6*Cs6):.11f}**")
+
+    st.subheader("(Ui x Csi)^2")
+    st.write(f"U1^2 : **{(U1*Cs1)**2:.11f}**")
+    st.write(f"U2^2 : **{(U2*Cs2)**2:.11f}**")
+    st.write(f"U3^2 : **{(U3*Cs3)**2:.11f}**")
+    st.write(f"U4^2 : **{(U4*Cs4)**2:.11f}**")
+    st.write(f"U5^2 : **{(U5*Cs5)**2:.11f}**")
+    st.write(f"U6^2 : **{(U6*Cs6)**2:.11f}**")
+
+
+
+    
 elif selected == "📘 Penutup":
     st.markdown('<div class="header-section"><h1>Terimakasih</h1></div>', unsafe_allow_html=True)
            
