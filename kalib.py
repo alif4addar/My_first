@@ -118,9 +118,12 @@ elif selected == "💾 Input Data":
     # Input volume konvensional
     st.markdown("<h3 style='color:#5F6F65;'>1.Input Volume Labu Takar</h3>", unsafe_allow_html=True)
     v_konven = st.number_input("Masukkan Volume Konvensional (mL)", min_value=0.0, step=25.0,  format="%.2f")
+    st.session_state.v_konven = v_konven
+    
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
     st.markdown("<h3 style='color:#5F6F65;'>2. Input Ketelitian Alat</h3>", unsafe_allow_html=True)
     ketelitian_lb = st.number_input("Masukkan Ketelitian Labu Takar (mL)", min_value=0.0, step=0.0100, format="%.4f")
+    st.session_state.ketelitian_lb = ketelitian_lb
     
     # Template input tabel
     st.markdown('<div class="app-card">', unsafe_allow_html=True)
@@ -144,7 +147,8 @@ elif selected == "💾 Input Data":
         
     def_data = [["" for _ in range(len(cols))] for _ in range(st.session_state.rows)]
     df = st.data_editor(pd.DataFrame(def_data, columns=cols), use_container_width=True, num_rows="dynamic")
-        
+    st.session_state.data_input = df
+    
     if st.button("Hitung Rata-rata Data Pengukuran"):
         try:
             if df.isnull().values.any() or (df == "").values.any():
@@ -300,34 +304,21 @@ elif selected == "💾 Input Data":
                     st.error(f"Terjadi kesalahan saat perhitungan lanjutan: {e}")
     
 elif selected == "📱 Hasil Perhitungan":
-    if "ui" in st.session_state and "csi" in st.session_state:
-        ui = st.session_state.ui
-        csi = st.session_state.csi
-    
-        st.subheader("Ui")
-        for i, u in enumerate(ui, 1):
-            st.write(f"U{i} : **{u:.11f}**")
-    
-        st.subheader("Csi")
-        for i, c in enumerate(csi, 1):
-            st.write(f"Cs{i} : **{c:.11f}**")
-    
-        st.subheader("Ui x Csi")
-        for i in range(6):
-            result = ui[i] * csi[i]
-            st.write(f"U{i+1} x Cs{i+1} : **{result:.11f}**")
-    
-        st.subheader("(Ui x Csi)^2")
-        for i in range(6):
-            result2 = (ui[i] * csi[i])**2
-            st.write(f"(U{i+1} x Cs{i+1})² : **{result2:.11f}**")
+
+    if "data_input" in st.session_state:
+        df = st.session_state.data_input
+        v_konven = st.session_state.v_konven
+        ketelitian_lb = st.session_state.ketelitian_lb
+        
+        # Lakukan perhitungan menggunakan df, v_konven, dan ketelitian_lb
+        st.subheader("Data Input")
+        st.write(df)
+        st.write(f"Volume Konvensional: {v_konven} mL")
+        st.write(f"Ketelitian Labu Takar: {ketelitian_lb} mL")
+        
+        # Lanjutkan dengan perhitungan yang diperlukan
     else:
         st.warning("⚠️ Silakan lakukan perhitungan terlebih dahulu pada halaman 'Input Data'.")
-
-
-   
-
-
     
 elif selected == "📘 Penutup":
     st.markdown('<div class="header-section"><h1>Terimakasih</h1></div>', unsafe_allow_html=True)
