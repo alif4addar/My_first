@@ -28,12 +28,11 @@
     .header-section {
         padding: 20px 0;
         text-align: center !important;
-        background: linear-gradient( to left, #FFD65A; #FFF7D1);
+        background: linear-gradient( to left, #FFD65A; #FFF7D1, 0.70);
         border-bottom: 1px solid #eee;
         margin-bottom: 30px;
         border-radius: 8px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        text-align: center;
     }
     .header-section h1 {
         font-weight: 650;
