@@ -25,7 +25,7 @@
     .header-section {
         padding: 20px 0;
         text-align: center !important;
-        background: linear-gradient( to left, #FFD65A; #FFF7D1);
+        background: linear-gradient( to left, green, green);
         border-bottom: 1px solid #eee;
         margin-bottom: 30px;
         border-radius: 8px;
