@@ -1,8 +1,5 @@
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-    html, body, [class*="st-"] {
-        color: #888; /* Warna teks umum */
-    }
 
     /* Hilangkan efek tema otomatis dari browser */
    
@@ -28,7 +25,7 @@
     .header-section {
         padding: 20px 0;
         text-align: center !important;
-        background: linear-gradient( to left, #FFD65A; #FFF7D1, 0.70);
+        background: linear-gradient( to left, #FFD65A; #FFF7D1);
         border-bottom: 1px solid #eee;
         margin-bottom: 30px;
         border-radius: 8px;
@@ -75,7 +72,7 @@
 
     /* Hero Section */
     .hero-section {
-        background: linear-gradient(to left, #06D001, #2fec00, #9BEC00);
+        background: linear-gradient(to left, #06D001, #2fec00, #9BEC00, 0.70);
         color: white;
         padding: 60px 30px;
         text-align: center;
@@ -291,7 +288,7 @@
 
     
     [data-testid="stSidebar"] {
-        background: linear-gradient(to right, #06D001, #2fec00, #9BEC00);
+        background: linear-gradient(to right, #06D001, #2fec00, #9BEC00, 0.70);
         color: #030f00;
         padding: 15px;
         border-radius: 15px;
