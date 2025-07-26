@@ -9,17 +9,22 @@
         color-scheme: only light !important;  /* Atau 'dark' tergantung kamu mau yang mana */
     }
 
-    body {
-        background: linear-gradient(-45deg, #FFFADC, #B6F500, #A4DD00, #98CD00);
-        background-size: 400% 400%;
-        animation: gradientBG 15s ease infinite;
+     body {
+        background: url('https://raw.githubusercontent.com/alif4addar/My_projeck/blob/main/bg%20baru%20no%20wn_PhotoGrid.png') no-repeat center center fixed;
+        background-size: cover;
+        font-family: 'Inter', sans-serif;
     }
 
-    .stApp {
-        background-color: #f8f8f8; /* Latar belakang aplikasi */
-        padding: 20px; /* Padding keseluruhan */
-        animation: fadeIn 3s ease-in-out;
+
+   .stApp {
+        background-color: rgba(255,255,255,0.90);
+        padding: 2rem 2rem 5rem 2rem;
+        border-radius: 24px;
+        max-width: 900 px;
+        margin: auto;
+        box-shadow: 0 4px 40px rgba(0,0,0,0.15);
     }
+
 
     /* Header */
     .header-section {
