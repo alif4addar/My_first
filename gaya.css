@@ -15,7 +15,7 @@
 
 
    .stApp {
-        background-color: rgba(255,255,255,0.90);
+        background-color: rgba(255,255,255,0.90) !important;
         padding: 2rem 2rem 5rem 2rem;
         border-radius: 24px;
         max-width: 900 px;
@@ -275,8 +275,7 @@
     }
 
     /* Paksa latar belakang utama aplikasi jadi putih */
-    html, body, [class*="stApp"] {
-        background-color: white !important;
+    html, body {
         color: black !important;
     }
 
