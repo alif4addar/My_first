@@ -25,7 +25,6 @@
     .header-section {
         padding: 20px 0;
         text-align: center !important;
-        background: linear-gradient( to left, #FFD65A; #FFF7D1);
         border-bottom: 1px solid #eee;
         margin-bottom: 30px;
         border-radius: 8px;
@@ -36,7 +35,7 @@
         margin: 0;
         text-align: center;
         font-size: 3.5rem;
-        background: linear-gradient(30deg, #A4DD00, #98CD00);
+        background: linear-gradient(30deg, #98CD00);
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
