@@ -5,15 +5,13 @@
     }
 
     /* Hilangkan efek tema otomatis dari browser */
+   
     body {
-        color-scheme: only light !important;  /* Atau 'dark' tergantung kamu mau yang mana */
-    }
-
-     body {
         background: url('https://raw.githubusercontent.com/alif4addar/My_first/main/background_baru.png') no-repeat center center fixed;
         background-size: cover;
         font-family: 'Inter', sans-serif;
     }
+
 
 
    .stApp {
