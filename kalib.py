@@ -358,7 +358,7 @@ elif selected == "💾 Input Data":
                     except Exception as e:
                         st.error(f"Terjadi kesalahan saat perhitungan lanjutan: {e}")
     else:
-        st.markdown("Harap Penuhi Semua Syarat")
+        st.warning("⚠️ Harap Penuhi Semua Syarat Terlebih Dahulu.")
 elif selected == "perhitungan":
     col_ui, col_csi, col_ui_csi = st.columns([2, 2, 2])
     with col_ui:
