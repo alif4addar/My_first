@@ -263,12 +263,6 @@ elif selected == "💾 Input Data":
                 #Ketidakpastian Diperluas
                     U95_exp = Ugab * 2
 
-
-                    st.markdown("""
-                        <div class="hero-section">
-                           <h3>Hasil Perhitungan</h3>
-                        </div>
-                    """, unsafe_allow_html=True)
                     st.subheader("Hasil Perhitungan")
                     st.write(f"Densitas Air: **{dens_air:.6f} g/mL**")
                     st.write(f"Densitas Udara: **{dens_udara:.6f} g/mL**")
