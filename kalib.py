@@ -21,6 +21,12 @@ if 'ui' not in st.session_state:
     st.session_state.ui = [0]*6
 if 'csi' not in st.session_state:
     st.session_state.csi = [0]*6
+
+if 'nst' not in st.session_state:
+    st.session_state.nst = [0]*5
+if 'u95' not in st.session_state:
+    st.session_state.u95 = [0]*5
+
 if "rows" not in st.session_state:
     st.session_state.rows = 1
 def add_row():
@@ -30,6 +36,11 @@ def remove_row():
         st.session_state.rows -= 1
 def mulai():
     st.session_state.show_sidebar = True
+    st.session_state.u95 = [0]*5
+    st.session_state.nst = [0]*5
+    st.session_state.ui = [0]*6
+    st.session_state.csi = [0]*6
+    st.session_state.syarat = False
 
 # --- SESSION STATE ---
 if "show_sidebar" not in st.session_state:
@@ -195,10 +206,12 @@ elif selected == "💾 Input Data":
         col_nst, col_u95, col_k = st.columns(3)
         with col_nst:
                 st.markdown("<h3 style='color:#5F6F65; font-size: 24px;'>NST</h3>", unsafe_allow_html=True)
-                nst = [st.number_input(f" {label} ( {satuan[i]} )", value=0.0000, key=f"nst_{i}", step=0.0001, format="%.4f") for i, label in enumerate(CC)]
+                nst = [st.number_input(f" {label} ( {satuan[i]} )", value = st.session_state.nst[i], key=f"nst_{i}", step=0.0001, format="%.4f") for i, label in enumerate(CC)]
+                st.session_state.nst = nst
         with col_u95:
                 st.markdown("<h3 style='color:#5F6F65; font-size: 24px;'>U95</h3>", unsafe_allow_html=True)
                 u95 = [st.number_input(f" {label}", value=0.0000, key=f"u95_{i}", step=0.0010, format="%.4f") for i, label in enumerate(CC)]
+                st.session_state.u95 = u95
         with col_k:
                 st.markdown("<h3 style='color:#5F6F65; font-size: 24px;'>K</h3>", unsafe_allow_html=True)
                 nilai_k = [st.number_input(f" {label}", value=2.0, key=f"kval_{i}", step=0.1000, format="%.4f") for i, label in enumerate(CC)]
