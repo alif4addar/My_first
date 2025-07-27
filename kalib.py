@@ -21,11 +21,14 @@ if 'ui' not in st.session_state:
     st.session_state.ui = [0]*6
 if 'csi' not in st.session_state:
     st.session_state.csi = [0]*6
-
+if 'v_konven' not in st.session_state:
+    st.session_state.v_konven = 0.00
+if 'ketelitian_lb' not in st.session_state:
+    st.session_state.ketelitian_lb = 0.0000
 if 'nst' not in st.session_state:
-    st.session_state.nst = [0]*5
+    st.session_state.nst = [0.0]*5
 if 'u95' not in st.session_state:
-    st.session_state.u95 = [0]*5
+    st.session_state.u95 = [0.0]*5
 
 if "rows" not in st.session_state:
     st.session_state.rows = 1
@@ -36,11 +39,12 @@ def remove_row():
         st.session_state.rows -= 1
 def mulai():
     st.session_state.show_sidebar = True
-    st.session_state.u95 = [0]*5
-    st.session_state.nst = [0]*5
+    st.session_state.u95 = [0.0]*5
+    st.session_state.nst = [0.0]*5
     st.session_state.ui = [0]*6
     st.session_state.csi = [0]*6
     st.session_state.syarat = False
+    st.session_state.v_konven = 0.00
 
 # --- SESSION STATE ---
 if "show_sidebar" not in st.session_state:
@@ -132,11 +136,11 @@ elif selected == "💾 Input Data":
     
         # Input volume konvensional
         st.markdown("<h3 style='color:#5F6F65;'>1.Input Volume Labu Takar</h3>", unsafe_allow_html=True)
-        v_konven = st.number_input("Masukkan Volume Konvensional (mL)", min_value=0.00, step=25.0,  format="%.2f")
+        st.session_state.v_konven = st.number_input("Masukkan Volume Konvensional (mL)", min_value=0.00, value=st.session_state.v_konven, step=25.0,  format="%.2f")
         
         st.markdown('<div class="app-card">', unsafe_allow_html=True)
         st.markdown("<h3 style='color:#5F6F65;'>2. Input Ketelitian Alat</h3>", unsafe_allow_html=True)
-        ketelitian_lb = st.number_input("Masukkan Ketelitian Labu Takar (mL)", min_value=0.00, step=0.0100, format="%.4f")
+        st.session_state.ketelitian_lb = st.number_input("Masukkan Ketelitian Labu Takar (mL)", min_value=0.00, value=st.session_state.ketelitian_lb, step=0.0100, format="%.4f")
         
         # Template input tabel
         st.markdown('<div class="app-card">', unsafe_allow_html=True)
@@ -206,12 +210,10 @@ elif selected == "💾 Input Data":
         col_nst, col_u95, col_k = st.columns(3)
         with col_nst:
                 st.markdown("<h3 style='color:#5F6F65; font-size: 24px;'>NST</h3>", unsafe_allow_html=True)
-                nst = [st.number_input(f" {label} ( {satuan[i]} )", value = st.session_state.nst[i], key=f"nst_{i}", step=0.0001, format="%.4f") for i, label in enumerate(CC)]
-                st.session_state.nst = nst
+                st.session_state.nst = [st.number_input(f" {label} ( {satuan[i]} )", value=st.session_state.nst[i], key=f"nst_{i}", step=0.0001, format="%.4f") for i, label in enumerate(CC)]
         with col_u95:
                 st.markdown("<h3 style='color:#5F6F65; font-size: 24px;'>U95</h3>", unsafe_allow_html=True)
-                u95 = [st.number_input(f" {label}", value=0.0000, key=f"u95_{i}", step=0.0010, format="%.4f") for i, label in enumerate(CC)]
-                st.session_state.u95 = u95
+                st.session_state.u95 = [st.number_input(f" {label}", value=0.0000, key=f"u95_{i}", step=0.0010, format="%.4f") for i, label in enumerate(CC)]
         with col_k:
                 st.markdown("<h3 style='color:#5F6F65; font-size: 24px;'>K</h3>", unsafe_allow_html=True)
                 nilai_k = [st.number_input(f" {label}", value=2.0, key=f"kval_{i}", step=0.1000, format="%.4f") for i, label in enumerate(CC)]
@@ -239,7 +241,7 @@ elif selected == "💾 Input Data":
             
                         koef_muai = 0.00001
                         v_20 = massa * (1 - koef_muai * (T - 20)) / (dens_air - dens_udara)
-                        koreksi = abs(v_20 - v_konven)
+                        koreksi = abs(v_20 - st.session_state.v_konven)
             
                     # Ketidakpastian massa air (U1)
                         k_neraca = (lop/(2*math.sqrt(3)))
@@ -248,7 +250,7 @@ elif selected == "💾 Input Data":
                         Cs1 = (1 - koef_muai * (T - 20)) / (dens_air - dens_udara)
             
                     #Ketidakpastian suhu air (U2)
-                        U2 = u95[1] / nilai_k[1]
+                        U2 = st.session_state.u95[1] / nilai_k[1]
                         Cs2 = (massa * (-koef_muai)) / (dens_air - dens_udara)
             
                     #Ketidakpastian densitas air(U3)
@@ -258,9 +260,9 @@ elif selected == "💾 Input Data":
                         Cs3 = -massa * (1 - koef_muai*(T - 20)) / ((dens_air - dens_udara)**2)
             
                     #Ketidakpastian densitas udara(U4)
-                        Uh = u95[4]/nilai_k[4]
-                        Up = u95[3]/nilai_k[3]
-                        Ut = u95[2]/nilai_k[2]
+                        Uh = st.session_state.u95[4]/nilai_k[4]
+                        Up = st.session_state.u95[3]/nilai_k[3]
+                        Ut = st.session_state.u95[2]/nilai_k[2]
                         Ch = (0.020582 - 0.00252*suhu_udara) / ((237.15 + suhu_udara) * 1000)
                         Cp = (0.464554) / ((237.15 + suhu_udara) * 1000)
                         Ct = (-0.6182*kelembaban - 0.46554*tekanan) / (((237.15 + suhu_udara)**2) * 1000)
@@ -272,7 +274,7 @@ elif selected == "💾 Input Data":
                         Cs5 = massa * (20 - T) / (dens_air - dens_udara)
             
                     #Ketidakpastian miniskus(U6)
-                        U6 = ((5/100) * ketelitian_lb) / math.sqrt(3)
+                        U6 = ((5/100) * st.session_state.ketelitian_lb) / math.sqrt(3)
                         Cs6 = 1
     
                         st.session_state.ui = [U1, U2, U3, U4, U5, U6]
@@ -330,22 +332,22 @@ elif selected == "💾 Input Data":
     
                         nilai_maks = koreksi + U95_exp
                         st.subheader("Kesimpulan")
-                        if koreksi < ketelitian_lb and nilai_maks < ketelitian_lb:
+                        if koreksi < st.session_state.ketelitian_lb and nilai_maks < st.session_state.ketelitian_lb:
                             st.write("✅ labu Takar Dapat Digunakan")
-                            st.write(f"Karena Nilai Koreksi ({koreksi:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
-                            st.write(f"Karena Nilai Maksimum(Nilai Koreksi + U95) ({koreksi:.4f}+{U95_exp:.4f} = {nilai_maks:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
-                        elif koreksi < ketelitian_lb and nilai_maks > ketelitian_lb:
+                            st.write(f"Karena Nilai Koreksi ({koreksi:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
+                            st.write(f"Karena Nilai Maksimum(Nilai Koreksi + U95) ({koreksi:.4f}+{U95_exp:.4f} = {nilai_maks:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
+                        elif koreksi < st.session_state.ketelitian_lb and nilai_maks > st.session_state.ketelitian_lb:
                             st.write("labu Takar Tidak Dapat Digunakan")
-                            st.write(f"Karena Nilai Koreksi ({koreksi:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
-                            st.write(f"Tetapi Nilai Maksimum(Nilai Koreksi + U95) ({koreksi:.4f}+{U95_exp:.4f} = {nilai_maks:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
-                        elif koreksi > ketelitian_lb and nilai_maks < ketelitian_lb:
+                            st.write(f"Karena Nilai Koreksi ({koreksi:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lbketelitian_lb:.4f})")
+                            st.write(f"Tetapi Nilai Maksimum(Nilai Koreksi + U95) ({koreksi:.4f}+{U95_exp:.4f} = {nilai_maks:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
+                        elif koreksi > st.session_state.ketelitian_lb and nilai_maks < st.session_state.ketelitian_lb:
                             st.write("labu Takar Tidak Dapat Digunakan")
-                            st.write(f"Karena Nilai Maksimum(Nilai Koreksi + U95) ({koreksi:.4f}+{U95_exp:.4f} = {nilai_maks:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
-                            st.write(f"Tetapi Nilai Koreksi ({koreksi:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
+                            st.write(f"Karena Nilai Maksimum(Nilai Koreksi + U95) ({koreksi:.4f}+{U95_exp:.4f} = {nilai_maks:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
+                            st.write(f"Tetapi Nilai Koreksi ({koreksi:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
                         else:
                             st.write("labu Takar Tidak Dapat Digunakan")
-                            st.write(f"Karena Nilai Koreksi ({koreksi:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
-                            st.write(f"Dan Karena Nilai Maksimum(Nilai Koreksi + U95) ({koreksi:.4f}+{U95_exp:.4f} = {nilai_maks:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({ketelitian_lb:.4f})")
+                            st.write(f"Karena Nilai Koreksi ({koreksi:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
+                            st.write(f"Dan Karena Nilai Maksimum(Nilai Koreksi + U95) ({koreksi:.4f}+{U95_exp:.4f} = {nilai_maks:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
                     except Exception as e:
                         st.error(f"Terjadi kesalahan saat perhitungan lanjutan: {e}")
     else:
