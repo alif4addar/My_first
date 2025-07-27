@@ -13,6 +13,7 @@ st.set_page_config(
     page_title="Aplikasi Kalibrasi Volume",
     page_icon="📖",
     layout="centered",
+    initial_sidebar_state="expanded",
 )
 
 if 'syarat' not in st.session_state:
