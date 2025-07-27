@@ -224,8 +224,7 @@ elif selected == "💾 Input Data":
                 st.markdown("<h3 style='color:#0a0000; font-size: 24px;'>K</h3>", unsafe_allow_html=True)
                 nilai_k = [st.number_input(f" {label}", value=2.0, key=f"kval_{i}", step=0.1000, format="%.4f") for i, label in enumerate(CC)]
                 
-        st.markdown('<div class="app-card">', unsafe_allow_html=True)
-        st.markdown("<h3 style='color:#5F6F65;'>Perhitungan Ketidakpastian</h3>", unsafe_allow_html=True)   
+        st.markdown('<div class="app-card">', unsafe_allow_html=True)  
            
             # Tombol ngitung ketidakpastian
         if "rata_pengukuran" in st.session_state:
