@@ -110,7 +110,7 @@ elif selected == "📑 Syarat Yang Harus Dipenuhi":
         st.warning("⚠️ Harap centang semua syarat terlebih dahulu.")
 
 elif selected == "💾 Input Data":
-    if st.session_state.syarat == True:
+    if st.session_state.syarat:
         st.markdown('<div class="header-section"><h2>Input Data</h2></div>', unsafe_allow_html=True)
     
         # Input volume konvensional
