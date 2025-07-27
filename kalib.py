@@ -355,7 +355,7 @@ elif selected == "💾 Input Data":
     else:
         st.markdown("Harap Penuhi Semua Syarat")
 elif selected == "perhitungan":
-    col_ui, col_csi, col_ui*csi = st.columns
+    col_ui, col_csi = st.columns(3)
     with col_ui:
         st.subheader("Ui")
         st.write(f"U1 : **{st.session_state.ui[0]:.11f}**")
