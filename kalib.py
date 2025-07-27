@@ -15,6 +15,12 @@ st.set_page_config(
     layout="centered",
 )
 
+if 'syarat' not in st.session_state:
+    st.session_state.syarat = False
+if 'ui' not in st.session_state:
+    st.session_state.ui = [0]*6
+if 'csi' not in st.session_state:
+    st.session_state.csi = [0]*6
 if "rows" not in st.session_state:
     st.session_state.rows = 1
 def add_row():
@@ -51,7 +57,7 @@ with st.sidebar:
         options=[
                 "🏠 Home", "📋 Cara Penggunaan Web Aplikasi", 
                 "📑 Syarat Yang Harus Dipenuhi",
-                "💾 Input Data", "📘 Penutup"],
+                "💾 Input Data", "perhitungan", "📘 Penutup"],
         menu_icon="cast"    
     )
     st.session_state.menu_selected = menu
@@ -331,6 +337,15 @@ elif selected == "💾 Input Data":
                         st.error(f"Terjadi kesalahan saat perhitungan lanjutan: {e}")
     else:
         st.markdown("Harap Penuhi Semua Syarat")
+elif selected == "perhitungan":
+    st.subheader("Ui")
+    st.write(f"U1 : **{st.session_state.ui[0]:.11f}**")
+    st.write(f"U2 : **{st.session_state.ui[1]:.11f}**")
+    st.write(f"U3 : **{st.session_state.ui[2]:.11f}**")
+    st.write(f"U4 : **{st.session_state.ui[3]:.11f}**")
+    st.write(f"U5 : **{st.session_state.ui[4]:.11f}**")
+    st.write(f"U6 : **{st.session_state.ui[5]:.11f}**")
+                    
 elif selected == "📘 Penutup":
     st.markdown('<div class="header-section"><h1>Terimakasih</h1></div>', unsafe_allow_html=True)
            
