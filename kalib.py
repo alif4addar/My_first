@@ -22,6 +22,10 @@ if 'ui' not in st.session_state:
     st.session_state.ui = [0]*6
 if 'csi' not in st.session_state:
     st.session_state.csi = [0]*6
+if 'ui_csi' not in st.session_state:
+    st.session_state.ui_csi = [0]*6
+if 'ui_csi2' not in st.session_state:
+    st.session_state.ui_csi2 = [0]*6
     
 if 'v_konven' not in st.session_state:
     st.session_state.v_konven = 0.00
@@ -281,6 +285,8 @@ elif selected == "💾 Input Data":
     
                         st.session_state.ui = [U1, U2, U3, U4, U5, U6]
                         st.session_state.csi = [Cs1, Cs2, Cs3, Cs4, Cs5, Cs6]
+                        st.session_state.ui_csi = [U1*Cs1, U2*Cs2, U3*Cs3, U4*Cs4, U5*Cs5, U6*Cs6]
+                        st.session_state.ui_csi2 = [(U1*Cs1)**2, (U2*Cs2)**2, (U3*Cs3)**2, (U4*Cs4)**2, (U5*Cs5)**2, (U6*Cs6)**2]
                         
                     #Ketidakpastian gabungan(Ugab)
                         Ugab2 = ((U1*Cs1)**2 + (U2*Cs2)**2 + (U3*Cs3)**2 + (U4*Cs4)**2 + (U5*Cs5)**2 + (U6*Cs6)**2)
@@ -355,7 +361,7 @@ elif selected == "💾 Input Data":
     else:
         st.markdown("Harap Penuhi Semua Syarat")
 elif selected == "perhitungan":
-    col_ui, col_csi = st.columns([3, 3])
+    col_ui, col_csi, col_ui_csi = st.columns([2, 2, 2])
     with col_ui:
         st.subheader("Ui")
         st.write(f"U1 : **{st.session_state.ui[0]:.11f}**")
@@ -367,13 +373,21 @@ elif selected == "perhitungan":
      
     with col_csi:
         st.subheader("Csi")
-        st.write(f"Csi1 : **{st.session_state.csi[0]:.11f}**")
-        st.write(f"Csi2 : **{st.session_state.csi[1]:.11f}**")
-        st.write(f"Csi3 : **{st.session_state.csi[2]:.11f}**")
-        st.write(f"Csi4 : **{st.session_state.csi[3]:.11f}**")
-        st.write(f"Csi5 : **{st.session_state.csi[4]:.11f}**")
-        st.write(f"Csi6 : **{st.session_state.csi[5]:.11f}**")
-     
+        st.write(f"Cs1 : **{st.session_state.csi[0]:.11f}**")
+        st.write(f"Cs2 : **{st.session_state.csi[1]:.11f}**")
+        st.write(f"Cs3 : **{st.session_state.csi[2]:.11f}**")
+        st.write(f"Cs4 : **{st.session_state.csi[3]:.11f}**")
+        st.write(f"Cs5 : **{st.session_state.csi[4]:.11f}**")
+        st.write(f"Cs6 : **{st.session_state.csi[5]:.11f}**")
+    
+    with col_ui_csi:
+        st.subheader("Ui*Csi")
+        st.write(f"U1*Cs1 : **{st.session_state.ui_csi[0]:.11f}**")
+        st.write(f"U2*Cs2 : **{st.session_state.ui_csi[1]:.11f}**")
+        st.write(f"U3*Cs3 : **{st.session_state.ui_csi[2]:.11f}**")
+        st.write(f"U4*Cs4 : **{st.session_state.ui_csi[3]:.11f}**")
+        st.write(f"U5*Cs5 : **{st.session_state.ui_csi[4]:.11f}**")
+        st.write(f"U6*Cs6 : **{st.session_state.ui_csi[5]:.11f}**")
 
                     
 elif selected == "📘 Penutup":
