@@ -140,7 +140,7 @@ elif selected == "💾 Input Data":
         
         st.markdown('<div class="app-card">', unsafe_allow_html=True)
         st.markdown("<h3 style='color:#5F6F65;'>2. Input Ketelitian Alat</h3>", unsafe_allow_html=True)
-        st.session_state.ketelitian_lb = st.number_input("<syle='color:#00000;'>Masukkan Ketelitian Labu Takar (mL)", min_value=0.00, value=st.session_state.ketelitian_lb, step=0.0100, format="%.4f")
+        st.session_state.ketelitian_lb = st.number_input("<syle='color:#00000;'>Masukkan Ketelitian Labu Takar (mL)", min_value=0.00, value=st.session_state.ketelitian_lb, step=0.0100, format="%.4f", unsafe_allow_html=True)
         
         # Template input tabel
         st.markdown('<div class="app-card">', unsafe_allow_html=True)
