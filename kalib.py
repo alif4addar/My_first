@@ -87,7 +87,6 @@ if selected == "🏠 Home":
             <p>Alat komprehensif ini membantu Anda melakukan perhitungan kalibrasi volume labu takar secara akurat, termasuk analisis ketidakpastian sesuai standar metrologi.</p>
         </div>
     """, unsafe_allow_html=True)
-    st.markdown('<div class="header-section"><h1>Aplikasi</h1></div>', unsafe_allow_html=True)
     st.divider()
     col_spasi, col_mulai, col_spasi_2 = st.columns([5, 4, 5])
     with col_mulai:
@@ -205,7 +204,7 @@ elif selected == "💾 Input Data":
         st.markdown('<div class="app-card">', unsafe_allow_html=True)
         st.markdown("<h3 style='color:#0a0000;'>4. Input Data Alat Ukur</h3>", unsafe_allow_html=True)
         lop = st.number_input("Masukkan Nilai LOP Timbangan", value=0.0000, step=0.0001, format="%.4f")
-        st.markdown("Masukkan nilai NST, U95, dan K untuk alat ukur:")
+        st.markdown("<p2 style='color:#0a0000;'>Masukkan nilai NST, U95, dan K untuk alat ukur:</p2>",unsafe_allow_html=True)
             
         col_nst, col_u95, col_k = st.columns(3)
         with col_nst:
