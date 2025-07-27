@@ -135,16 +135,16 @@ elif selected == "💾 Input Data":
         st.markdown('<div class="header-section"><h2>Input Data</h2></div>', unsafe_allow_html=True)
     
         # Input volume konvensional
-        st.markdown("<h3 style='color:#0000;'>1.Input Volume Labu Takar</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='color:#0a0000;'>1.Input Volume Labu Takar</h3>", unsafe_allow_html=True)
         st.session_state.v_konven = st.number_input("Masukkan Volume Konvensional (mL)", min_value=0.00, value=st.session_state.v_konven, step=25.0,  format="%.2f")
         
         st.markdown('<div class="app-card">', unsafe_allow_html=True)
-        st.markdown("<h3 style='color:#0000;'>2. Input Ketelitian Alat</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='color:#0a0000;'>2. Input Ketelitian Alat</h3>", unsafe_allow_html=True)
         st.session_state.ketelitian_lb = st.number_input("Masukkan Ketelitian Labu Takar (mL)", min_value=0.00, value=st.session_state.ketelitian_lb, step=0.0100, format="%.4f")
         
         # Template input tabel
         st.markdown('<div class="app-card">', unsafe_allow_html=True)
-        st.markdown("<h3 style='color:#0000;'>3. Input Data Pengukuran</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='color:#0a0000;'>3. Input Data Pengukuran</h3>", unsafe_allow_html=True)
         cols = [
                 "Bobot Kosong (g)",
                 "Bobot Isi (g)",
@@ -203,19 +203,19 @@ elif selected == "💾 Input Data":
         CC = ["Timbangan","Termometer Air","Termometer Udara","Barometer Udara","Hygrometer"]
         satuan = ["g", "C", "C", "mmHg", "%"]
         st.markdown('<div class="app-card">', unsafe_allow_html=True)
-        st.markdown("<h3 style='color:#0000;'>4. Input Data Alat Ukur</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='color:#0a0000;'>4. Input Data Alat Ukur</h3>", unsafe_allow_html=True)
         lop = st.number_input("Masukkan Nilai LOP Timbangan", value=0.0000, step=0.0001, format="%.4f")
         st.markdown("Masukkan nilai NST, U95, dan K untuk alat ukur:")
             
         col_nst, col_u95, col_k = st.columns(3)
         with col_nst:
-                st.markdown("<h3 style='color:#0000; font-size: 24px;'>NST</h3>", unsafe_allow_html=True)
+                st.markdown("<h3 style='color:#0a0000; font-size: 24px;'>NST</h3>", unsafe_allow_html=True)
                 st.session_state.nst = [st.number_input(f" {label} ( {satuan[i]} )", value=st.session_state.nst[i], key=f"nst_{i}", step=0.0001, format="%.4f") for i, label in enumerate(CC)]
         with col_u95:
-                st.markdown("<h3 style='color:#0000; font-size: 24px;'>U95</h3>", unsafe_allow_html=True)
+                st.markdown("<h3 style='color:#0a0000; font-size: 24px;'>U95</h3>", unsafe_allow_html=True)
                 st.session_state.u95 = [st.number_input(f" {label}", value=0.0000, key=f"u95_{i}", step=0.0010, format="%.4f") for i, label in enumerate(CC)]
         with col_k:
-                st.markdown("<h3 style='color:#0000; font-size: 24px;'>K</h3>", unsafe_allow_html=True)
+                st.markdown("<h3 style='color:#0a0000; font-size: 24px;'>K</h3>", unsafe_allow_html=True)
                 nilai_k = [st.number_input(f" {label}", value=2.0, key=f"kval_{i}", step=0.1000, format="%.4f") for i, label in enumerate(CC)]
                 
         st.markdown('<div class="app-card">', unsafe_allow_html=True)
