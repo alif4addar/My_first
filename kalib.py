@@ -17,14 +17,17 @@ st.set_page_config(
 
 if 'syarat' not in st.session_state:
     st.session_state.syarat = False
+    
 if 'ui' not in st.session_state:
     st.session_state.ui = [0]*6
 if 'csi' not in st.session_state:
     st.session_state.csi = [0]*6
+    
 if 'v_konven' not in st.session_state:
     st.session_state.v_konven = 0.00
 if 'ketelitian_lb' not in st.session_state:
     st.session_state.ketelitian_lb = 0.0000
+    
 if 'nst' not in st.session_state:
     st.session_state.nst = [0.0]*5
 if 'u95' not in st.session_state:
@@ -352,13 +355,26 @@ elif selected == "💾 Input Data":
     else:
         st.markdown("Harap Penuhi Semua Syarat")
 elif selected == "perhitungan":
-    st.subheader("Ui")
-    st.write(f"U1 : **{st.session_state.ui[0]:.11f}**")
-    st.write(f"U2 : **{st.session_state.ui[1]:.11f}**")
-    st.write(f"U3 : **{st.session_state.ui[2]:.11f}**")
-    st.write(f"U4 : **{st.session_state.ui[3]:.11f}**")
-    st.write(f"U5 : **{st.session_state.ui[4]:.11f}**")
-    st.write(f"U6 : **{st.session_state.ui[5]:.11f}**")
+    col_ui, col_csi, col_ui*csi = st.columns
+    with col_ui:
+        st.subheader("Ui")
+        st.write(f"U1 : **{st.session_state.ui[0]:.11f}**")
+        st.write(f"U2 : **{st.session_state.ui[1]:.11f}**")
+        st.write(f"U3 : **{st.session_state.ui[2]:.11f}**")
+        st.write(f"U4 : **{st.session_state.ui[3]:.11f}**")
+        st.write(f"U5 : **{st.session_state.ui[4]:.11f}**")
+        st.write(f"U6 : **{st.session_state.ui[5]:.11f}**")
+     
+    with col_csi:
+        st.subheader("Csi")
+        st.write(f"Csi1 : **{st.session_state.csi[0]:.11f}**")
+        st.write(f"Csi2 : **{st.session_state.csi[1]:.11f}**")
+        st.write(f"Csi3 : **{st.session_state.csi[2]:.11f}**")
+        st.write(f"Csi4 : **{st.session_state.csi[3]:.11f}**")
+        st.write(f"Csi5 : **{st.session_state.csi[4]:.11f}**")
+        st.write(f"Csi6 : **{st.session_state.csi[5]:.11f}**")
+     
+
                     
 elif selected == "📘 Penutup":
     st.markdown('<div class="header-section"><h1>Terimakasih</h1></div>', unsafe_allow_html=True)
