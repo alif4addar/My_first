@@ -153,7 +153,7 @@
 
     .stButton > button {
         background: linear-gradient(to left, #06D001, #9BEC00) !important;
-        color: #030f00 !important;
+        color: #0a0000 !important;
         border: #059212 ;
         padding: 8px 20px;
         border-radius: 5px;
@@ -204,7 +204,7 @@
 
     /* Warna untuk teks label input */
     label {
-        color: #0000 !important;
+        color: #0a0000 !important;
     }
 
     /* Warna header tabel Data Editor */
