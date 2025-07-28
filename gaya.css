@@ -77,7 +77,10 @@
       }
     }
 
-
+    @keyframes hue{
+        from {filter: hue-rotate(0deg);}
+        to {filter: hue-rotate(360deg);}
+    }
 
     /* Hero Section */
     .hero-section {
@@ -171,7 +174,7 @@
         cursor: pointer;
         transition: background-color 0.3s ease, box-shadow 0.3s ease;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        animation: moveGradient 5s infinite linear;
+        animation: hue 5s infinite linear;
     }
     .stButton > button:hover {
         background: linear-gradient(to left, #9BEC00, #06D001) !important;
