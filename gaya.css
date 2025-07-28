@@ -119,6 +119,17 @@
         max-width: 200px;
     }
 
+    .hero-section p3 {
+        font-size: 1.1em;
+        margin-bottom: 14px;
+        max-width: 800px;
+        margin-left: 1.5px;
+        text-align: left;
+        margin-right: auto;
+        font-weight: 400;
+        color: linear-gradient(to right, #f5faf9, #0a0000 )!important;
+    }
+
     /* General Card/Container Style */
     .app-card {
         background-color: transparent;
