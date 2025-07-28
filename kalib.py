@@ -346,57 +346,28 @@ elif selected == "💾 Input Data":
                         st.write(f"Ugab2 (Gabungan2): **{st.session_state.Ugab2:.6f} mL**")
                         st.write(f"Ugab (Gabungan): **{st.session_state.Ugab:.6f} mL**")
                         st.write(f"Ketidakpastian Diperluas (U95): **{st.session_state.U95_exp:.6f} mL**")
-    
-                        st.subheader("Ui")
-                        st.write(f"U1 : **{U1:.11f}**")
-                        st.write(f"U2 : **{U2:.11f}**")
-                        st.write(f"U3 : **{U3:.11f}**")
-                        st.write(f"U4 : **{U4:.11f}**")
-                        st.write(f"U5 : **{U5:.11f}**")
-                        st.write(f"U6 : **{U6:.11f}**")
-                    
-                        st.subheader("Csi")
-                        st.write(f"Cs1 : **{Cs1:.11f}**")
-                        st.write(f"Cs2 : **{Cs2:.11f}**")
-                        st.write(f"Cs3 : **{Cs3:.11f}**")
-                        st.write(f"Cs4 : **{Cs4:.11f}**")
-                        st.write(f"Cs5 : **{Cs5:.11f}**")
-                        st.write(f"Cs6 : **{Cs6:.11f}**")
-                    
-                        st.subheader("Ui x Csi")
-                        st.write(f"U1 : **{(U1*Cs1):.11f}**")
-                        st.write(f"U2 : **{(U2*Cs2):.11f}**")
-                        st.write(f"U3 : **{(U3*Cs3):.11f}**")
-                        st.write(f"U4 : **{(U4*Cs4):.11f}**")
-                        st.write(f"U5 : **{(U5*Cs5):.11f}**")
-                        st.write(f"U6 : **{(U6*Cs6):.11f}**")
-                    
-                        st.subheader("(Ui x Csi)^2")
-                        st.write(f"U1 : **{(U1*Cs1)**2:.11f}**")
-                        st.write(f"U2 : **{(U2*Cs2)**2:.11f}**")
-                        st.write(f"U3 : **{(U3*Cs3)**2:.11f}**")
-                        st.write(f"U4 : **{(U4*Cs4)**2:.11f}**")
-                        st.write(f"U5 : **{(U5*Cs5)**2:.11f}**")
-                        st.write(f"U6 : **{(U6*Cs6)**2:.11f}**")
-    
-                        nilai_maks = st.session_state.koreksi + st.session_state.U95_exp
+
                         st.subheader("Kesimpulan")
+                        nilai_maks = st.session_state.koreksi + st.session_state.U95_exp
                         if st.session_state.koreksi < st.session_state.ketelitian_lb and nilai_maks < st.session_state.ketelitian_lb:
                             st.write("✅ labu Takar Dapat Digunakan")
-                            st.write(f"Karena Nilai Koreksi ({st.session_state.koreksi:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
-                            st.write(f"Karena Nilai Maksimum(Nilai Koreksi + U95) ({st.session_state.koreksi:.4f}+{st.session_state.U95_exp:.4f} = {nilai_maks:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
+                            st.write(f"Karena Nilai Koreksi Dan Nilai Maksimum Lebih Kecil Dari Ketelitian Labu Takar")
+                        
                         elif st.session_state.koreksi < st.session_state.ketelitian_lb and nilai_maks > st.session_state.ketelitian_lb:
-                            st.write("labu Takar Tidak Dapat Digunakan")
-                            st.write(f"Karena Nilai Koreksi ({st.session_state.koreksi:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lbketelitian_lb:.4f})")
-                            st.write(f"Tetapi Nilai Maksimum(Nilai Koreksi + U95) ({st.session_state.koreksi:.4f}+{st.session_state.U95_exp:.4f} = {nilai_maks:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
+                            st.write("❌ labu Takar Tidak Dapat Digunakan")
+                            st.write(f"Karena Nilai Koreksi Lebih Kecil Dari Ketelitian Labu Takar")
+                            st.write(f"Tetapi Nilai Maksimum Lebih Besar Dari Ketelitian Labu Takar")
+                            
                         elif st.session_state.koreksi > st.session_state.ketelitian_lb and nilai_maks < st.session_state.ketelitian_lb:
-                            st.write("labu Takar Tidak Dapat Digunakan")
-                            st.write(f"Karena Nilai Maksimum(Nilai Koreksi + U95) ({st.session_state.koreksi:.4f}+{st.session_state.U95_exp:.4f} = {nilai_maks:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
-                            st.write(f"Tetapi Nilai Koreksi ({st.session_state.koreksi:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
+                            st.write("❌ labu Takar Tidak Dapat Digunakan")
+                            st.write(f"Karena Nilai Maksimum Lebih Kecil Dari Ketelitian Labu Takar")
+                            st.write(f"Tetapi Nilai Koreksi Lebih Besar Dari Ketelitian Labu Takar")
+                            
                         else:
-                            st.write("labu Takar Tidak Dapat Digunakan")
-                            st.write(f"Karena Nilai Koreksi ({st.session_state.koreksi:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
-                            st.write(f"Dan Karena Nilai Maksimum(Nilai Koreksi + U95) ({st.session_state.koreksi:.4f}+{st.session_state.U95_exp:.4f} = {nilai_maks:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
+                            st.write("❌ labu Takar Tidak Dapat Digunakan")
+                            st.write(f"Karena Nilai Koreksi Dan Nilai Maksimum Lebih Besar Dari Ketelitian Labu Takar")
+                                    
+             
                     except Exception as e:
                         st.error(f"Terjadi kesalahan saat perhitungan lanjutan: {e}")
     else:
