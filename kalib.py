@@ -389,6 +389,15 @@ elif selected == "perhitungan":
         st.write(f"U5*Cs5 : **{st.session_state.ui_csi[4]:.11f}**")
         st.write(f"U6*Cs6 : **{st.session_state.ui_csi[5]:.11f}**")
 
+    col_kosong, col_ui_csi2, col_kosong2 = st.columns([2, 2, 2])
+    with col_ui_csi2: 
+        st.subheader("(Ui*Csi)^2")
+        st.write(f"(U1*Cs1)^2 : **{st.session_state.ui_csi2[0]:.11f}**")
+        st.write(f"(U2*Cs2)^2 : **{st.session_state.ui_csi2[1]:.11f}**")
+        st.write(f"(U3*Cs3)^2 : **{st.session_state.ui_csi2[2]:.11f}**")
+        st.write(f"(U4*Cs4)^2 : **{st.session_state.ui_csi2[3]:.11f}**")
+        st.write(f"(U5*Cs5)^2 : **{st.session_state.ui_csi2[4]:.11f}**")
+        st.write(f"(U6*Cs6)^2 : **{st.session_state.ui_csi2[5]:.11f}**")
                     
 elif selected == "📘 Penutup":
     st.markdown('<div class="header-section"><h1>Terimakasih</h1></div>', unsafe_allow_html=True)
