@@ -377,6 +377,9 @@ elif selected == "💾 Input Data":
     else:
         st.warning("⚠️ Harap Penuhi Semua Syarat Terlebih Dahulu.")
 elif selected == "perhitungan":
+    st.markdown('<div class="header-section"><h2>Perhitungan</h2></div>', unsafe_allow_html=True)
+    nilai_maks = st.session_state.koreksi + st.session_state.U95_exp
+#baris ke-1
     col_ui, col_csi, col_ui_csi = st.columns([2, 2, 2])
     with col_ui:
         st.subheader("Ui")
@@ -405,6 +408,7 @@ elif selected == "perhitungan":
         st.write(f"U5 x Cs5 : **{st.session_state.ui_csi[4]:.11f}**")
         st.write(f"U6 x Cs6 : **{st.session_state.ui_csi[5]:.11f}**")
 
+#baris ke-2
     col_ui_csi2, col_U = st.columns([3, 3])
     with col_ui_csi2: 
         st.subheader("(Ui x Csi)²")
@@ -421,7 +425,10 @@ elif selected == "perhitungan":
         st.write(f"Densitas Udara: **{st.session_state.dens_udara:.6f} g/mL**")
         st.write(f"Volume Sebenarnya (20°C): **{st.session_state.v_20:.6f} mL**")
         st.write(f"Koreksi Volume Konvensional: **{st.session_state.koreksi:+.6f} mL**") 
-        
+        st.write(f"Ketelitian Labu Takar: **{st.session_state.ketelitian_lb:.4f} mL**")
+        st.write(f"Nilai Maksimum: **{nilai_maks:.4f} mL**")
+
+#baris ke-3
     col_ketidak, col_kesimpul = st.columns([3, 3])
     with col_ketidak:
         st.subheader("Ketidakpastian")
