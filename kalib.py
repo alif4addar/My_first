@@ -27,7 +27,11 @@ if 'ui_csi' not in st.session_state:
     st.session_state.ui_csi = [0]*6
 if 'ui_csi2' not in st.session_state:
     st.session_state.ui_csi2 = [0]*6
-    
+if 'Ugab' not in st.session_state:
+    st.session_state.Ugab = 0
+if 'U95_exp' not in st.session_state:
+    st.session_state.U95_exp = 0
+
 if 'v_konven' not in st.session_state:
     st.session_state.v_konven = 0.00
 if 'ketelitian_lb' not in st.session_state:
@@ -290,10 +294,10 @@ elif selected == "💾 Input Data":
                         
                     #Ketidakpastian gabungan(Ugab)
                         Ugab2 = ((U1*Cs1)**2 + (U2*Cs2)**2 + (U3*Cs3)**2 + (U4*Cs4)**2 + (U5*Cs5)**2 + (U6*Cs6)**2)
-                        Ugab = math.sqrt((U1*Cs1)**2 + (U2*Cs2)**2 + (U3*Cs3)**2 + (U4*Cs4)**2 + (U5*Cs5)**2 + (U6*Cs6)**2)
+                        st.session_state.Ugab = math.sqrt((U1*Cs1)**2 + (U2*Cs2)**2 + (U3*Cs3)**2 + (U4*Cs4)**2 + (U5*Cs5)**2 + (U6*Cs6)**2)
                     
                     #Ketidakpastian Diperluas
-                        U95_exp = Ugab * 2
+                        st.session_state.U95_exp = Ugab * 2
     
                         st.subheader("Hasil Perhitungan")
                         st.write(f"Densitas Air: **{dens_air:.6f} g/mL**")
@@ -389,7 +393,7 @@ elif selected == "perhitungan":
         st.write(f"U5*Cs5 : **{st.session_state.ui_csi[4]:.11f}**")
         st.write(f"U6*Cs6 : **{st.session_state.ui_csi[5]:.11f}**")
 
-    col_kosong, col_ui_csi2, col_kosong2 = st.columns([2, 3, 1])
+    col_ui_csi2, col_U = st.columns([3, 3])
     with col_ui_csi2: 
         st.subheader("(Ui*Csi)^2")
         st.write(f"(U1*Cs1)^2 : **{st.session_state.ui_csi2[0]:.11f}**")
@@ -398,6 +402,10 @@ elif selected == "perhitungan":
         st.write(f"(U4*Cs4)^2 : **{st.session_state.ui_csi2[3]:.11f}**")
         st.write(f"(U5*Cs5)^2 : **{st.session_state.ui_csi2[4]:.11f}**")
         st.write(f"(U6*Cs6)^2 : **{st.session_state.ui_csi2[5]:.11f}**")
+
+    with col_U:
+        st.write(f"Ketidakpastian Gabungan: **{st.session_state.Ugab:.6f}**")
+        st.write(f"Ketidakpastian Diperluas: **{st.session_state.U95_exp:.6f}**")
                     
 elif selected == "📘 Penutup":
     st.markdown('<div class="header-section"><h1>Terimakasih</h1></div>', unsafe_allow_html=True)
