@@ -40,7 +40,7 @@
         margin: 0;
         text-align: center;
         font-size: 3.5rem;
-        background: linear-gradient(30deg, #0a0000);
+        background: linear-gradient(30deg, #9BEC00, #06D001, #059212);
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
@@ -52,7 +52,7 @@
         margin: 0;
         text-align: center;
         font-size: 2.8rem;
-        background: linear-gradient(30deg, #A4DD00, #98CD00);
+        background: linear-gradient(30deg, #9BEC00, #06D001, #059212);
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
@@ -157,7 +157,7 @@
 /* Buttons  */
 
     .stButton > button {
-        background: linear-gradient(to left, #06D001, #9BEC00) !important;
+        background: linear-gradient(to right, #9BEC00, #06D001, #059212) !important;
         color: #0a0000 !important;
         border: #059212 ;
         padding: 8px 20px;
@@ -175,16 +175,16 @@
     }
     /* Style for the "Add Row" and "Remove Row" buttons */
     .stButton > button[data-testid="stFormSubmitButton"] { /* Target specific buttons if needed */
-        background: linear-gradient(to right, #9BEC00, #06D001) !important;
+        background: linear-gradient(to right, #9BEC00, #06D001, #059212) !important;
     }
     .stButton > button[data-testid="stFormSubmitButton"]:hover {
-        background: linear-gradient(to left, #9BEC00, #06D001) !important;
+        background: linear-gradient(to left, #9BEC00, #06D001, #059212) !important;
     }
     .stButton > button[data-testid="stFormSubmitButton"] + div .stButton > button { /* Target remove button */
-        background: linear-gradient(to right, #9BEC00, #06D001) !important;
+        background: linear-gradient(to right, #9BEC00, #06D001, #059212) !important;
     }
     .stButton > button[data-testid="stFormSubmitButton"] + div .stButton > button:hover {
-        background: linear-gradient(to left, #9BEC00, #06D001) !important;
+        background: linear-gradient(to left, #9BEC00, #06D001, #059212) !important;
     }
         
     
@@ -282,7 +282,7 @@
 
     
     [data-testid="stSidebar"] {
-        background: linear-gradient(to right, #06D001, #2fec00, #9BEC00, 0.90);
+        background: linear-gradient(to right, #9BEC00, #06D001, #059212, 0.90);
         color: #0a0000;
         padding: 15px;
         border-radius: 15px;
