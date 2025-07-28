@@ -27,8 +27,6 @@ if 'ui_csi' not in st.session_state:
     st.session_state.ui_csi = [0]*6
 if 'ui_csi2' not in st.session_state:
     st.session_state.ui_csi2 = [0]*6
-if 'Ugab2' not in st.session_state:
-    st.session_state.Ugab2 = 0    
 if 'Ugab' not in st.session_state:
     st.session_state.Ugab = 0
 if 'U95_exp' not in st.session_state:
@@ -96,7 +94,7 @@ with st.sidebar:
         options=[
                 "🏠 Home", "📋 Cara Penggunaan Web Aplikasi", 
                 "📑 Syarat Yang Harus Dipenuhi",
-                "💾 Input Data", "perhitungan", "📘 Penutup"],
+                "💾 Input Data", "📏 Perhitungan", "📘 Penutup"],
         menu_icon="cast"    
     )
     st.session_state.menu_selected = menu
@@ -345,7 +343,6 @@ elif selected == "💾 Input Data":
                         st.session_state.ui_csi2 = [(U1*Cs1)**2, (U2*Cs2)**2, (U3*Cs3)**2, (U4*Cs4)**2, (U5*Cs5)**2, (U6*Cs6)**2]
                         
                     #Ketidakpastian gabungan(Ugab)
-                        st.session_state.Ugab2 = ((U1*Cs1)**2 + (U2*Cs2)**2 + (U3*Cs3)**2 + (U4*Cs4)**2 + (U5*Cs5)**2 + (U6*Cs6)**2)
                         st.session_state.Ugab = math.sqrt((U1*Cs1)**2 + (U2*Cs2)**2 + (U3*Cs3)**2 + (U4*Cs4)**2 + (U5*Cs5)**2 + (U6*Cs6)**2)
                     
                     #Ketidakpastian Diperluas
@@ -358,7 +355,6 @@ elif selected == "💾 Input Data":
                         st.write(f"Koreksi Volume Konvensional: **{st.session_state.koreksi:.6f} mL**") 
                         
                         st.subheader("Ketidakpastian")
-                        st.write(f"Ugab2 (Gabungan2): **{st.session_state.Ugab2:.6f} mL**")
                         st.write(f"Ugab (Gabungan): **{st.session_state.Ugab:.6f} mL**")
                         st.write(f"Ketidakpastian Diperluas (U95): **{st.session_state.U95_exp:.6f} mL**")
 
@@ -387,7 +383,7 @@ elif selected == "💾 Input Data":
                         st.error(f"Terjadi kesalahan saat perhitungan lanjutan: {e}")
     else:
         st.warning("⚠️ Harap Penuhi Semua Syarat Terlebih Dahulu.")
-elif selected == "perhitungan":
+elif selected == "📏 Perhitungan":
     st.markdown('<div class="header-section"><h2>Perhitungan</h2></div>', unsafe_allow_html=True)
     nilai_maks = st.session_state.koreksi + st.session_state.U95_exp
 #baris ke-1
