@@ -110,6 +110,7 @@
         text-align: left;
         margin-right: auto;
         font-weight: 400;
+        line-height: 1.6;
         color: linear-gradient(to right, #f5faf9, #0a0000 )!important;
     }
 
@@ -120,7 +121,9 @@
     }
 
    .hero-section ul {
+        font-size: 1.1em;
         text-align: left;
+        line-height: 1.6;
         margin-left: 1.5rem;  
         padding-left: 1.2rem; 
     }
