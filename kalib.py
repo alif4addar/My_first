@@ -107,8 +107,8 @@ if selected == "🏠 Home":
     st.markdown('<div class="header-section"><h1>Aplikasi Kalibrasi Volume Labu Takar</h1></div>', unsafe_allow_html=True)
     st.markdown("""
         <div class="hero-section">
-            <h2>Hitung Volume Sebenarnya dan Ketidakpastian Labu Takar Anda</h2>
-            <p>Alat komprehensif ini membantu Anda melakukan perhitungan kalibrasi volume labu takar secara akurat, termasuk analisis ketidakpastian sesuai standar metrologi.</p>
+            <h3>Latar Belakang Kalibrasi</h3>
+            <p>Dalam dunia laboratorium, industri, dan pelayanan publik, alat ukur digunakan untuk menghasilkan data yang menjadi dasar dalam pengambilan keputusan teknis, ekonomi, maupun legal. Agar hasil pengukuran dapat diandalkan, akurat, dan dapat ditelusuri ke standar nasional atau internasional, maka kalibrasi harus dilakukan.</p>
         </div>
     """, unsafe_allow_html=True)
     st.divider()
