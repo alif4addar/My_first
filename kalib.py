@@ -380,7 +380,7 @@ elif selected == "perhitungan":
     st.markdown('<div class="header-section"><h2>Perhitungan</h2></div>', unsafe_allow_html=True)
     nilai_maks = st.session_state.koreksi + st.session_state.U95_exp
 #baris ke-1
-    col_U = st.columns
+    col_U, col_kosongg = st.columns([3, 3])
     with col_U:
         st.subheader("Hasil Perhitungan")
         st.write(f"Densitas Air: **{st.session_state.dens_air:.6f} g/mL**")
