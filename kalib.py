@@ -119,10 +119,10 @@ if selected == "🏠 Home":
             <br>
             <h3>Mengapa Kalibrasi Harus Dilakukan?</h3>
             <ul>
-                <li>1. Menjamin akurasi pengukuran.</li>
-                <li>2. Menjamin Ketertelusuran ke Standar Internasional.</li>
-                <li>3. Mendukung Keputusan Teknis dan Legal.</li>
-                <li>4. Memastikan Kesesuaian Berkala.</li>
+                <li>Menjamin akurasi pengukuran.</li>
+                <li>Menjamin Ketertelusuran ke Standar Internasional.</li>
+                <li>Mendukung Keputusan Teknis dan Legal.</li>
+                <li>Memastikan Kesesuaian Berkala.</li>
             </ul>
         </div>
     """, unsafe_allow_html=True)
