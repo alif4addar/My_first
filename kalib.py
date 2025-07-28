@@ -340,7 +340,7 @@ elif selected == "💾 Input Data":
                         st.write(f"Densitas Air: **{st.session_state.dens_air:.6f} g/mL**")
                         st.write(f"Densitas Udara: **{st.session_state.dens_udara:.6f} g/mL**")
                         st.write(f"Volume Sebenarnya (20°C): **{st.session_state.v_20:.6f} mL**")
-                        st.write(f"Koreksi Volume Konvensional: **{st.session_state.koreksi:+.6f} mL**") 
+                        st.write(f"Koreksi Volume Konvensional: **{st.session_state.koreksi:.6f} mL**") 
                         
                         st.subheader("Ketidakpastian")
                         st.write(f"Ugab2 (Gabungan2): **{st.session_state.Ugab2:.6f} mL**")
@@ -383,7 +383,7 @@ elif selected == "perhitungan":
         st.write(f"Densitas Air: **{st.session_state.dens_air:.6f} g/mL**")
         st.write(f"Densitas Udara: **{st.session_state.dens_udara:.6f} g/mL**")
         st.write(f"Volume Sebenarnya (20°C): **{st.session_state.v_20:.6f} mL**")
-        st.write(f"Koreksi Volume Konvensional: **{st.session_state.koreksi:+.6f} mL**") 
+        st.write(f"Koreksi Volume Konvensional: **{st.session_state.koreksi:.6f} mL**") 
         
 #baris ke-2
     col_ui, col_csi, col_ui_csi2 = st.columns([2, 2, 2])
