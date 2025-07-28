@@ -7,6 +7,7 @@
         color-scheme: only light !important;
         background: url('https://raw.githubusercontent.com/alif4addar/My_first/main/background_baru.png') no-repeat center center fixed;
         background-size: cover;
+        color: #0a0000 !important;
         font-family: 'Inter', sans-serif;
     }
 
@@ -125,7 +126,7 @@
 
     /* General Card/Container Style */
     .app-card {
-        background-color: transparen;
+        background-color: transparent;
         padding: 30px;
         border-radius: 8px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -180,13 +181,13 @@
     }
     /* Style for the "Add Row" and "Remove Row" buttons */
     .stButton > button[data-testid="stFormSubmitButton"] { /* Target specific buttons if needed */
-        background: linear-gradient(to rigth, #9BEC00, #06D001) !important;
+        background: linear-gradient(to right, #9BEC00, #06D001) !important;
     }
     .stButton > button[data-testid="stFormSubmitButton"]:hover {
         background: linear-gradient(to left, #9BEC00, #06D001) !important;
     }
     .stButton > button[data-testid="stFormSubmitButton"] + div .stButton > button { /* Target remove button */
-        background: linear-gradient(to rigth, #9BEC00, #06D001) !important;
+        background: linear-gradient(to right, #9BEC00, #06D001) !important;
     }
     .stButton > button[data-testid="stFormSubmitButton"] + div .stButton > button:hover {
         background: linear-gradient(to left, #9BEC00, #06D001) !important;
@@ -281,20 +282,9 @@
         font-size: 0.9em;
     }
 
-    /* Paksa latar belakang utama aplikasi jadi putih */
-    html, body {
-        color: #000000 !important;
-    }
-
     /* Paksa latar belakang semua container jadi putih */
     .st-emotion-cache-1r6slb0 {
         background-color: transparent !important;
-    }
-
-    /* Warna header dan elemen lain  */
-    .st-emotion-cache-13k62yr {
-        background-color: white !important;
-        color: black !important;
     }
 
     
