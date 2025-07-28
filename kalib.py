@@ -297,7 +297,7 @@ elif selected == "💾 Input Data":
                         st.session_state.Ugab = math.sqrt((U1*Cs1)**2 + (U2*Cs2)**2 + (U3*Cs3)**2 + (U4*Cs4)**2 + (U5*Cs5)**2 + (U6*Cs6)**2)
                     
                     #Ketidakpastian Diperluas
-                        st.session_state.U95_exp = Ugab * 2
+                        st.session_state.U95_exp = st.session_state.Ugab * 2
     
                         st.subheader("Hasil Perhitungan")
                         st.write(f"Densitas Air: **{dens_air:.6f} g/mL**")
