@@ -44,7 +44,7 @@
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
-        animation: moveGradient 5s linear;
+        animation: moveGradient 3s linear;
     }
 
     .header-section h2 {
