@@ -81,7 +81,7 @@
         padding: 60px 30px;
         text-align: center;
         border-radius: 10px;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     
@@ -97,7 +97,8 @@
     .hero-section h3 {
         font-size: 1.7em;
         font-weight: 750;
-        margin-bottom: 15px;
+        line-height: 1.2;
+        margin-bottom: 12px;
         text-align: left;
     }
 
