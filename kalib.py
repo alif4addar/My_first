@@ -122,9 +122,10 @@ elif selected == "📋 Cara Penggunaan Web Aplikasi":
     st.markdown('<div class="header-section"><h2>Cara Penggunaan Web Aplikasi</h2></div>', unsafe_allow_html=True)
     st.markdown("""
         <div class="hero-section">
-            <p2>1. Pastikan sudah memenuhu semua syarat yang ditentukan.</p2>
+            <p2>1. Pastikan sudah memenuhi semua syarat yang ditentukan.</p2>
         </div>
     """, unsafe_allow_html=True)
+    
     st.markdown("""
         <div class="hero-section">
             <p2>2. Pada saat akan memasukan data pengukuran, banyaknya kolom sesuaikan dengan banyaknya data.</p2>
@@ -132,13 +133,37 @@ elif selected == "📋 Cara Penggunaan Web Aplikasi":
     """, unsafe_allow_html=True)
     st.markdown("""
         <div class="hero-section">
-            <p2>3. Sebelum menghitung nilai rata-rata  dari data pengukuran, semua kolom sudah terisi semua.</p2>
+            <p2>3. Sebelum menghitung nilai rata-rata dari data pengukuran,
+                semua kolom sudah terisi semua.</p2>
         </div>
     """, unsafe_allow_html=True)
     st.markdown("""
         <div class="hero-section">
-            <p2>4. Tombol untuk menghitung volume sebenarnya dan nilai ketidakpastian
+            <p2>4. NST adalah nilai skala terkecil dari sebuah alat ukur,
+                nilai U95 dan K didapatkan dari sertifikat alat ukur
+                setelah diperoleh rata-rata hasil pengukuran.</p2>
+        </div>
+    """, unsafe_allow_html=True)
+    st.markdown("""
+        <div class="hero-section">
+            <p2>5. Tombol untuk menghitung volume sebenarnya dan nilai ketidakpastian
                 akan otomatis muncul setelah nilai rata-rata didapatkan.</p2>
+        </div>
+    """, unsafe_allow_html=True)
+    st.markdown("""
+        <div class="hero-section">
+            <p2>6. Labu takar dinyatakan layak pakai apabila memenuhi syarat keberterimaan,
+                yaitu nilai koreksi dan nilai maksimum yang didapatkan lebih kecil dari ketelitian labu takar.</p2>
+        </div>
+    """, unsafe_allow_html=True)
+    st.markdown("""
+        <div class="hero-section">
+            <p2>7. Nilai koreksi didapatkan dari selisih volume konvensional dan volume sebenarnya pada suhu 20°C.</p2>
+        </div>
+    """, unsafe_allow_html=True)
+    st.markdown("""
+        <div class="hero-section">
+            <p2>8. Nilai maksimum didapatkan dari jumlah nilai koreksi dan nilai U95.</p2>
         </div>
     """, unsafe_allow_html=True)
 
@@ -228,7 +253,7 @@ elif selected == "💾 Input Data":
         st.markdown('<div class="app-card">', unsafe_allow_html=True)
         st.markdown("<h3 style='color:#0a0000;'>4. Input Data Alat Ukur</h3>", unsafe_allow_html=True)
         lop = st.number_input("Masukkan Nilai LOP Timbangan", value=0.0000, step=0.0001, format="%.4f")
-        st.markdown("<p2 style='color:#0a0000;'>Masukkan nilai NST, U95, dan K untuk alat ukur:</p2>",unsafe_allow_html=True)
+        st.markdown("<p2 style='color:#0a0000;'>Masukkan NST, nilai U95, dan K untuk alat ukur:</p2>",unsafe_allow_html=True)
             
         col_nst, col_u95, col_k = st.columns(3)
         with col_nst:
@@ -236,10 +261,10 @@ elif selected == "💾 Input Data":
                 st.session_state.nst = [st.number_input(f" {label} ( {satuan[i]} )", value=st.session_state.nst[i], key=f"nst_{i}", step=0.0001, format="%.4f") for i, label in enumerate(CC)]
         with col_u95:
                 st.markdown("<h3 style='color:#0a0000; font-size: 24px;'>U95</h3>", unsafe_allow_html=True)
-                st.session_state.u95 = [st.number_input(f" {label}", value=0.0000, key=f"u95_{i}", step=0.0010, format="%.4f") for i, label in enumerate(CC)]
+                st.session_state.u95 = [st.number_input(f" {label}", value=st.session_state.u95[i], key=f"u95_{i}", step=0.0010, format="%.4f") for i, label in enumerate(CC)]
         with col_k:
                 st.markdown("<h3 style='color:#0a0000; font-size: 24px;'>K</h3>", unsafe_allow_html=True)
-                nilai_k = [st.number_input(f" {label}", value=2.0, key=f"kval_{i}", step=0.1000, format="%.4f") for i, label in enumerate(CC)]
+                nilai_k = [st.number_input(f" {label}", value=2.0, key=f"kval_{i}", step=1.0000, format="%.4f") for i, label in enumerate(CC)]
                 
         st.markdown('<div class="app-card">', unsafe_allow_html=True)  
            
@@ -427,21 +452,23 @@ elif selected == "perhitungan":
         st.write(f"Ketidakpastian Diperluas: **{st.session_state.U95_exp:.6f} mL**")
         
     with col_kesimpul:
-        nilai_maks = st.session_state.koreksi + st.session_state.U95_exp
         st.subheader("Kesimpulan")
         if st.session_state.koreksi < st.session_state.ketelitian_lb and nilai_maks < st.session_state.ketelitian_lb:
             st.write("✅ labu Takar Dapat Digunakan")
             st.write(f"Karena Nilai Koreksi Dan Nilai Maksimum Lebih Kecil Dari Ketelitian Labu Takar")
+        
         elif st.session_state.koreksi < st.session_state.ketelitian_lb and nilai_maks > st.session_state.ketelitian_lb:
-            st.write("labu Takar Tidak Dapat Digunakan")
+            st.write("❌ labu Takar Tidak Dapat Digunakan")
             st.write(f"Karena Nilai Koreksi Lebih Kecil Dari Ketelitian Labu Takar")
             st.write(f"Tetapi Nilai Maksimum Lebih Besar Dari Ketelitian Labu Takar")
+            
         elif st.session_state.koreksi > st.session_state.ketelitian_lb and nilai_maks < st.session_state.ketelitian_lb:
-            st.write("labu Takar Tidak Dapat Digunakan")
+            st.write("❌ labu Takar Tidak Dapat Digunakan")
             st.write(f"Karena Nilai Maksimum Lebih Kecil Dari Ketelitian Labu Takar")
             st.write(f"Tetapi Nilai Koreksi Lebih Besar Dari Ketelitian Labu Takar")
+            
         else:
-            st.write("labu Takar Tidak Dapat Digunakan")
+            st.write("❌ labu Takar Tidak Dapat Digunakan")
             st.write(f"Karena Nilai Koreksi Dan Nilai Maksimum Lebih Besar Dari Ketelitian Labu Takar")
                     
 elif selected == "📘 Penutup":
