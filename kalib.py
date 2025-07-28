@@ -428,7 +428,7 @@ elif selected == "perhitungan":
         st.write(f"Ketidakpastian Gabungan: **{st.session_state.Ugab:.6f} mL**")
         st.write(f"Ketidakpastian Diperluas: **{st.session_state.U95_exp:.6f} mL**")
         
-    col_kesimpul:
+    with col_kesimpul:
         nilai_maks = st.session_state.koreksi + st.session_state.U95_exp
         st.subheader("Kesimpulan")
         if st.session_state.koreksi < st.session_state.ketelitian_lb and nilai_maks < st.session_state.ketelitian_lb:
