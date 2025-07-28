@@ -404,6 +404,7 @@ elif selected == "perhitungan":
         st.write(f"(U6*Cs6)^2 : **{st.session_state.ui_csi2[5]:.11f}**")
 
     with col_U:
+        st.subheader("Hasil")
         st.write(f"Ketidakpastian Gabungan: **{st.session_state.Ugab:.6f}**")
         st.write(f"Ketidakpastian Diperluas: **{st.session_state.U95_exp:.6f}**")
                     
