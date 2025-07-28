@@ -110,6 +110,8 @@
         margin-left: 1.5px;
         text-align: left;
         margin-right: auto;
+        font-weight: 400;
+        color:linear-gradient(to right, #FFFCFB ,#0a0000 )!important;
     }
 
     .hero-section p2 {
