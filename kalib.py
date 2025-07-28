@@ -118,10 +118,12 @@ if selected == "🏠 Home":
             <p>Kalibrasi tidak hanya membandingkan nilai, tetapi juga melibatkan penentuan ketidakpastian pengukuran serta penyesuaian atau koreksi jika diperlukan.</p>
             <br>
             <h3>Mengapa Kalibrasi Harus Dilakukan?</h3>
-            <p3>1. Menjamin akurasi pengukuran.</p3>
-            <p3>2. Menjamin Ketertelusuran ke Standar Internasional.</p3>
-            <p3>3. Mendukung Keputusan Teknis dan Legal.</p3>
-            <p3>4. Memastikan Kesesuaian Berkala.</p3>
+            <ul>
+                <li>1. Menjamin akurasi pengukuran.</li>
+                <li>2. Menjamin Ketertelusuran ke Standar Internasional.</li>
+                <li>3. Mendukung Keputusan Teknis dan Legal.</li>
+                <li>4. Memastikan Kesesuaian Berkala.</li>
+            </ul>
         </div>
     """, unsafe_allow_html=True)
     st.divider()
