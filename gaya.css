@@ -315,3 +315,21 @@
     }
 
 
+    /* Buat header transparan */
+    header[data-testid="stHeader"] {
+        background-color: rgba(255, 255, 255, 0.3) !important; /* transparan 30% */
+        backdrop-filter: blur(8px); /* efek blur supaya elegan */
+    }
+    
+    /* Tombol-tombol tetap solid */
+    header[data-testid="stHeader"] button {
+        background-color: white !important;
+        color: black !important;
+        opacity: 1 !important;
+    }
+    
+    /* Ikon atau svg di dalam tombol tetap terlihat */
+    header[data-testid="stHeader"] svg {
+        opacity: 1 !important;
+        fill: black !important;
+    }
