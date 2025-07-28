@@ -87,7 +87,7 @@
         margin-bottom: 15px;
         line-height: 1.2;
         text-align: left;
-        color: white; /* Pastikan judul di hero putih */
+        color: linear-gradient(to right, #059212, #06D001, #9BEC00);
     }
     
     .hero-section h3 {
