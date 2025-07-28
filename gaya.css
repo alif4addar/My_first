@@ -293,7 +293,7 @@
 
     /* Background dan warna teks menu */
     [data-testid="stSidebar"] ul[class^="css-"] {
-        border-radius: 15px;
+        border-radius: 150px;
         padding: 10px;
         background-color: transparent !important;
     }
