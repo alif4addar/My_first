@@ -45,7 +45,7 @@
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
-        animation: moveGradient 3s linear;
+        animation: moveGradient 3s linear infinite;
     }
 
     .header-section h2 {
@@ -57,7 +57,7 @@
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
-        animation: moveGradient 5s infinite linear;
+        animation: moveGradient 5s  linear infinite;
      }
 
     .h1 {
