@@ -307,8 +307,8 @@ elif selected == "💾 Input Data":
                         
                         st.subheader("Ketidakpastian")
                         st.write(f"Ugab2 (Gabungan2): **{Ugab2:.6f} mL**")
-                        st.write(f"Ugab (Gabungan): **{Ugab:.6f} mL**")
-                        st.write(f"Ketidakpastian Diperluas (U95): **{U95_exp:.6f} mL**")
+                        st.write(f"Ugab (Gabungan): **{st.session_state.Ugab:.6f} mL**")
+                        st.write(f"Ketidakpastian Diperluas (U95): **{st.session_state.U95_exp:.6f} mL**")
     
                         st.subheader("Ui")
                         st.write(f"U1 : **{U1:.11f}**")
