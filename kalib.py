@@ -312,8 +312,8 @@ elif selected == "💾 Input Data":
                         st.session_state.U95_exp = st.session_state.Ugab * 2
     
                         st.subheader("Hasil Perhitungan")
-                        st.write(f"Densitas Air: **{dens_air:.6f} g/mL**")
-                        st.write(f"Densitas Udara: **{dens_udara:.6f} g/mL**")
+                        st.write(f"Densitas Air: **{st.session_state.dens_air:.6f} g/mL**")
+                        st.write(f"Densitas Udara: **{st.session_state.dens_udara:.6f} g/mL**")
                         st.write(f"Volume Sebenarnya (20°C): **{st.session_state.v_20:.6f} mL**")
                         st.write(f"Koreksi Volume Konvensional: **{st.session_state.koreksi:+.6f} mL**") 
                         
