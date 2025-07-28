@@ -27,6 +27,8 @@ if 'ui_csi' not in st.session_state:
     st.session_state.ui_csi = [0]*6
 if 'ui_csi2' not in st.session_state:
     st.session_state.ui_csi2 = [0]*6
+if 'Ugab2' not in st.session_state:
+    st.session_state.Ugab2 = 0    
 if 'Ugab' not in st.session_state:
     st.session_state.Ugab = 0
 if 'U95_exp' not in st.session_state:
@@ -36,6 +38,11 @@ if 'v_20' not in st.session_state:
     st.session_state.v_20 = 0
 if 'koreksi' not in st.session_state:
     st.session_state.koreksi = 0
+
+if 'dens_air' not in st.session_state:
+    st.session_state.dens_air = 0
+if 'dens_udara' not in st.session_state:
+    st.session_state.dens_udara = 0
 
 if 'v_konven' not in st.session_state:
     st.session_state.v_konven = 0.00
@@ -251,28 +258,28 @@ elif selected == "💾 Input Data":
                         tekanan = rata["Tekanan Udara (mmHg)"]
                         kelembaban = rata["Kelembaban (%)"]
             
-                        dens_air = 0.999974 - ((((T - 3.989)**2) * (T + 338.636)) / (563385.4 * (T + 72.45147)))
-                        dens_udara = (((0.464554 * tekanan) - kelembaban*(0.00252*suhu_udara-0.020582)) / ((237.15+suhu_udara)*1000))
+                        st.session_state.dens_air = 0.999974 - ((((T - 3.989)**2) * (T + 338.636)) / (563385.4 * (T + 72.45147)))
+                        st.session_state.dens_udara = (((0.464554 * tekanan) - kelembaban*(0.00252*suhu_udara-0.020582)) / ((237.15+suhu_udara)*1000))
             
                         koef_muai = 0.00001
-                        st.session_state.v_20 = massa * (1 - koef_muai * (T - 20)) / (dens_air - dens_udara)
+                        st.session_state.v_20 = massa * (1 - koef_muai * (T - 20)) / (st.session_state.dens_air - st.session_state.dens_udara)
                         st.session_state. koreksi = abs(st.session_state.v_20 - st.session_state.v_konven)
             
                     # Ketidakpastian massa air (U1)
                         k_neraca = (lop/(2*math.sqrt(3)))
                         k_ulangan = rata["U repeatability (g)"]
                         U1 = math.sqrt(k_neraca**2 + k_ulangan**2)
-                        Cs1 = (1 - koef_muai * (T - 20)) / (dens_air - dens_udara)
+                        Cs1 = (1 - koef_muai * (T - 20)) / (st.session_state.dens_air - st.session_state.dens_udara)
             
                     #Ketidakpastian suhu air (U2)
                         U2 = st.session_state.u95[1] / nilai_k[1]
-                        Cs2 = (massa * (-koef_muai)) / (dens_air - dens_udara)
+                        Cs2 = (massa * (-koef_muai)) / (st.session_state.dens_air - st.session_state.dens_udara)
             
                     #Ketidakpastian densitas air(U3)
                         Ut = U2
                         Ci = -((5.32*(10**-6) * T**2 + 1.20*(10**-4)*T + 2.82*(10**-5)) / ((T + 72.45147)**2))
                         U3 = math.sqrt((Ut * Ci)**2)
-                        Cs3 = -massa * (1 - koef_muai*(T - 20)) / ((dens_air - dens_udara)**2)
+                        Cs3 = -massa * (1 - koef_muai*(T - 20)) / ((st.session_state.dens_air - st.session_state.dens_udara)**2)
             
                     #Ketidakpastian densitas udara(U4)
                         Uh = st.session_state.u95[4]/nilai_k[4]
@@ -282,11 +289,11 @@ elif selected == "💾 Input Data":
                         Cp = (0.464554) / ((237.15 + suhu_udara) * 1000)
                         Ct = (-0.6182*kelembaban - 0.46554*tekanan) / (((237.15 + suhu_udara)**2) * 1000)
                         U4 = math.sqrt((Uh*Ch)**2 + (Up*Cp)**2 + (Ut*Ct)**2)
-                        Cs4 = massa * (1 - koef_muai*(T - 20)) / ((dens_air - dens_udara)**2)
+                        Cs4 = massa * (1 - koef_muai*(T - 20)) / ((st.session_state.dens_air - st.session_state.dens_udara)**2)
             
                     #Ketidakpastian KMV(U5)
                         U5 = (0.1 * koef_muai) / math.sqrt(3)
-                        Cs5 = massa * (20 - T) / (dens_air - dens_udara)
+                        Cs5 = massa * (20 - T) / (st.session_state.dens_air - st.session_state.dens_udara)
             
                     #Ketidakpastian miniskus(U6)
                         U6 = ((5/100) * st.session_state.ketelitian_lb) / math.sqrt(3)
@@ -298,7 +305,7 @@ elif selected == "💾 Input Data":
                         st.session_state.ui_csi2 = [(U1*Cs1)**2, (U2*Cs2)**2, (U3*Cs3)**2, (U4*Cs4)**2, (U5*Cs5)**2, (U6*Cs6)**2]
                         
                     #Ketidakpastian gabungan(Ugab)
-                        Ugab2 = ((U1*Cs1)**2 + (U2*Cs2)**2 + (U3*Cs3)**2 + (U4*Cs4)**2 + (U5*Cs5)**2 + (U6*Cs6)**2)
+                        st.session_state.Ugab2 = ((U1*Cs1)**2 + (U2*Cs2)**2 + (U3*Cs3)**2 + (U4*Cs4)**2 + (U5*Cs5)**2 + (U6*Cs6)**2)
                         st.session_state.Ugab = math.sqrt((U1*Cs1)**2 + (U2*Cs2)**2 + (U3*Cs3)**2 + (U4*Cs4)**2 + (U5*Cs5)**2 + (U6*Cs6)**2)
                     
                     #Ketidakpastian Diperluas
@@ -311,7 +318,7 @@ elif selected == "💾 Input Data":
                         st.write(f"Koreksi Volume Konvensional: **{st.session_state.koreksi:+.6f} mL**") 
                         
                         st.subheader("Ketidakpastian")
-                        st.write(f"Ugab2 (Gabungan2): **{Ugab2:.6f} mL**")
+                        st.write(f"Ugab2 (Gabungan2): **{st.session_state.Ugab2:.6f} mL**")
                         st.write(f"Ugab (Gabungan): **{st.session_state.Ugab:.6f} mL**")
                         st.write(f"Ketidakpastian Diperluas (U95): **{st.session_state.U95_exp:.6f} mL**")
     
@@ -409,9 +416,14 @@ elif selected == "perhitungan":
         st.write(f"(U6 x Cs6)² : **{st.session_state.ui_csi2[5]:.11f}**")
 
     with col_U:
-        st.subheader("Hasil")
-        st.write(f"Ketidakpastian Gabungan: **{st.session_state.Ugab:.6f}**")
-        st.write(f"Ketidakpastian Diperluas: **{st.session_state.U95_exp:.6f}**")
+        st.subheader("Hasil Perhitungan")
+        st.write(f"Densitas Air: **{st.session_state.dens_air:.6f} g/mL**")
+        st.write(f"Densitas Udara: **{st.session_state.dens_udara:.6f} g/mL**")
+        st.write(f"Volume Sebenarnya (20°C): **{st.session_state.v_20:.6f} mL**")
+        st.write(f"Koreksi Volume Konvensional: **{st.session_state.koreksi:+.6f} mL**") 
+        st.subheader("Ketidakpastian")
+        st.write(f"Ketidakpastian Gabungan: **{st.session_state.Ugab:.6f} mL**")
+        st.write(f"Ketidakpastian Diperluas: **{st.session_state.U95_exp:.6f} mL**")
                     
 elif selected == "📘 Penutup":
     st.markdown('<div class="header-section"><h1>Terimakasih</h1></div>', unsafe_allow_html=True)
