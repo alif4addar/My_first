@@ -129,8 +129,7 @@ elif selected == "📋 Cara Penggunaan Web Aplikasi":
 elif selected == "📑 Syarat Yang Harus Dipenuhi":
     st.markdown('<div class="header-section"><h2> Syarat Yang Harus Dipenuhi</h2></div>', unsafe_allow_html=True)
     cek1 = st.checkbox("✅ Pastikan Seluruh Alat Ukur Memiliki Sertifikat")
-    cek2 = st.checkbox("✅ Pastikan Suhu, Tekanan Dan Kelembaban Ruangan Stabil
-        Pada Saat Kalibrasi Berlangsung")
+    cek2 = st.checkbox("✅ Pastikan Suhu, Tekanan Dan Kelembaban Ruangan Stabil Pada Saat Kalibrasi Berlangsung")
     
     if cek1 and cek2:
         st.session_state.syarat = True
