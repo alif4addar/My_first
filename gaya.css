@@ -300,7 +300,7 @@
 
     [data-testid="stSidebar"] ul[class^="css-"] > li {
         color: #030f00;
-        border-radius: 150px;
+        border-radius: 50px;
     }
 
     div[class*="option-menu"] {
