@@ -107,22 +107,22 @@ if selected == "🏠 Home":
     st.markdown('<div class="header-section"><h1>Aplikasi Kalibrasi Volume Labu Takar</h1></div>', unsafe_allow_html=True)
     st.markdown("""
         <div class="hero-section">
-            <h3>Latar Belakang Kalibrasi</h3>
+            <h3>📓 Latar Belakang Kalibrasi</h3>
             <p>Dalam dunia laboratorium, industri, dan pelayanan publik, alat ukur digunakan untuk menghasilkan data yang menjadi dasar dalam pengambilan keputusan teknis, ekonomi, maupun legal. Agar hasil pengukuran dapat diandalkan, akurat, dan dapat ditelusuri ke standar nasional atau internasional, maka kalibrasi harus dilakukan.</p>
             <p>ISO/IEC 17025:2017 sebagai standar internasional untuk laboratorium pengujian dan kalibrasi, mengatur bahwa semua alat ukur yang memengaruhi keabsahan hasil pengujian wajib dikalibrasi untuk menjamin validitas pengukuran.</p>
             <br>
-            <h3>Apa Itu Kalibrasi?</h3>
+            <h3>📌 Apa Itu Kalibrasi?</h3>
             <p>Menurut VIM (International Vocabulary of Metrology) dan dirujuk dalam ISO/IEC 17025:</p>
             <p>Kalibrasi adalah: "Suatu rangkaian kegiatan yang menetapkan hubungan antara nilai yang ditunjukkan oleh alat ukur (atau sistem ukur), atau nilai yang diwakili oleh suatu bahan ukur, dengan nilai-nilai yang diketahui dari suatu standar acuan, dalam kondisi tertentu."</p>
             <p>Kalibrasi adalah proses membandingkan hasil pengukuran dari suatu alat ukur dengan standar acuan yang tertelusur (traceable) ke standar nasional atau internasional.</p>
             <p>Kalibrasi tidak hanya membandingkan nilai, tetapi juga melibatkan penentuan ketidakpastian pengukuran serta penyesuaian atau koreksi jika diperlukan.</p>
             <br>
-            <h3>Mengapa Kalibrasi Harus Dilakukan?</h3>
+            <h3>📝 Mengapa Kalibrasi Harus Dilakukan?</h3>
             <ul>
                 <li>Menjamin akurasi pengukuran.</li>
-                <li>Menjamin Ketertelusuran ke Standar Internasional.</li>
-                <li>Mendukung Keputusan Teknis dan Legal.</li>
-                <li>Memastikan Kesesuaian Berkala.</li>
+                <li>Menjamin ketertelusuran ke Standar Internasional.</li>
+                <li>Mendukung keputusan teknis dan legal.</li>
+                <li>Memastikan kesesuaian berkala.</li>
             </ul>
         </div>
     """, unsafe_allow_html=True)
