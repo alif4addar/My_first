@@ -27,7 +27,7 @@
     button[title="Share this app"],
     button[title="Favorite this app"],
     button[title="Edit"]{
-        display: none !important;
+        visibility: hidden !important;
     }
 
 
