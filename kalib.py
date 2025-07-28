@@ -389,7 +389,7 @@ elif selected == "perhitungan":
         st.write(f"U5*Cs5 : **{st.session_state.ui_csi[4]:.11f}**")
         st.write(f"U6*Cs6 : **{st.session_state.ui_csi[5]:.11f}**")
 
-    col_kosong, col_ui_csi2, col_kosong2 = st.columns([1, 3, 1])
+    col_kosong, col_ui_csi2, col_kosong2 = st.columns([2, 3, 1])
     with col_ui_csi2: 
         st.subheader("(Ui*Csi)^2")
         st.write(f"(U1*Cs1)^2 : **{st.session_state.ui_csi2[0]:.11f}**")
