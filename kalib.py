@@ -108,7 +108,13 @@ if selected == "🏠 Home":
     st.markdown("""
         <div class="hero-section">
             <h3>Latar Belakang Kalibrasi</h3>
-            <p>Dalam dunia laboratorium, industri, dan pelayanan publik, alat ukur digunakan untuk menghasilkan data yang menjadi dasar dalam pengambilan keputusan teknis, ekonomi, maupun legal. Agar hasil pengukuran dapat diandalkan, akurat, dan dapat ditelusuri ke standar nasional atau internasional, maka kalibrasi harus dilakukan.</p>
+            <p>    Dalam dunia laboratorium, industri, dan pelayanan publik, alat ukur digunakan untuk menghasilkan data yang menjadi dasar dalam pengambilan keputusan teknis, ekonomi, maupun legal. Agar hasil pengukuran dapat diandalkan, akurat, dan dapat ditelusuri ke standar nasional atau internasional, maka kalibrasi harus dilakukan.</p>
+            <p>    ISO/IEC 17025:2017 sebagai standar internasional untuk laboratorium pengujian dan kalibrasi, mengatur bahwa semua alat ukur yang memengaruhi keabsahan hasil pengujian wajib dikalibrasi untuk menjamin validitas pengukuran.</p>
+            <p> </p>
+            <h3>Apa Itu Kalibrasi?</h3>
+            <p>Menurut VIM (International Vocabulary of Metrology) dan dirujuk dalam ISO/IEC 17025:</p>
+            <p>    Kalibrasi adalah: "Suatu rangkaian kegiatan yang menetapkan hubungan antara nilai yang ditunjukkan oleh alat ukur (atau sistem ukur), atau nilai yang diwakili oleh suatu bahan ukur, dengan nilai-nilai yang diketahui dari suatu standar acuan, dalam kondisi tertentu."</p>
+            <p>Kalibrasi tidak hanya membandingkan nilai, tetapi juga melibatkan penentuan ketidakpastian pengukuran serta penyesuaian atau koreksi jika diperlukan.</p>
         </div>
     """, unsafe_allow_html=True)
     st.divider()
