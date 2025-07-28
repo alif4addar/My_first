@@ -385,23 +385,23 @@ elif selected == "perhitungan":
         st.write(f"Cs6 : **{st.session_state.csi[5]:.11f}**")
     
     with col_ui_csi:
-        st.subheader("Ui*Csi")
-        st.write(f"U1*Cs1 : **{st.session_state.ui_csi[0]:.11f}**")
-        st.write(f"U2*Cs2 : **{st.session_state.ui_csi[1]:.11f}**")
-        st.write(f"U3*Cs3 : **{st.session_state.ui_csi[2]:.11f}**")
-        st.write(f"U4*Cs4 : **{st.session_state.ui_csi[3]:.11f}**")
-        st.write(f"U5*Cs5 : **{st.session_state.ui_csi[4]:.11f}**")
-        st.write(f"U6*Cs6 : **{st.session_state.ui_csi[5]:.11f}**")
+        st.subheader("Ui x Csi")
+        st.write(f"U1 x Cs1 : **{st.session_state.ui_csi[0]:.11f}**")
+        st.write(f"U2 x Cs2 : **{st.session_state.ui_csi[1]:.11f}**")
+        st.write(f"U3 x Cs3 : **{st.session_state.ui_csi[2]:.11f}**")
+        st.write(f"U4 x Cs4 : **{st.session_state.ui_csi[3]:.11f}**")
+        st.write(f"U5 x Cs5 : **{st.session_state.ui_csi[4]:.11f}**")
+        st.write(f"U6 x Cs6 : **{st.session_state.ui_csi[5]:.11f}**")
 
     col_ui_csi2, col_U = st.columns([3, 3])
     with col_ui_csi2: 
-        st.subheader("(Ui*Csi)^2")
-        st.write(f"(U1*Cs1)^2 : **{st.session_state.ui_csi2[0]:.11f}**")
-        st.write(f"(U2*Cs2)^2 : **{st.session_state.ui_csi2[1]:.11f}**")
-        st.write(f"(U3*Cs3)^2 : **{st.session_state.ui_csi2[2]:.11f}**")
-        st.write(f"(U4*Cs4)^2 : **{st.session_state.ui_csi2[3]:.11f}**")
-        st.write(f"(U5*Cs5)^2 : **{st.session_state.ui_csi2[4]:.11f}**")
-        st.write(f"(U6*Cs6)^2 : **{st.session_state.ui_csi2[5]:.11f}**")
+        st.subheader("(Ui x Csi)²")
+        st.write(f"(U1 x Cs1)² : **{st.session_state.ui_csi2[0]:.11f}**")
+        st.write(f"(U2 x Cs2)² : **{st.session_state.ui_csi2[1]:.11f}**")
+        st.write(f"(U3 x Cs3)² : **{st.session_state.ui_csi2[2]:.11f}**")
+        st.write(f"(U4 x Cs4)² : **{st.session_state.ui_csi2[3]:.11f}**")
+        st.write(f"(U5 x Cs5)² : **{st.session_state.ui_csi2[4]:.11f}**")
+        st.write(f"(U6 x Cs6)² : **{st.session_state.ui_csi2[5]:.11f}**")
 
     with col_U:
         st.subheader("Hasil")
