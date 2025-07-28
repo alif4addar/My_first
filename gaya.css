@@ -24,12 +24,12 @@
     header {
         opacity: 0.1;
     }
+
     button[title="Share this app"],
     button[title="Favorite this app"],
-    button[title="Edit"]{
-        visibility: hidden !important;
+    button[title="Edit"] {
+        display: none !important;
     }
-
 
     /* Header */
     .header-section {
