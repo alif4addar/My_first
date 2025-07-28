@@ -421,9 +421,32 @@ elif selected == "perhitungan":
         st.write(f"Densitas Udara: **{st.session_state.dens_udara:.6f} g/mL**")
         st.write(f"Volume Sebenarnya (20°C): **{st.session_state.v_20:.6f} mL**")
         st.write(f"Koreksi Volume Konvensional: **{st.session_state.koreksi:+.6f} mL**") 
+        
+    col_ketidak, col_kesimpul = st.columns([3, 3])
+    with col_ketidak:
         st.subheader("Ketidakpastian")
         st.write(f"Ketidakpastian Gabungan: **{st.session_state.Ugab:.6f} mL**")
         st.write(f"Ketidakpastian Diperluas: **{st.session_state.U95_exp:.6f} mL**")
+        
+    col_kesimpul:
+        nilai_maks = st.session_state.koreksi + st.session_state.U95_exp
+        st.subheader("Kesimpulan")
+        if st.session_state.koreksi < st.session_state.ketelitian_lb and nilai_maks < st.session_state.ketelitian_lb:
+            st.write("✅ labu Takar Dapat Digunakan")
+            st.write(f"Karena Nilai Koreksi ({st.session_state.koreksi:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
+            st.write(f"Karena Nilai Maksimum(Nilai Koreksi + U95) ({st.session_state.koreksi:.4f}+{st.session_state.U95_exp:.4f} = {nilai_maks:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
+        elif st.session_state.koreksi < st.session_state.ketelitian_lb and nilai_maks > st.session_state.ketelitian_lb:
+            st.write("labu Takar Tidak Dapat Digunakan")
+            st.write(f"Karena Nilai Koreksi ({st.session_state.koreksi:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lbketelitian_lb:.4f})")
+            st.write(f"Tetapi Nilai Maksimum(Nilai Koreksi + U95) ({st.session_state.koreksi:.4f}+{st.session_state.U95_exp:.4f} = {nilai_maks:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
+        elif st.session_state.koreksi > st.session_state.ketelitian_lb and nilai_maks < st.session_state.ketelitian_lb:
+            st.write("labu Takar Tidak Dapat Digunakan")
+            st.write(f"Karena Nilai Maksimum(Nilai Koreksi + U95) ({st.session_state.koreksi:.4f}+{st.session_state.U95_exp:.4f} = {nilai_maks:.4f}) Lebih Kecil Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
+            st.write(f"Tetapi Nilai Koreksi ({st.session_state.koreksi:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
+        else:
+            st.write("labu Takar Tidak Dapat Digunakan")
+            st.write(f"Karena Nilai Koreksi ({st.session_state.koreksi:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
+            st.write(f"Dan Karena Nilai Maksimum(Nilai Koreksi + U95) ({st.session_state.koreksi:.4f}+{st.session_state.U95_exp:.4f} = {nilai_maks:.4f}) Lebih Besar Dari Ketelitian Labu Takar ({st.session_state.ketelitian_lb:.4f})")
                     
 elif selected == "📘 Penutup":
     st.markdown('<div class="header-section"><h1>Terimakasih</h1></div>', unsafe_allow_html=True)
