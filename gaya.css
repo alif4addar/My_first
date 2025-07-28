@@ -285,7 +285,7 @@
         background: linear-gradient(to right, #06D001, #2fec00, #9BEC00);
         color: #0a0000;
         padding: 15px;
-        border-radius: 50px;
+        border-radius: 15px;
         border-right: 2px solid white;
         width: 280px !important;
     }
