@@ -291,22 +291,5 @@
         width: 280px !important;
     }
 
-    /* Background dan warna teks menu */
-    [data-testid="stSidebar"] ul[class^="css-"] {
-        border-radius: 150px;
-        padding: 10px;
-        background-color: transparent !important;
-    }
-
-    [data-testid="stSidebar"] ul[class^="css-"] > li {
-        color: #030f00;
-        border-radius: 50px;
-    }
-
-    div[class*="option-menu"] {
-        background-color: transparent !important;
-        color: white;
-        font-size: 60px;
-    }
 
 
