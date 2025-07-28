@@ -408,13 +408,12 @@ elif selected == "perhitungan":
     col_U, col_kosongg = st.columns([3, 3])
     with col_U:
         st.subheader("Hasil Perhitungan")
+        st.write(f"Ketelitian Labu Takar: **{st.session_state.ketelitian_lb:.4f} mL**")
         st.write(f"Densitas Air: **{st.session_state.dens_air:.6f} g/mL**")
         st.write(f"Densitas Udara: **{st.session_state.dens_udara:.6f} g/mL**")
         st.write(f"Volume Sebenarnya (20°C): **{st.session_state.v_20:.6f} mL**")
         st.write(f"Koreksi Volume Konvensional: **{st.session_state.koreksi:+.6f} mL**") 
-        st.write(f"Ketelitian Labu Takar: **{st.session_state.ketelitian_lb:.4f} mL**")
-        st.write(f"Nilai Maksimum: **{nilai_maks:.4f} mL**")
-
+        
 #baris ke-2
     col_ui, col_csi, col_ui_csi2 = st.columns([2, 2, 2])
     with col_ui:
@@ -450,6 +449,7 @@ elif selected == "perhitungan":
         st.subheader("Ketidakpastian")
         st.write(f"Ketidakpastian Gabungan: **{st.session_state.Ugab:.6f} mL**")
         st.write(f"Ketidakpastian Diperluas: **{st.session_state.U95_exp:.6f} mL**")
+        st.write(f"Nilai Maksimum: **{nilai_maks:.4f} mL**")
         
     with col_kesimpul:
         st.subheader("Kesimpulan")
